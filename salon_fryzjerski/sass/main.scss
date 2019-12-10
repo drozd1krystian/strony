@@ -1,0 +1,339 @@
+@import 'config';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;;
+}
+
+body {
+  line-height: 1.5;
+  font-family: 'Solway', sans-serif;
+}
+// Utility
+ul, a {
+  text-decoration: none;
+  list-style: none;
+  color: $light-color;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+@keyframes opacity {
+  from {opacity: 0}
+  to {opacity: 1};
+}
+@keyframes slider {
+  from {margin-left: -1500px;}
+  to {margin-left: inherit}
+}
+
+#navbar {
+  height: 12vh;
+  background: rgba($color: #000000, $alpha: 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 1rem 2rem;
+  z-index: 1;
+  .logo {
+    color: $light-color;
+    height: 100%;
+    a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      img { height: 100%}
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      padding: 0 0.3rem;
+      text-transform: uppercase;
+    }
+    a{
+      padding: 0.75rem;
+      &:hover {
+        color: $supp-color;
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+  }
+  .burger div {
+    width: 25px;
+    height: 5px;
+    background: $light-color;
+    margin: 5px;
+  }
+}
+
+#showcase{
+  background: url('/dist/img/showcase.jpg') no-repeat center center/cover;
+  height: 95vh;
+  margin-top: -12vh;
+  .showcase-content {
+    background: rgba($color: $dark-color, $alpha: 0.3);
+    height: 100%;
+    color: $light-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      font-size: 4rem;
+      animation: opacity;
+      animation-duration: 1.2s;
+      animation-timing-function: ease-in;
+    }
+    p{
+     animation: slider;
+     animation-duration: 1s; 
+     animation-timing-function: ease-in;
+    }
+  }
+}
+#separator {
+  height: 10vh;
+  width: 100%;
+  color: $light-color;
+  z-index: 1;
+}
+
+#services, #open-hr {
+  background: url('/dist/img/services-bg.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  padding: 5rem 0;
+  height: 70vh;
+  h1, h2 {
+    text-align: center;
+    color: $light-color;
+    img {
+      height: 100px;
+    }
+  }
+  z-index: -1;
+  .services-content, .open-hr-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    hr {width: 50%; margin: 0 auto;}
+
+    .service, .day {
+      width: 200px;
+      height: 200px;
+      background: rgba($color: $supp-color, $alpha: 0.9);
+      box-shadow: 0px 0px 5px 1px rgba($dark-color,0.75);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem 0;
+      animation: opacity;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+      .service-price {
+        color: $light-color;
+        text-shadow: 3px 3px $dark-color;
+      }
+    }
+  }
+}
+
+// Changed only few properties - the rest is the same as in services
+#open-hr {
+  background: url('/dist/img/open-hr.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  h1 {text-shadow: 2px 2px $dark-color;}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .open-hr-content{
+    .day {
+      width: 150px;
+      height: 150px;
+      align-items: center;
+      justify-content: center;
+      background: rgba($color: $light-color, $alpha:.8);
+      box-shadow: none;
+      h2 {color: $dark-color; text-shadow: none;}
+      .day-hr {
+        font-size: 1rem;
+      }
+    }
+    .weekend {
+      background: $supp-color;
+    }
+  }
+}
+
+#opinions {
+  height: 70vh;
+  padding: 2rem;
+  .opinions-content {
+    height: 93%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    h1{
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .img {
+      background: url('/dist/img/opinion-img.jpg') no-repeat center center/cover;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    .switch {
+      display: flex;
+      width: 200px;
+      i {
+        cursor: pointer;
+        color: $supp-color;
+        margin: .5rem auto;
+      }
+    }
+  }
+}
+
+#contact {
+  height: 70vh;
+  background: url('/dist/img/contact-bg.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  .contact-content {
+    background: rgba($color: #000000, $alpha: .6);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: $light-color;
+      margin: .5rem 0;
+    }
+    .phone {
+      padding: 0 3rem;
+      background: $light-color;
+      color: $dark-color;
+    }
+  }
+}
+
+#main-footer {
+  height: 5vh;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+// Smartphone
+
+@media screen and (max-width: 768px) {
+
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    ul {
+      flex-direction: column;
+      position: absolute;
+      top: 12vh;
+      right: 0;
+      width: 60%;
+      height: 88vh;
+      background: rgba($color: $dark-color, $alpha:1 );
+      justify-content: space-around;
+      box-shadow: 0px 0px 5px 1px $light-color;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in-out;
+    }
+    .burger {
+      display: block;
+      div {
+        transition: all 0.5s ease-in-out;
+      }
+    }
+    .active {
+      transform: translateX(0%);
+    } 
+    .toggle{
+      .line-1 {transform: rotate(-45deg) translate(-7px, 8px);}
+      .line-2 {opacity: 0;}
+      .line-3 {transform: rotate(45deg) translate(-5px, -7px);}
+    }
+  }
+  #showcase {
+    .showcase-content {
+      text-align: center;
+      h1 {
+        line-height: 1;
+      }
+      p {margin: 2rem;}
+    }
+  }
+
+  #services {
+    background: $light-color;
+    height: initial;
+    h1 {
+      color: $dark-color;
+    }
+    .container {
+      .services-content {
+        flex-direction: column;
+        padding: .5rem;
+        .service {
+          box-shadow: none;
+          background: $supp-color;
+          margin: .5rem 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  #open-hr {
+    background: $dark-color;
+    height: initial;
+    width: 100%;
+    .container {
+      width: 100%;
+    }
+    .open-hr-content {
+      width: 100%;
+      flex-direction: column;
+      .day {
+        background: $light-color;
+        width: 100%;
+        height: 100px;
+      }
+    }
+  }
+
+  #opinions {
+    height: 100%;
+  }
+}
