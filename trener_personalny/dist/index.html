@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Solway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3c70acfb9a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/main.min.css">
+  <title>Jan Kowalski - Trener Personalny Rzeszów</title>
+</head>
+<body onload="autoSlide">
+  <nav id="navbar">
+    <div class="logo"><a href="index.html"></a></div>
+    <ul class ="links">
+      <li><a href="#">O mnie</a></li>
+      <li><a href="#">Oferta</a></li>
+      <li><a href="#">Opinie</a></li>
+      <li><a href="#">Kontakt</a></li>
+      <li><a href="#">Podopieczni</a></li>
+    </ul>
+  </nav>
+
+  <header id="showcase">
+    <div class="showcase-content slide-1 fade"></div>
+    <div class="showcase-content slide-2 fade"></div>
+    <a class="prev" onclick="nextSlide(-1)">&#10094;</a>
+    <a class="next" onclick="nextSlide(1)">&#10095;</a>
+  </header>
+
+  <section id="offert">
+    <div class="offert-container">
+      <a href=""><div class="offert offert-1"><img src="img/offer-1.jpg" alt="offert1"><div class="overlay"><h2>Treningi</h2><h1>Personalne</h1><i class="fas fa-user-friends"></i></div></div></a>
+      <a href=""><div class="offert offert-2"><img src="img/offert-2.jpg" alt="offert2"><div class="overlay"><h2>Plany</h2><h1>Żywieniowe</h1><i class="far fa-calendar-alt"></i></div></div></a>
+      <a href=""><div class="offert offert-3"><img src="img/offert-3.jpg" alt="offert3"><div class="overlay"><h2>Przygotowanie</h2><h1>Do Zawodów</h1><i class="fas fa-trophy"></i></div></div></a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="photo"><img src="img/about-photo.jpg" alt="Jan Kowalski"></div>
+    <div class="disc">
+      <div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quia quo vitae aut maiores voluptates, ea numquam aperiam sit laboriosam, quod, excepturi mollitia ab minus! Non velit laborum quidem porro!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quaerat dolor aperiam magni molestiae omnis in voluptatem vero odit, consequuntur sequi eaque libero mollitia culpa quia temporibus eveniet. At ut quam modi perspiciatis deleniti voluptates, quidem sed labore magni earum laboriosam non accusantium cumque, iste amet recusandae beatae nostrum in?</p>
+        <a href="about.html">Dowiedz się więcej</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="whatIDo">
+      <h1>Poprowadzę ciebie w zakresie:</h1>
+      <hr>
+      <div class="box-container">
+        <div class="box">
+          <div>
+            <div class="icon"><i class="fas fa-utensils fa-2x"></i></div>
+            <div class="content">
+              <h2>Prowadzenie dietetyczne</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempora voluptate alias incidunt pariatur et.</p> 
+            </div>    
+          </div>
+          <div>
+            <div class="icon"><i class="fas fa-utensils fa-2x"></i></div>
+            <div class="content">
+              <h2>Prowadzenie dietetyczne</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempora voluptate alias incidunt pariatur et.</p> 
+            </div>    
+          </div>
+        </div>
+        <div class="box slider"></div>
+        <div class="box">
+          <div>
+            <div class="content">
+              <h2>Prowadzenie dietetyczne</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempora voluptate alias incidunt pariatur et.</p> 
+            </div> 
+            <div class="icon"><i class="fas fa-utensils fa-2x"></i></div>   
+          </div>
+          <div>
+            <div class="content">
+              <h2>Prowadzenie dietetyczne</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempora voluptate alias incidunt pariatur et.</p> 
+            </div>  
+            <div class="icon"><i class="fas fa-utensils fa-2x"></i></div>  
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="plans">
+    <div class="plans-container">
+      <div class="plan secondary">
+        <div class="photo">
+          <div class="header"><h1>Plan Żywieniowy</h1></div>
+          <img src="img/offer-1.jpg" alt="plan-1">
+        </div>
+        <ul>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+        </ul>
+        <div class="price">
+          <div class="price-data">
+            <h4>100zł/miesiąc</h4>
+            <h1>85zł / miesiąc</h1>
+            <a href="#" >Wybieram</a>
+          </div>
+        </div>
+      </div>
+      <div class="plan picked" id ="picked">
+        <div class="photo">
+          <div class="header"><h1>Plan Żywieniowy</h1></div>
+          <img src="img/offer-1.jpg" alt="plan-1">
+        </div>
+        <ul>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+        </ul>
+        <div class="price">
+          <div class="price-data">
+            <h4>100zł/miesiąc</h4>
+            <h1>85zł / miesiąc</h1>
+            <a href="#" class ="primary">Wybieram</a>
+          </div>
+        </div>
+      </div>
+      <div class="plan secondary">
+        <div class="photo">
+          <div class="header"><h1>Plan Żywieniowy</h1></div>
+          <img src="img/offer-1.jpg" alt="plan-1">
+        </div>
+        <ul>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+          <li><i class="fas fa-utensils"></i> Lorem, ipsum dolor.</li>
+        </ul>
+        <div class="price">
+          <div class="price-data">
+            <h4>100zł/miesiąc</h4>
+            <h1>85zł / miesiąc</h1>
+            <a href="#">Wybieram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jquery CDN -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <!-- JS local File -->
+  <script src= "js/main.js"></script> 
+</body>
+</html>
