@@ -90,3 +90,44 @@ const slider = (slideNr) => {
   slides[slideId-1].style.display = "block";
 }
 slider(slideId);
+
+
+// Changes sub-data (+/- 15kg color based on sign )
+const changeBackground = (el, color) => {
+  el.style.background = color ; 
+}
+
+let subData = []
+subData = document.querySelectorAll('.sub-data');
+
+subData.forEach(el => {
+  if(el.innerHTML.slice(0, 1) == '+' ) {
+    changeBackground(el, 'green')
+  }
+})
+
+
+const items = document.querySelectorAll('section-content');
+
+const isInViewport = el => {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+const run = () =>
+  items.forEach(item => {
+    if (isInViewport(item)) {
+      item.classList.add('animate');
+    }
+  });
+
+// Events
+window.addEventListener('load', run);
+window.addEventListener('resize', run);
+window.addEventListener('scroll', run);

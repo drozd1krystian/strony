@@ -20,8 +20,6 @@ a {
   text-decoration: none;
   color: $light-color;
   text-transform: uppercase;
-  font-weight: 700;
-  font-style: italic;
 }
 
 .primary {
@@ -32,6 +30,17 @@ a {
   max-width: 1100px;
   height: 100%;
   margin: 0 auto;
+}
+
+.text-right {
+  text-align: right;
+}
+.active {
+  color: $supp-color;
+  transition: all .4s ease;
+  &:hover {
+    color: $light-color;
+  }
 }
 
 #navbar {
@@ -62,6 +71,7 @@ a {
     align-items: center;
     height: 100%;
     padding: 0 1rem;
+    font-family: "Russo One", sans-serif;
     li {
       height: 100%;
       position: relative;
@@ -74,6 +84,7 @@ a {
         position: relative; 
         background: transparent;
         z-index: 2;
+        font-style: italic;
       }
       &:hover:after {
         background: $supp-color;
@@ -278,7 +289,7 @@ a {
         position: absolute;
         right: 0;
         transform: translate(-20%, -20%);
-        box-shadow: 0px 0px 6px -1px $dark-color;
+        box-shadow: 0 4px 8px 0 $dark-color;
         &:hover {
           color: $light-color;
           background: $supp-color;
@@ -290,7 +301,7 @@ a {
 }
 
 #whatIDo {
-  padding: 2rem 1rem 0 1rem;
+  padding: 5rem 1rem 4rem 1rem;
   background: url('../img/whatIDo-bg.jpg') no-repeat center center/cover;
   margin-top: -10px;
   color: $light-color; 
@@ -311,22 +322,25 @@ a {
   }
   .box-container {
     display: flex;
+    margin: 2rem 0 1rem 0;
     padding: 0 2rem;
-    div{
-      flex: 1;
-    }
+    height: 500px;
+    div{flex: 1;}
     .slider{flex: 2;}
     .box {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      height: 100%;
       h2 {
         text-transform: uppercase;
         font-family: "Russo One", sans-serif;
       }
       div{
-        margin-bottom: 2rem;
         display: flex;
         padding: 1rem;
+        height: 50%;
         .icon {
           margin-top: 10px;
           border: 3px solid $light-color;
@@ -334,6 +348,10 @@ a {
           height: 80px;
           position: relative;
           box-shadow: 0 0 0 rgba($color: #000000, $alpha: 0);
+          transition: all 0.5s ease;
+          &:hover {
+            transform: rotateY(180deg);
+          }
           i {
             position: absolute;
             top: 50%; 
@@ -345,18 +363,17 @@ a {
             color: $light-color;
             border: none;
             box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: .15);
-            transition: all 0.4s ease;
             animation: beat .5s;
           }
         }
         .content {
+          min-width: 300px;
           display: flex;
           flex-direction: column;
           padding: 0 1rem;
           p {color: $grey-color;}
         }
-      }
-      
+      }  
     }
   }
 }
@@ -366,14 +383,19 @@ a {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   .plans-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 0 4rem;
     .plan {
       flex: 1;
-      margin-right: 10px;
+      margin: 10px 10px 20px 0;
       border-top: none;
       transition: all 0.4s ease;
+      position: relative;
+      min-width: 300px;
       .photo{
         height: 200px;
+        width: 100%;
         position: relative;
         transition: all 0.4s ease;
         .header{
@@ -382,6 +404,8 @@ a {
           position:absolute;
           z-index: 1;
           width: 100%;
+          text-transform: uppercase;
+          margin-left: 1px;
           h1 {
             padding: .5rem;
             text-align: center;
@@ -391,11 +415,12 @@ a {
           width: 100%;
           height: 100%;
           position: relative;
+          margin-left: 1px;
         }
       }
       ul{
-        border: 1px solid $dark-color;
         border-bottom: none;
+        padding: 0 .1rem;
       }
       ul li{
         padding: .3rem;
@@ -411,10 +436,10 @@ a {
         }
       }
       .price {
-        padding: 2.3rem;
+        padding: 1rem 2.3rem;
         position: relative;
         transition: all 0.3s ease;
-        border: 1px solid black;
+        top: 0;
         border-top: none;
         .price-data {
           display: flex;
@@ -446,30 +471,426 @@ a {
           }
         }
       }
-      &:hover {
-        .photo{
-          margin-top: -25px;
+        &:hover {
+          .photo{
+           margin-top: -35px;
+         }
+         .price {
+           top: 35px;
+         }
+       }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: 1px solid $dark-color;
+        transition: all .4s ease;
+        z-index: -1;
+        box-sizing: content-box !important;
+      }
+      &:hover::after {
+        height: 110%;
+        top: -35px;
+      }
+    }
+  }
+}
+
+ .picked {
+    &::after{
+      height: 110% !important;
+      top: -35px !important;     
+    }
+    .photo{
+      margin-top: -35px;
+    }
+    .price {
+      top: 35px !important;
+    }
+ }
+
+
+#ppl-changes {
+  padding: 2rem;
+  background: #333;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1{
+    text-align: center;
+    color: $light-color;
+    text-transform: uppercase;
+    font-family: "Russo One", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-style: italic;
+  }
+  h2{
+    text-align: center;
+    color: $dark-color;
+  }
+  a {
+    background: $grey-color;
+    padding: 1rem;
+    color: $dark-color;
+    border-radius: 5px;
+    transition: all .3s ease;
+    &:hover {
+      color: $light-color;
+      background: $supp-color;
+    }
+    }
+  .changes-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .wrapper {
+      padding: 2rem 30px;
+      width: 33.3%;
+      min-width: 300px;
+      position: relative;
+      .change{
+        padding: 20px 30px;;
+        background: $light-color;
+        position: relative;
+        box-shadow: 0 8px 16px 0 $dark-color;
+        border-radius: 5px;
+        .photo {
+          width: 100%;
+          height: 200px;
+          margin-bottom: 2rem;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            transition: all .3s ease;
+            &:hover{
+              transform: scale(1.3);
+            }
+          }
         }
-        .price {
-          padding-top: 5rem;
+        .discription {
+          margin-bottom: 3rem;
+          h3 {
+            padding: .2rem;
+            font-size: .9rem;
+            i {
+              padding: .2rem;
+            }
+          }
+        }
+        .sub-data {
+          position: absolute;
+          width: 70px;
+          height: 50px;
+          top: 0;
+          right: 0;
+          background: red;
+          z-index: 2;
+          color: $light-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: "Russo One", sans-serif;
+          font-size: 1.2rem;
+          font-style: italic;
+          z-index: 2;
         }
       }
     }
   }
 }
 
-.picked {
-  .photo{
-    margin-top: -25px;
+#main-footer {
+  display: flex;
+  flex-wrap: wrap;
+  background: $dark-color;
+  .instagram, .questions, .social-media {
+    flex: 1;
+    width: 33,3333333%;
+    min-width: 300px;
+    min-height: 300px;
+    padding: 2rem 1rem;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: $light-color;
+    h2{
+      color: $supp-color;
+      font-family: "Russo One", sans-serif;
+      font-style: italic;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
   }
-  .price {
-    padding-top: 5rem !important;
-    .price-data {
-      padding: 0rem !important;
+  .inst-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 90px;
+      height: 90px;
+      padding: 0.1rem;
+      margin: 0.1rem;
+    }
+  }
+  .questions {
+    display: flex;
+    a {
+      padding: 1rem 3rem;
+      color: $dark-color;
+      background: $grey-color;
+      margin-top: 1rem;
+      border-radius: 3px;
+      transition: all 0.4s ease;
+      display: block;
+      &:hover {
+        opacity: 0.7;
+        img{
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+  .social-media {
+    display: flex;
+    .social-icons {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      color: $grey-color;
+      a {
+        margin-top: 1rem;
+        position: relative; 
+        display: block;
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        line-height: 63px;
+        background: #333;
+        border-radius: 50%;
+        font-size: 20px;
+        color: #666;
+        transition: .5s;
+        i {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background: $supp-color;
+          transition: .5s;
+          transform: scale(.9);
+          z-index: -1;
+        }
+        &:hover::before {
+          transform: scale(1.4);
+          box-shadow: 0 0 15px $supp-color;
+        }
+        &:hover {
+          color: $supp-color;
+          box-shadow: 0 0 15px $supp-color;
+          border: 5px solid $supp-color;;
+          text-shadow: 0 0 15px $supp-color;;
+        }
+      }
     }
   }
 }
 
+// About Me subpage //
+
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: stretch;
+  justify-content: space-around;
+  div {
+    padding: 3rem 2rem;
+  }
+}
+
+.animate {
+  animation: slider 1.5s ease;
+}
+#about-showcase {
+  height: 30vh;
+  background: url('../img/offer-1.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  .showcase-content {
+    background: rgba($color: $dark-color, $alpha: .5);
+    width: 100%;
+    height: 100%;
+    .container {
+      position: relative;
+    }
+    h1 {
+      font-size: 60px;
+      font-family: "Russo One", sans-serif;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $light-color;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transition: all 0.4s ease;
+      transform: translate(0,-50%);
+    }
+    hr {
+      width: 180px;
+      height: 5px;
+      border: none;
+      background: $grey-color;
+      position: absolute;
+      top: 65%;
+      left: 0;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+#my-start {
+  .section-content {
+    .text {
+      flex: 2;
+      min-width: 400px;
+      animation: slider 1.5s ease;
+      font-family: "Montserrat", sans-serif;
+      h2{
+        font-size: 30px;
+        font-family: "Russo One", sans-serif;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      p {
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+    }
+    .photo{
+      flex: 1;
+      min-height: 300px;
+      animation: fade 1s ease, photo-right 1.5s ease;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+#first-tournament {
+  background: url('../img/offer-1.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  .section-content {
+    width: 100%;
+    height: 100%;
+    background: rgba($color: $dark-color, $alpha: .4);
+  }
+  h1 {
+    font-size: 30px;
+    font-family: "Russo One", sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $light-color;
+  }
+  .text {
+    width: 70%;
+    float: right;
+    color: $grey-color;
+    font-family: "Montserrat", sans-serif;
+    p {
+      margin: 1rem 0;
+    }
+  }
+}
+
+#me-today {
+  .photo, .text {
+    width: 50%;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    h2 {
+      font-size: 30px;
+      font-family: "Russo One", sans-serif;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  }
+  .photo  {
+    min-height: 600px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// About Me Mobile 
+@media screen and (max-width: 768px) {
+  #about-showcase {
+    background-position: center center;
+    h1, hr {
+      left: 50% !important; 
+      transform: translate(-50%, -50%) !important;
+      font-size: 40px !important;
+    }
+  }
+  #my-start {
+    .section-content {
+      .photo {
+        padding: 0 1rem 1rem 1rem;
+      }
+      .text {
+        padding-bottom: 0;
+      }
+    }
+  }
+  #first-tournament {
+    background-position: center center;
+    .section-content {
+      .text {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  #me-today {
+    .photo, .text {
+      width: 100%;
+    }
+  }
+}
 
 // Animations 
 @keyframes beat {
@@ -502,12 +923,18 @@ a {
   }
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
 }
+
+@keyframes slider {
+  from {margin-left: -50%;}
+  to {margin-left: 0;}
+}
+
+@keyframes photo-right {
+  from {margin-left: 50%;}
+  to {margin-left: 0;}
+}
+
