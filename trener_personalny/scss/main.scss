@@ -64,7 +64,19 @@ a {
       margin: 0 auto;
     }
   }
-
+  .burger {
+    display: none;
+    div {
+      transition: all 0.5s ease-in-out;
+    }
+    .line-1, .line-2, .line-3 {
+      width: 30px;
+      height: 5px;
+      padding: 0 10px;
+      background: #fff;
+      margin-top: 5px;
+    }
+  }
   ul {
     display: flex;
     justify-content: center;
@@ -322,10 +334,10 @@ a {
   }
   .box-container {
     display: flex;
+    flex-wrap: wrap;
     margin: 2rem 0 1rem 0;
     padding: 0 2rem;
     height: 500px;
-    div{flex: 1;}
     .slider{flex: 2;}
     .box {
       display: flex;
@@ -729,10 +741,16 @@ a {
 }
 
 .animate {
-  animation: slider 1.5s ease;
+  animation: 1s slider ease;
+  visibility: initial !important;
 }
-#about-showcase {
-  height: 30vh;
+.photo-animate {
+  animation: 1s photo-right ease, 2s fade ease;
+  visibility: visible !important;
+}
+
+#sub-page-showcase {
+  height: 50vh;
   background: url('../img/offer-1.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   .showcase-content {
@@ -771,9 +789,9 @@ a {
 #my-start {
   .section-content {
     .text {
-      flex: 2;
+      width: 66%;
+      visibility: hidden;
       min-width: 400px;
-      animation: slider 1.5s ease;
       font-family: "Montserrat", sans-serif;
       h2{
         font-size: 30px;
@@ -788,9 +806,9 @@ a {
       }
     }
     .photo{
-      flex: 1;
+      width: 33%;
+      visibility: hidden;
       min-height: 300px;
-      animation: fade 1s ease, photo-right 1.5s ease;
       img{
         width: 100%;
         height: 100%;
@@ -807,7 +825,7 @@ a {
     height: 100%;
     background: rgba($color: $dark-color, $alpha: .4);
   }
-  h1 {
+  h2 {
     font-size: 30px;
     font-family: "Russo One", sans-serif;
     font-style: italic;
@@ -817,6 +835,7 @@ a {
   }
   .text {
     width: 70%;
+    visibility: hidden;
     float: right;
     color: $grey-color;
     font-family: "Montserrat", sans-serif;
@@ -828,7 +847,7 @@ a {
 
 #me-today {
   .photo, .text {
-    width: 50%;
+    width: 49.5%;
   }
   .text {
     display: flex;
@@ -856,20 +875,432 @@ a {
   }
 }
 
-// About Me Mobile 
+
+// My Offert subpage
+.icons-animation {
+  animation: 1s popUp ease;
+  visibility: visible !important;
+}
+
+#one-page {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0;
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    line-height: 2;
+  }
+  .what-i-offer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    .my-offert {
+      width: 49%;
+      padding: 1rem;
+      min-width: 400px;
+      display: inline-block;
+      h1 {
+        font-family: "Russo One", sans-serif;
+        font-size: 1.7rem;
+        font-style: italic;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 100;
+        margin-bottom: .5rem;
+      }
+      hr {
+        width: 100px;
+        height: 6px;
+        border: none;
+        margin-bottom: 2rem;
+        background: $supp-color;
+      }
+      ul {
+        padding: 1rem 2rem;
+        list-style: initial;
+        font-size: 13px;
+        li {
+          margin: 10px 0;
+          font-family: "Montserrat", sans-serif;
+        }
+      }
+      .photo {
+        width: 100%;
+        height: auto;
+        img {
+          width: 100%; height: 100%;
+        }
+      }
+    }
+  }
+  .plans-container {
+    padding: 0;
+  }
+  #icons {
+    h1 {
+      font-family: "Russo One", sans-serif;
+      font-size: 45px;
+      text-align: center;
+      font-weight: 100;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    hr {
+      margin-left: 50%;
+      transform: translate(-50%, 0%);
+      width: 140px;
+      height: 7px;
+      background: $supp-color;
+      border: none;
+      margin-bottom: 1rem;
+    }
+    .icons-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+      position: relative;
+      .content {
+        width: 33.33%;
+        padding: 1rem;
+        h2{
+          font-size: 20px;
+          font-family: "Montserrat", sans-serif;
+          text-transform: uppercase;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        .icon {
+          margin-left: 50%;
+          transform: translate(-50%, 0);
+          width: 90px;
+          height: 90px;
+          color: $light-color;
+          background: $supp-color;
+          position: relative;
+          margin-bottom: 40px;
+          border-radius: 8px;
+          visibility: hidden;
+          i {
+            position: absolute;
+            font-size: 2.5rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+}
+
+#opinions {
+  padding: 4rem 0;
+  font-family: "Montserrat", sans-serif;
+  .opinion {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    .text-bubble {
+      border: 1px solid $grey-color;
+      box-shadow: 2px 2px 4px #ccc;
+      padding: 1rem 2rem;
+      position: relative;
+      &::after {
+        bottom: -30px;
+        box-sizing: border-box;
+        content: '';
+        display: block;
+        left: 80px;
+        position: absolute;
+        filter: drop-shadow(rgba(0, 0, 0, 0.0980392) 2px 2px 1px);
+        border-top: 30px solid rgb(255, 255, 255);
+        border-right: 30px solid rgba(0, 0, 0, 0);
+        border-bottom: 0px solid rgba(0, 0, 0, 0);
+        border-left: 0px solid rgba(0, 0, 0, 0);
+      }
+      p::before {
+        display: block;
+        font-size: 4rem;
+        color: $grey-color;
+        position: absolute;
+        content: open-quote;
+        left: 5px;
+        top: -5px;
+      }
+      p::after {
+        content: close-quote;
+        visibility: hidden;
+      }
+    }
+    .person {
+      display: flex;
+      margin-top: 20px;
+      align-items: center;
+      .photo {
+        width: 95px;
+        height: 90px;
+        padding: 10px;
+        background: #fff;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+      .disc {
+        font-size: 12px;
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+#ppl-changes {
+  .facebook {
+    width: 100%;
+    height: 400px;
+    background: url('../img/offer-1.jpg') center/cover no-repeat;
+    div {
+      width: 100%;
+      height: 100%;
+      background: rgba($color: $supp-color, $alpha: .8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h1, h2 {
+        z-index: 2;
+      }
+      h2 {
+        color: #fff;
+        font-style: italic;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      a {
+        color: $light-color;
+        background: #333;
+        z-index: 4;
+      }
+      a:hover {
+        background: $dark-color;
+      }
+    }
+  } 
+}
+#contact {
+  padding: 2rem;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contact-info{
+    width: 50%;
+  }
+  h1 {
+    font-family: "Russo One", sans-serif;
+    font-size: 2.2rem;
+    font-style: italic;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+  hr {
+    width: 90px;
+    height: 5px;
+    background: $supp-color;
+    border: none;
+    margin: 20px 0;
+  }
+  p {
+    margin: 20px 0;
+  }
+  .contact-disc {
+    display: flex;
+    .icon {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 3px solid $light-color;
+      width: 80px;
+      height: 80px;
+      position: relative;
+      box-shadow: 0 0 0 rgba($color: #000000, $alpha: 0);
+      border: 4px solid $supp-color;
+      color: $supp-color;
+      transition: all 0.5s ease;
+      &:hover {
+        transform: rotateY(180deg);
+      }
+      i {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:hover {
+        background: $supp-color;
+        color: $light-color;
+        border: none;
+        box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: .35);
+        animation: beat .5s;
+      }
+    }
+    .info {
+      width: 250px;
+      margin-left: 20px;
+      h1 {
+        margin-top: 10px;
+        font-size: 20px;
+        font-family: "Russo One", sans-serif;
+        font-style: italic;
+        font-weight: 100;
+      }
+      h2 {
+        font-size: 14px;
+        font-weight: 100;
+        color: rgb(129, 128, 128);
+      }
+    }
+  }
+  label {
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+  }
+  form {
+    width: 50%;
+    padding: 0 2rem;
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 10px 10px;
+      background: #eee;
+      border: none;
+    }
+    button {
+      background: $dark-color;
+      color: $supp-color;
+      padding: 1rem 2rem;
+      margin-top: 20px;
+      border: none;
+      text-transform: uppercase;
+      font-family: "Russo One", sans-serif;
+      font-style: italic;
+      transition: all .3s ease;
+      &:hover {
+        color: $dark-color;
+        background: $supp-color;
+      }
+    }
+  }
+}
+
+
+
 @media screen and (max-width: 768px) {
-  #about-showcase {
+  .container {
+    max-width: 95%;
+  }
+
+  #navbar {
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    .logo {
+      display: inline-block !important;
+      background-size: contain !important;
+    }
+    ul {
+      flex-direction: column;
+      position: absolute;
+      top: 10vh;
+      right: 0;
+      width: 60%;
+      height: 90vh;
+      background: rgba($color: #333, $alpha:1 );
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in-out;
+    }
+    .active {
+      transform: translateX(0%);
+    } 
+    .toggle{
+      .line-1 {transform: rotate(-45deg) translate(-7px, 8px);}
+      .line-2 {opacity: 0;}
+      .line-3 {transform: rotate(45deg) translate(-5px, -7px);}
+    }
+    .burger {
+      display: initial;
+    }
+  }
+  #showcase, #offert {
+    display: none;
+  }
+  #about {
+    flex-direction: column;
+    margin-top: 10vh;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 6rem;
+    div {
+      width: 100%;
+    }
+    .photo{
+      padding: 0 1rem;
+    }
+    .disc div {
+      a {
+        position: relative;      
+      }
+    }
+  }
+  #whatIDo{
+    .box-container{
+      padding: 0;
+      flex-direction: column;
+      height: auto;
+      .slider{
+        display: none !important;
+      }
+      .box {
+        margin-bottom: 0;
+      }
+      .box a div .content p {
+        display: none;
+      }
+      .icon {
+        width: 30% !important;
+        order: -1;
+      }
+      .content {
+        width: 70% !important;
+        min-width: 0 !important;
+        h2 {
+          text-align: left;
+        }
+      }
+    }
+    
+  }
+
+  #sub-page-showcase {
     background-position: center center;
+    margin-top: 0;
     h1, hr {
       left: 50% !important; 
       transform: translate(-50%, -50%) !important;
       font-size: 40px !important;
+      margin-bottom: 10px;
     }
   }
   #my-start {
     .section-content {
       .photo {
         padding: 0 1rem 1rem 1rem;
+        width: 100%;
       }
       .text {
         padding-bottom: 0;
@@ -890,41 +1321,66 @@ a {
       width: 100%;
     }
   }
+
+  #one-page {
+    p{
+      padding: 1rem;
+    }
+    .what-i-offer {
+      width: 100%;
+      margin: 0;
+      .my-offert {
+        width: 100%;
+        padding: 0;
+        min-width: auto;
+        p {
+          padding: 0 1rem 0 1rem;
+        }
+        h1 {
+          text-align: center;
+        }
+        hr {
+          margin-left: 50%;
+          transform: translate(-50%, 0%);
+        }
+      }
+    }
+    #icons {
+      h1 {
+        font-size: 35px;
+      }
+      .icons-container{
+        .content {
+          width: 100%;
+        }
+      }
+    }
+  }
+  #contact {
+    .contact-info, form {
+      width: 100%;
+    }
+    form {
+      padding: 0;
+    }
+  }
 }
+
+
+
 
 // Animations 
 @keyframes beat {
-  0%
-  {
-    box-shadow: 0px 0px 0px 0px rgba($color: $grey-color, $alpha: .15);
-  }
-  20%
-  {
-    box-shadow: 0px 0px 0px 3px rgba($color: $grey-color, $alpha: .15);
-  }
-  40%
-  {
-    box-shadow: 0px 0px 0px 7px rgba($color: $grey-color, $alpha: .15);
-  }
-
-  60%
-  {
-    box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: .15);
-  }
-
-  80%
-  {
-    box-shadow: 0px 0px 0px 20px rgba($color: $grey-color, $alpha: .1);
-  }
-
-  100%
-  {
-    box-shadow: 0px 0px 0px 25px rgba($color: $grey-color, $alpha: 0);
-  }
+  0% {box-shadow: 0px 0px 0px 0px rgba($color: $grey-color, $alpha: .15);}
+  20% {box-shadow: 0px 0px 0px 3px rgba($color: $grey-color, $alpha: .15);}
+  40%{box-shadow: 0px 0px 0px 7px rgba($color: $grey-color, $alpha: .15);}
+  60%{box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: .15);}
+  80%{box-shadow: 0px 0px 0px 20px rgba($color: $grey-color, $alpha: .1);}
+  100%{box-shadow: 0px 0px 0px 25px rgba($color: $grey-color, $alpha: 0);}
 }
 
 @keyframes fade {
-  from {opacity: .4}
+  from {opacity: .1}
   to {opacity: 1}
 }
 
@@ -938,3 +1394,9 @@ a {
   to {margin-left: 0;}
 }
 
+@keyframes popUp {
+  0% {top: 100%;}
+  50% {top: -5%;}
+  75% {top: 5%;}
+  100% {top: 0%;}
+}

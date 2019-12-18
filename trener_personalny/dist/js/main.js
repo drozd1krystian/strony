@@ -48,22 +48,21 @@ checkPrimary();
 
 
 // Burger Menu
-// const navSlide = () => {
-//   const burger = document.querySelector('.burger');
-//   const nav = document.querySelector('.links');
+const navSlide = () => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.links');
 
-//   burger.addEventListener('click', () => {
-//     nav.classList.toggle('active');
-//     burger.classList.toggle('toggle');
-//   })
-// };
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.classList.toggle('toggle');
+  })
+};
+navSlide();
 
-// navSlide();
-
-// $( '.links a' ).on("click", function(){
-//   $('.links').removeClass('active');
-//   $('.burger').removeClass('toggle');
-// });
+$( '.links a' ).on("click", function(){
+  $('.links').removeClass('active');
+  $('.burger').removeClass('toggle');
+});
 
 
 // Slide show
@@ -106,8 +105,11 @@ subData.forEach(el => {
   }
 })
 
+// About me Animations run on scroll
 
-const items = document.querySelectorAll('section-content');
+const headers = document.querySelectorAll('.text h2');
+const texts =  document.querySelectorAll('.text')
+const photos = document.querySelectorAll('.photo');
 
 const isInViewport = el => {
   const rect = el.getBoundingClientRect();
@@ -120,12 +122,28 @@ const isInViewport = el => {
   );
 };
 
-const run = () =>
-  items.forEach(item => {
+const iconsAnimation = () => {
+  const headers = document.querySelectorAll('.icons-container .content h2');
+  const icons = document.querySelectorAll('.icons-container .icon');
+
+  headers.forEach((item, index) => {
     if (isInViewport(item)) {
-      item.classList.add('animate');
+      icons[index].classList.add('icons-animation');
+    }
+  })
+}
+
+const run = () => {
+  headers.forEach( (item, index) => {
+    if (isInViewport(item)) {
+      texts[index].classList.add('animate');
+      photos[index].classList.add('photo-animate');
     }
   });
+  iconsAnimation();
+}
+
+
 
 // Events
 window.addEventListener('load', run);
