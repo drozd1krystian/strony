@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3c70acfb9a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <title>Sklep odzieżowy - tanie ubrania</title>
+  </head>
+<body>
+  <header id="main-header">
+    <div class="container">
+      <div class="header-wrapper">
+        <div class="logo">
+          <img src="img/logo.png" alt="logo">
+        </div>
+        <form action="#">
+          <div>
+            <input type="text" id="searchBar" placeholder="Wyszukaj">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
+        <div class="menu-basket">
+          <div class="link-wrapper">
+            <a href="#">
+              <i class="far fa-user"></i>
+              <span class="header-discription-element">Konto</span>
+            </a> 
+          </div>
+          <div class="link-wrapper">
+            <a href="#">
+              <i class="far fa-heart"></i>
+              <span class="header-discription-element">Ulubione</span>
+            </a> 
+          </div>
+          <div class="link-wrapper">
+            <a href="#">
+              <i class="fas fa-shopping-basket"></i>
+              <span class="header-discription-element">Koszyk</span>
+            </a> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <header id="menu">
+    <ul class ="links">
+      <li onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)" id="mens-clothes">
+        <a href="#" >Odzież Męska</a>
+        <div class="sub-menu">
+          <ul class="sub-menu-links">
+            <a href=""><h3>Kategoria-1</h3></a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+            <li><a href="#">Sub-Kategoria-3</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#"><h3>Kategoria-2</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#"><h3>Kategoria-3</a>
+              <li><a href="#">Sub-Kategoria-1</a></li>
+              <li> <a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          </div>
+      </li>
+      <li  onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)" id="womens-clothes">
+        <a href="#">Odzież Damska</a>
+        <div class="sub-menu">
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-1</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+            <li><a href="#">Sub-Kategoria-3</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-2</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          </div>
+      </li>
+      <li id="accesory" id="sub-accesory" onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)">
+        <a href="#">Akcesoria</a>
+        <div class="sub-menu">
+          <ul class="sub-menu-links">
+            <a href=""><h3>Kategoria-1</h3></a>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href=""><h3>Kategoria-2</h3></a>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href=""><h3>Kategoria-3</h3></a>
+          </ul>
+          </div>
+      </li>
+      <li>
+        <a href="#">Wyprzedaże</a>
+      </li>
+    </ul>
+  </header>
+
+  <section id="slider">
+    <div class="slide-container">
+      <a href=""><img class = "slide showing" src="img/slide-1.jpg" alt="slide-1"></a> 
+      <a href=""><img class = "slide" src="img/slide-2.jpg" alt="slide-2"></a>
+      <a href=""><img class = "slide" src="img/slide-3.jpg" alt="slide-3"></a>
+    </div>
+    <div class="prev-slide">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="next-slide">
+      <i class="fas fa-arrow-right"></i>
+    </div> 
+    <div class="buttons">
+      <div class="dot active" onclick="goToSlide(0)"></div>
+      <div class="dot" onclick="goToSlide(1)"></div>
+      <div class="dot" onclick="goToSlide(2)"></div>
+    </div>
+  </section>
+
+  <section id="showcase" class="p-1">
+    <div class="container">
+      <div class="showcase-content">
+        <div class="sale sale-1">
+          <div class="header">
+            <h2>Płaszcze</h2>
+            <h1>Sprawdź >></h1>
+          </div>
+        </div>
+        <div class="sale sale-2">
+          <div class="header">
+            <h2>Płaszcze</h2>
+            <h1>Sprawdź >></h1>
+          </div>
+        </div>
+        <div class="sale sale-3">
+          <div class="header">
+            <h2>Jesień - spodnie</h2>
+            <h1>Sprawdź >></h1>
+          </div>
+        </div>
+        <div class="sale sale-4">
+          <div class="header">
+            <h2>Płaszcze</h2>
+            <h1>Sprawdź >></h1>
+          </div>
+        </div>
+        <div class="sale sale-5">
+          <div class="header">
+            <h2>Płaszcze</h2>
+            <h1>Sprawdź >></h1>
+          </div>
+        </div>
+        <div class="sale sale-6">
+          <div class="header">
+            <h2>Jesień - spodnie</h2>
+            <h1>Sprawdź >></h1>
+          </div>
+        </div>
+      </div>
+      <div class="sale sale-7">
+        <img src="img/sale-7.jpg" alt="sale-7">
+        <div class="header">
+          <h2>Kurtki</h2>
+          <h1>Sprawdź >></h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" class ="p-1">
+    <div class="container">
+      <h1>Nowosci</h1>
+      <div class="items-container">
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-1.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-3.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-1.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-1.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-2.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-3.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-3.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-3.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-3.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="photo">
+            <img src="img/jacket-2.jpg" alt="item">
+          </div>
+          <div class="disc">
+            <div class="name">
+              <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <div class="price">
+              <h3>100.00 zł</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="prev">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+        <div class="next">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src ="js/main.js"></script>
+</body>
+</html>

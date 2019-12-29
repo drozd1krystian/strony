@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Montserrat;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+i {
+  color: #666;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.py-1 {padding: 1rem 0;}
+.py-2 {padding: 2rem 0;}
+.py-3 {padding: 3rem 0;}
+
+.p-1 {padding: 1rem 1rem;}
+.p-2 {padding: 2rem 2rem;}
+.p-3 {padding: 3rem 3rem;}
+
+h1, h2 {
+  font-family: 'Fjalla+One', sans-serif;
+  text-transform: uppercase;
+}
+h2{font-size: 1.5rem;}
+h1{font-size: 1.7rem;}
+h3{font-size: 1rem;}
