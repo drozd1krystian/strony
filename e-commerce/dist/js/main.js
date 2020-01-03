@@ -1,13 +1,3 @@
-const displaySubMenu = (id) => {
-  const element = document.querySelector(`#${id} .sub-menu`);
-  element.classList.add('active-menu');
-}
-const hideSubMenu = (id) => {
-  const element = document.querySelector(`#${id} .sub-menu`);
-  element.classList.remove('active-menu');
-}
-
-
 const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
 const next = document.querySelector('.next-slide');
@@ -87,13 +77,9 @@ const showPrevItem = () => {
 }   
 
 nextItem.addEventListener('click', () => {
-  clearInterval(itemInterval);
   showNextItem();
 });
 
 prevItem.addEventListener('click', () => {
-  clearInterval(itemInterval);
   showPrevItem();
 });
-
-let itemInterval = setInterval(showNextItem, 1000);

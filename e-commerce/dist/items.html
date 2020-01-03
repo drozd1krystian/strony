@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3c70acfb9a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <title>Sklep odzieżowy - tanie ubrania</title>
+  </head>
+<body>
+  <header id="main-header">
+    <div class="container">
+      <div class="header-wrapper">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+        </div>
+        <form action="">
+          <div>
+            <input type="text" id="searchBar" placeholder="Wyszukaj">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
+        <div class="menu-basket">
+            <div class="burger">
+              <div class="line-1"></div>
+              <div class="line-2"></div>
+              <div class="line-3"></div>
+            </div>
+            <div class="link-wrapper">
+                <a href="">
+                    <i class="far fa-user"></i>
+                    <span class="header-discription-element">Konto</span>
+                </a> 
+            </div>
+            <div class="link-wrapper">
+                <a href="">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="header-discription-element">Koszyk</span>
+                </a> 
+            <div class="cart">
+                <h3>Koszyk</h3>
+                <div class="cart-items-container">
+                    <div class="cart-item">
+                        <div class="photo">
+                            <img src="img/jacket-2.jpg" alt="item">
+                        </div>
+                        <div class="disc">
+                            <p>Lorem, ipsum.</p>
+                            <div class="details">
+                                <div class="order-details">
+                                    <span>Ilosc: 1</span>
+                                    <span>Kolor: Czarny</span>
+                                    <span>Rozmiar: M</span>
+                                </div>
+                                <div class="price">
+                                    <span>100zł</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <div class="summary-disc">
+                        <div class="price-disc">
+                            <span class="price-tag">Wartość zamówienia:</span> 
+                            <span class="total">100 zł</span>
+                        </div>
+                        <div class="price-disc">
+                            <span class="price-tag">Dostawa:</span> 
+                            <span class="total">8,99 zł</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="total-amount">
+                        <span class="price-disc big">SUMA: </span> 
+                        <span class="total big" id="totalAmount">108,99zł</span>
+                    </div>
+                    <a href="" class="btn">Do Kasy</a>
+                </div>
+            </div>
+          </div>
+          <div id="mobile-menu">
+            <div class="list">
+              <ul>
+                <li>
+                  <a href="#dummy" class ="main-link">Odzież Męska</a>
+                  <div class="sub-menu">
+                    <a href="items.html">Kategoria-1</a>
+                    <a href="items.html">Kategoria-2</a>
+                    <a href="items.html">Kategoria-3</a>
+                  </div>
+                </li>
+                <li>
+                  <a href="#dummy" class ="main-link">Odzież Damska</a>
+                  <div class="sub-menu">
+                    <a href="items.html">Kategoria-1</a>
+                    <a href="items.html">Kategoria-2</a>
+                    <a href="items.html">Kategoria-3</a>
+                    <a href="items.html">Kategoria-3</a>
+                  </div>
+                </li>
+                  <li id="accesory" id="sub-accesory">
+                    <a href="#dummy" class ="main-link">Akcesoria</a>
+                    <div class="sub-menu">
+                      <a href="items.html">Kategoria-1</a>
+                      <a href="items.html">Kategoria-2</a>
+                      <a href="items.html">Kategoria-3</a>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#dummy" class ="main-link">Wyprzedaże</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="extender"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <header id="menu">
+    <ul class ="links">
+      <li onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)" id="mens-clothes">
+        <a href="#" >Odzież Męska</a>
+        <div class="sub-menu">
+          <ul class="sub-menu-links">
+            <a href=""><h3>Kategoria-1</h3></a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+            <li><a href="#">Sub-Kategoria-3</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#"><h3>Kategoria-2</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#"><h3>Kategoria-3</a>
+              <li><a href="#">Sub-Kategoria-1</a></li>
+              <li> <a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          </div>
+      </li>
+      <li onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)" id="womens-clothes">
+        <a href="#">Odzież Damska</a>
+        <div class="sub-menu">
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-1</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+            <li><a href="#">Sub-Kategoria-3</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-2</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          <ul class="sub-menu-links">
+            <a href="#">Kategoria-3</a>
+            <li><a href="#">Sub-Kategoria-1</a></li>
+            <li><a href="#">Sub-Kategoria-2</a></li>
+          </ul>
+          </div>
+      </li>
+      <li id="accesory" onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)">
+        <a href="#">Akcesoria</a>
+        <div class="sub-menu">
+          <a href=""><h3>Kategoria-1</h3></a>
+          <a href=""><h3>Kategoria-2</h3></a>
+          <a href=""><h3>Kategoria-3</h3></a>
+        </div>
+      </li>
+      <li>
+        <a href="#">Wyprzedaże</a>
+      </li>
+    </ul>
+  </header>
+
+  <section id="item-showcase">
+    <div class="container">
+        <div class="filters">
+            <div class="filter">
+                <h4>Kategoria</h4>
+                <div class="filter-type">
+                    <ul class="filter-list">
+                        <li>
+                            <input type="checkbox" name="jeansowe" id="jeansowe">
+                            <label for="jeansowe"><span>Jeansowe</span></li></label> 
+                        <li>
+                            <input type="checkbox" name="skorzane" id="skorzane">
+                            <label for="skorzane"><span>Skórzane</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="przejsciowe" id="przejsciowe">
+                            <label for="przejsciowe"><span>Przejściowe</span></label>
+                        </li>
+                    </ul>
+                </div>
+                <button class ="btn" id="filter-btn">Zastosuj</button>
+            </div>
+            <div class="filter">
+                <h4>Kolor</h4>
+                <div class="filter-type">
+                    <ul class="filter-list">
+                        <li>
+                            <input type="checkbox" name="niebieski" id="niebieski">
+                            <label for="niebieski"><span>Niebieski</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="czerwony" id="czerwony">
+                            <label for="czerwony"><span>Czerwony</span></label> 
+                        </li>    
+                        <li>
+                            <input type="checkbox" name="czarny" id="czarny">
+                            <label for="czarny"><span>Czarny</span></label> 
+                        </li>  
+                    </ul>
+                </div>
+                <button class ="btn" id="filter-btn">Zastosuj</button>
+            </div>
+            <div class="filter">
+                <h4>Rozmiar</h4>
+                <div class="filter-type">
+                    <ul class="filter-list">
+                        <li>
+                            <input type="checkbox" name="M" id="M">
+                            <label for="M"><span>M</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="L" id="L">
+                            <label for="L"><span>L</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="XL" id="XL">
+                            <label for="XL"><span>XL</span></label>
+                    </ul>
+                </div>
+                <button class ="btn" id="filter-btn">Zastosuj</button>
+            </div>
+            <div class="filter">
+                <h4>Cena</h4>
+                <input type="range" min="1" max="300" value="300" class="price-slider" id="priceRange">
+                <div class="price-tags">
+                    <div class="price-tag-min">
+                        <span class="price-value" id="min-price">0 zł</span>
+                    </div>
+                    <div class="price-tag-max">
+                        <input type="text" class="price-value" id="max-price" value="300"> zł
+                    </div>
+                </div>
+                <button class ="btn" id="filter-btn">Zastosuj</button>
+            </div>
+        </div>  
+        <div class="items-container">
+            <!-- <div class="item">
+                <div class="photo">
+                  <img src="img/jacket-2.jpg" alt="item">
+                </div>
+                <div class="disc">
+                  <div class="name">
+                    <h3>Lorem ipsum dolor sit.</h3>
+                  </div>
+                  <div class="price">
+                    <h3>100.00 zł</h3>
+                  </div>
+                </div>
+                <div class="add-btn">
+                    <button class="btn" id="add">Dodaj Do Koszyka</button>
+                </div>
+            </div> -->
+        </div>  
+    </div>
+  </section>
+
+  <section id="footer">
+    <div class="container">
+      <div class="about">
+        <h3>Informacje</h3>
+        <h5><a href="#">O nas</a></h5>
+        <h5><a href="#">Kontakt</a></h5>
+        <h5><a href="#">Regulamin sklepu</a></h5>
+      </div>
+      <div class="cust-service">
+        <h3>Obługa klienta</h3>
+        <h5><a href="#">FAQ</a></h5>
+        <h5><a href="#">Zwroty i reklamacje</a></h5>
+        <h5><a href="#">Dobór rozmiaru</a></h5>
+      </div>
+      <div class="payment-delivery">
+        <h3>Dostawa i płatność</h3>
+        <h5><a href="#">Rodzaje dostawy</a></h5>
+        <h5><a href="#">Metody płatności</a></h5>
+        <h5><a href="#">Dobór rozmiaru</a></h5>
+      </div>
+      <div class="contact">
+        <h3>Kontakt</h3>
+        <span><i class="fas fa-phone"> </i>123456789</span>
+        <div class="social-media">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>    
+      </div>
+    </div>
+  </section>
+
+  <!-- Jquery CDN -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <script src ="js/menu.js"></script>
+  <script src ="js/controllers.js"></script>
+</body>
+</html>

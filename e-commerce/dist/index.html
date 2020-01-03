@@ -18,32 +18,66 @@
     <div class="container">
       <div class="header-wrapper">
         <div class="logo">
-          <img src="img/logo.png" alt="logo">
+          <a href="index.html"><img src="img/logo.png" alt="logo"></a>
         </div>
-        <form action="#">
+        <form action="">
           <div>
             <input type="text" id="searchBar" placeholder="Wyszukaj">
             <button type="submit"><i class="fas fa-search"></i></button>
           </div>
         </form>
         <div class="menu-basket">
+            <div class="burger">
+              <div class="line-1"></div>
+              <div class="line-2"></div>
+              <div class="line-3"></div>
+            </div>
           <div class="link-wrapper">
-            <a href="#">
+            <a href="">
               <i class="far fa-user"></i>
               <span class="header-discription-element">Konto</span>
             </a> 
           </div>
           <div class="link-wrapper">
-            <a href="#">
-              <i class="far fa-heart"></i>
-              <span class="header-discription-element">Ulubione</span>
-            </a> 
-          </div>
-          <div class="link-wrapper">
-            <a href="#">
+            <a href="">
               <i class="fas fa-shopping-basket"></i>
               <span class="header-discription-element">Koszyk</span>
             </a> 
+          </div>
+          <div id="mobile-menu">
+            <div class="list">
+              <ul>
+                <li>
+                  <a href="#dummy" class ="main-link">Odzież Męska</a>
+                  <div class="sub-menu">
+                    <a href="items.html">Kategoria-1</a>
+                    <a href="items.html">Kategoria-2</a>
+                    <a href="items.html">Kategoria-3</a>
+                  </div>
+                </li>
+                <li>
+                  <a href="#dummy" class ="main-link">Odzież Damska</a>
+                  <div class="sub-menu">
+                    <a href="items.html">Kategoria-1</a>
+                    <a href="items.html">Kategoria-2</a>
+                    <a href="items.html">Kategoria-3</a>
+                    <a href="items.html">Kategoria-3</a>
+                  </div>
+                </li>
+                  <li id="accesory" id="sub-accesory">
+                    <a href="#dummy" class ="main-link">Akcesoria</a>
+                    <div class="sub-menu">
+                      <a href="items.html">Kategoria-1</a>
+                      <a href="items.html">Kategoria-2</a>
+                      <a href="items.html">Kategoria-3</a>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#dummy" class ="main-link">Wyprzedaże</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="extender"></div>
           </div>
         </div>
       </div>
@@ -53,97 +87,91 @@
   <header id="menu">
     <ul class ="links">
       <li onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)" id="mens-clothes">
-        <a href="#" >Odzież Męska</a>
+        <a href="items.html">Odzież Męska</a>
         <div class="sub-menu">
           <ul class="sub-menu-links">
             <a href=""><h3>Kategoria-1</h3></a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
-            <li><a href="#">Sub-Kategoria-3</a></li>
+            <li><a href="items.html">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
+            <li><a href="items.html">Sub-Kategoria-3</a></li>
           </ul>
           <ul class="sub-menu-links">
-            <a href="#"><h3>Kategoria-2</a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
+            <a href="items.html"><h3>Kategoria-2</a>
+            <li><a href="items.html">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
           </ul>
           <ul class="sub-menu-links">
-            <a href="#"><h3>Kategoria-3</a>
-              <li><a href="#">Sub-Kategoria-1</a></li>
-              <li> <a href="#">Sub-Kategoria-2</a></li>
+            <a href="items.html"><h3>Kategoria-3</a>
+              <li><a href="items.html">Sub-Kategoria-1</a></li>
+              <li> <a href="items.html">Sub-Kategoria-2</a></li>
           </ul>
           </div>
       </li>
-      <li  onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)" id="womens-clothes">
-        <a href="#">Odzież Damska</a>
+      <li onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)" id="womens-clothes">
+        <a href="items.html">Odzież Damska</a>
         <div class="sub-menu">
           <ul class="sub-menu-links">
-            <a href="#">Kategoria-1</a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
-            <li><a href="#">Sub-Kategoria-3</a></li>
+            <a href="items.html">Kategoria-1</a>
+            <li><a href="items.html#">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
+            <li><a href="items.html">Sub-Kategoria-3</a></li>
           </ul>
           <ul class="sub-menu-links">
-            <a href="#">Kategoria-2</a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
+            <a href="items.html">Kategoria-2</a>
+            <li><a href="items.html">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
           </ul>
           <ul class="sub-menu-links">
-            <a href="#">Kategoria-3</a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
+            <a href="items.html">Kategoria-3</a>
+            <li><a href="items.html">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
           </ul>
           <ul class="sub-menu-links">
-            <a href="#">Kategoria-3</a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
+            <a href="items.html">Kategoria-3</a>
+            <li><a href="items.html">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
           </ul>
           <ul class="sub-menu-links">
-            <a href="#">Kategoria-3</a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
+            <a href="items.html">Kategoria-3</a>
+            <li><a href="items.html">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
           </ul>
           <ul class="sub-menu-links">
-            <a href="#">Kategoria-3</a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
+            <a href="items.html">Kategoria-3</a>
+            <li><a href="items.html">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
           </ul>
           <ul class="sub-menu-links">
-            <a href="#">Kategoria-3</a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
+            <a href="items.html">Kategoria-3</a>
+            <li><a href="items.html">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
           </ul>
           <ul class="sub-menu-links">
-            <a href="#">Kategoria-3</a>
-            <li><a href="#">Sub-Kategoria-1</a></li>
-            <li><a href="#">Sub-Kategoria-2</a></li>
+            <a href="items.html">Kategoria-3</a>
+            <li><a href="items.html">Sub-Kategoria-1</a></li>
+            <li><a href="items.html">Sub-Kategoria-2</a></li>
           </ul>
           </div>
       </li>
-      <li id="accesory" id="sub-accesory" onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)">
-        <a href="#">Akcesoria</a>
+      <li id="accesory" onmouseover="displaySubMenu(this.id)" onmouseout="hideSubMenu(this.id)">
+        <a href="items.html">Akcesoria</a>
         <div class="sub-menu">
-          <ul class="sub-menu-links">
-            <a href=""><h3>Kategoria-1</h3></a>
-          </ul>
-          <ul class="sub-menu-links">
-            <a href=""><h3>Kategoria-2</h3></a>
-          </ul>
-          <ul class="sub-menu-links">
-            <a href=""><h3>Kategoria-3</h3></a>
-          </ul>
-          </div>
+          <a href=""><h3>Kategoria-1</h3></a>
+          <a href=""><h3>Kategoria-2</h3></a>
+          <a href=""><h3>Kategoria-3</h3></a>
+        </div>
       </li>
       <li>
-        <a href="#">Wyprzedaże</a>
+        <a href="items.html">Wyprzedaże</a>
       </li>
     </ul>
   </header>
 
   <section id="slider">
     <div class="slide-container">
-      <a href=""><img class = "slide showing" src="img/slide-1.jpg" alt="slide-1"></a> 
-      <a href=""><img class = "slide" src="img/slide-2.jpg" alt="slide-2"></a>
-      <a href=""><img class = "slide" src="img/slide-3.jpg" alt="slide-3"></a>
+      <a href="items.html"><img class = "slide showing" src="img/slide-1.jpg" alt="slide-1"></a> 
+      <a href="items.html"><img class = "slide" src="img/slide-2.jpg" alt="slide-2"></a>
+      <a href="items.html"><img class = "slide" src="img/slide-3.jpg" alt="slide-3"></a>
     </div>
     <div class="prev-slide">
       <i class="fas fa-arrow-left"></i>
@@ -198,13 +226,15 @@
           </div>
         </div>
       </div>
-      <div class="sale sale-7">
-        <img src="img/sale-7.jpg" alt="sale-7">
-        <div class="header">
-          <h2>Kurtki</h2>
-          <h1>Sprawdź >></h1>
+      <a href="items.html">
+        <div class="sale sale-7">
+          <img src="img/sale-7.jpg" alt="sale-7">
+          <div class="header">
+            <h2>Kurtki</h2>
+            <h1>Sprawdź >></h1>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -354,6 +384,45 @@
     </div>
   </section>
 
+  <section id="footer">
+    <div class="container">
+      <div class="about">
+        <h3>Informacje</h3>
+        <h5><a href="#">O nas</a></h5>
+        <h5><a href="#">Kontakt</a></h5>
+        <h5><a href="#">Regulamin sklepu</a></h5>
+      </div>
+      <div class="cust-service">
+        <h3>Obługa klienta</h3>
+        <h5><a href="#">FAQ</a></h5>
+        <h5><a href="#">Zwroty i reklamacje</a></h5>
+        <h5><a href="#">Dobór rozmiaru</a></h5>
+      </div>
+      <div class="payment-delivery">
+        <h3>Dostawa i płatność</h3>
+        <h5><a href="#">Rodzaje dostawy</a></h5>
+        <h5><a href="#">Metody płatności</a></h5>
+        <h5><a href="#">Dobór rozmiaru</a></h5>
+      </div>
+      <div class="contact">
+        <h3>Kontakt</h3>
+        <span><i class="fas fa-phone"> </i>123456789</span>
+        <div class="social-media">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>    
+      </div>
+    </div>
+  </section>
+
+  <!-- Jquery CDN -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
   <script src ="js/main.js"></script>
+  <script src ="js/menu.js"></script>
+  <script src ="js/controllers.js"></script>
 </body>
 </html>
