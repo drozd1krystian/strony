@@ -951,13 +951,15 @@
     width: 80%;
     padding-left: 3rem;
     .item {
-      min-width: 250px;
-      max-height: 470px;
-      padding-bottom: 3rem;
+      max-width: 250px;
+      height: 400px;
       margin-bottom: 1rem;
       position: relative;
+      display: flex;
+      flex-direction: column;
       .photo {
         max-width: 250px;
+        max-height: 350px;
         cursor: pointer;
         img {
           width: 100%;
@@ -980,7 +982,8 @@
       .add-btn {
         opacity: 0;
         transition: all .2s ease;
-        bottom: 0px;
+        position: absolute;
+        bottom: -70px;
         width: 100%;
         padding: .5rem 0;
         background: #fff;
@@ -1012,6 +1015,7 @@
       &:hover {
         .add-btn {
           opacity: 1;
+          z-index: 10;
         }
       }
     }

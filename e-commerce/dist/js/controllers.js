@@ -1,25 +1,30 @@
 const ItemCtrl = (function () {
 
-    const Item = function(id, name, size, price, amount, category) {
+    const Item = function(id, name, size, price, amount, category, color) {
         this.id = id;
         this.name = name;
         this.size = size;
         this.price = price;
         this.amout = amount;
         this.category = category;
+        this.color = color;
     }
 
     const data = {
         items: [
-            {id: 'a1', name: 'Bluza Męska Trosso', size: 'M', price: 80, amout: 1, category: 'bluza', color: 'czerwony'},
-            {id: 'a2', name: 'Kurtka Niebieska Męska', size: 'XL', price: 220, amout: 1, category: 'kurtka', color: 'niebieski'},
-            {id: 'a3', name: 'Sweter Męski Niebieski', size: 'L', price: 50, amout: 2, category: 'sweter', color: 'czerwony'},
+            {id: 'a1', name: 'Bluza Męska Trosso', sizes: ['M', 'L', 'XL'], price: 80, amout: 1, category: 'bluza', color: 'czerwony'},
+            {id: 'a2', name: 'Kurtka Niebieska Męska', sizes: ['L', 'XL'], price: 220, amout: 1, category: 'kurtka', color: 'niebieski'},
+            {id: 'a3', name: 'Sweter Męski Niebieski', sizes: ['M', 'L'], price: 50, amout: 2, category: 'sweter', color: 'czerwony'},
         ]
     }
 
     return {
         returnData: function() {
             return data;
+        },
+        createItem: function(el, selRadio) {
+            const item = new Item(el.id, el.name, selRadio, el.price, 1, el.category, el.color);
+            return item;
         }
     }
 })();
@@ -47,6 +52,15 @@ const UICtrl = (function () {
             }
         },
         addItem: function(el) {
+            let sizeMarkup = '';
+            el.sizes.forEach(size => {
+                sizeMarkup += `
+                <li>
+                    <input type="radio" name="size" id="${size}${el.id}" value="${size}">
+                    <label for="${size}${el.id}"><span>${size}</span></label>
+                </li>
+                `
+            })
             const item = 
             `<div class="item">
                 <div class="photo">
@@ -54,26 +68,15 @@ const UICtrl = (function () {
                 </div>
                 <div class="disc">
                     <div class="name">
-                        <h3>${el.name}</h3>
+                        <h3>${el.name} ${el.color}</h3>
                     </div>
                     <div class="price">
                         <h3>${el.price} zł</h3>
                     </div>
                 </div>
                 <div class="add-btn">
-                    <ul class="size-list">
-                        <li>
-                            <input type="checkbox" name="add-M" id="add-M">
-                            <label for="add-M"><span>M</span></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="add-L" id="add-L">
-                            <label for="add-L"><span>L</span></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="add-XL" id="add-XL">
-                            <label for="add-XL"><span>XL</span></label>
-                        </li>
+                    <ul class="size-list" id="list-${el.id}">
+                        ${sizeMarkup}
                      </ul>
                     <button class="btn" id="${el.id}">Dodaj Do Koszyka</button>
                 </div>
@@ -131,14 +134,28 @@ const App = (function(ItemCtrl, UICtrl, CartCtrl) {
     //const selectors = UICtrl.getSelectors();
     const cartData = CartCtrl.returnData();
 
+    function checkRadio(el) {
+        let radioButtons = Array.from(document.querySelectorAll(`#list-${el} input[type="radio"]`));
+        let value = radioButtons.find(el => el.checked);
+        return value != undefined ? value.value : false;
+    }
+
     function addItemsToView() {
         data.items.forEach(el => {
             UICtrl.addItem(el);
             const addBtn = document.querySelector(`#${el.id}`);
-            addBtn.onclick = () => {
-                UICtrl.addToCartView(el);
-                CartCtrl.addToCart(el);
-                UICtrl.updateCart(cartData);
+
+            addBtn.onclick = () => {       
+                const radioValue = checkRadio(el.id);  
+                console.log(radioValue); 
+                if(!radioValue) {
+
+                }else {
+                    const item = ItemCtrl.createItem(el, radioValue);
+                    UICtrl.addToCartView(item);
+                    CartCtrl.addToCart(item);
+                    UICtrl.updateCart(cartData);
+                }
             };
         })
     }
