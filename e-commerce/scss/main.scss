@@ -76,7 +76,6 @@
           }
         }
         .cart {
-          width: 100%;
           display: none;
           position:absolute;
           top: calc(10vh - 1px);
@@ -92,6 +91,10 @@
             padding: 1rem;
             background: #eee;
             border-bottom: 1px solid #ccc;
+          }
+          .cart-items-container {
+            max-height: 400px;
+            overflow: auto;
           }
           .cart-item {
             display: flex;
@@ -953,9 +956,9 @@
       padding-bottom: 3rem;
       margin-bottom: 1rem;
       position: relative;
-      cursor: pointer;
       .photo {
         max-width: 250px;
+        cursor: pointer;
         img {
           width: 100%;
           height: 100%;
@@ -963,6 +966,7 @@
       }
       .disc {
         display: flex;
+        cursor: pointer;
         .name{
           width: 70%;
           text-align: left;
@@ -974,12 +978,25 @@
         }
       }
       .add-btn {
-        display: none;
+        opacity: 0;
         transition: all .2s ease;
-        position: absolute;
         bottom: 0px;
         width: 100%;
+        padding: .5rem 0;
         background: #fff;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #ccc;
+        cursor: initial;
+        .size-list {
+          width: 50%;
+          display: flex;
+          justify-content: space-around;
+          padding: .5rem 0;
+          input[type="checkbox"], label {
+            cursor: pointer;
+          }
+        }
         button {
           padding: .5rem;
           background: #000;
@@ -994,10 +1011,7 @@
       }
       &:hover {
         .add-btn {
-          height: 50px;
-          padding: 0.5rem;
-          display: block;
-          border-bottom: 1px solid #ccc;
+          opacity: 1;
         }
       }
     }

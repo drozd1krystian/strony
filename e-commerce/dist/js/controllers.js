@@ -11,12 +11,10 @@ const ItemCtrl = (function () {
 
     const data = {
         items: [
-            {id: 1, name: 'Bluza Męska Trosso', size: 'M', price: 80, amout: 1, category: 'bluza', color: 'czerwony'},
-            {id: 2, name: 'Kurtka Niebieska Męska', size: 'XL', price: 220, amout: 1, category: 'kurtka', color: 'niebieski'},
-            {id: 3, name: 'Sweter Męski Niebieski', size: 'L', price: 50, amout: 2, category: 'sweter', color: 'czerwony'},
-        ],
-        currentItem: null,
-        total: 0,
+            {id: 'a1', name: 'Bluza Męska Trosso', size: 'M', price: 80, amout: 1, category: 'bluza', color: 'czerwony'},
+            {id: 'a2', name: 'Kurtka Niebieska Męska', size: 'XL', price: 220, amout: 1, category: 'kurtka', color: 'niebieski'},
+            {id: 'a3', name: 'Sweter Męski Niebieski', size: 'L', price: 50, amout: 2, category: 'sweter', color: 'czerwony'},
+        ]
     }
 
     return {
@@ -31,9 +29,15 @@ const UICtrl = (function () {
         priceRange: document.getElementById('priceRange'),
         maxPriceValue: document.getElementById('max-price'),
         itemsContainer: document.querySelector('.items-container'),
+        cartContainer: document.querySelector('.cart-items-container'),
+        priceTotal: document.querySelector('.price-disc .total'),
+        totalAmount: document.getElementById('totalAmount'),
     }
 
     return {
+        getSelectors: function() {
+            return selectors;
+        },
         updatePriceRange: function() {
             selectors.priceRange.oninput = function () {
                 selectors.maxPriceValue.value = this.value;
@@ -42,16 +46,7 @@ const UICtrl = (function () {
                 selectors.priceRange.value = this.value;
             }
         },
-        addItem: function(item) {
-            selectors.itemsContainer.insertAdjacentHTML('beforeend', item);
-        }
-    }
-})();
-
-const App = (function(ItemCtrl, UICtrl) {
-    const data = ItemCtrl.returnData();
-    function addItemsToView() {
-        data.items.forEach(el => {
+        addItem: function(el) {
             const item = 
             `<div class="item">
                 <div class="photo">
@@ -66,19 +61,93 @@ const App = (function(ItemCtrl, UICtrl) {
                     </div>
                 </div>
                 <div class="add-btn">
-                    <button class="btn" id="add">Dodaj Do Koszyka</button>
+                    <ul class="size-list">
+                        <li>
+                            <input type="checkbox" name="add-M" id="add-M">
+                            <label for="add-M"><span>M</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="add-L" id="add-L">
+                            <label for="add-L"><span>L</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="add-XL" id="add-XL">
+                            <label for="add-XL"><span>XL</span></label>
+                        </li>
+                     </ul>
+                    <button class="btn" id="${el.id}">Dodaj Do Koszyka</button>
                 </div>
             </div>`;
-            UICtrl.addItem(item);
-        })
+            selectors.itemsContainer.insertAdjacentHTML('beforeend', item);
+        },
+        addToCartView: function(item) {
+            const markup = `    
+            <div class="cart-item">
+                <div class="photo">
+                    <img src="img/jacket-2.jpg" alt="item">
+                </div>
+                <div class="disc">
+                    <p>Lorem, ipsum.</p>
+                    <div class="details">
+                        <div class="order-details">
+                            <span>Ilosc: 1</span>
+                            <span>Kolor: ${item.color}</span>
+                            <span>Rozmiar: ${item.size}</span>
+                        </div>
+                        <div class="price">
+                            <span>${item.price} zł</span>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+            selectors.cartContainer.insertAdjacentHTML('beforeend', markup);
+        },
+        updateCart: function(cartData) {
+            selectors.priceTotal.innerHTML = `${cartData.total} zł`;
+            selectors.totalAmount.innerHTML = `${cartData.total + 8.99} zł`;
+        }
+    }
+})();
+
+const CartCtrl = (function() {
+    const data = {
+        items: [],
+        total: 0,
     }
 
+    return {
+        addToCart: function(item) {
+            data.items.push(item);
+            data.total += item.price;
+        },
+        returnData: function() {
+            return data;
+        }
+    }
+})();
+
+const App = (function(ItemCtrl, UICtrl, CartCtrl) {
+    const data = ItemCtrl.returnData();
+    //const selectors = UICtrl.getSelectors();
+    const cartData = CartCtrl.returnData();
+
+    function addItemsToView() {
+        data.items.forEach(el => {
+            UICtrl.addItem(el);
+            const addBtn = document.querySelector(`#${el.id}`);
+            addBtn.onclick = () => {
+                UICtrl.addToCartView(el);
+                CartCtrl.addToCart(el);
+                UICtrl.updateCart(cartData);
+            };
+        })
+    }
     return {
         init: function() {
             UICtrl.updatePriceRange();
             addItemsToView();
         }
     }
-})(ItemCtrl, UICtrl);
+})(ItemCtrl, UICtrl, CartCtrl);
 
 App.init();
