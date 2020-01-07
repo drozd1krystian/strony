@@ -46,7 +46,9 @@ let wideSticky = menu.offsetTop;
 function wideScreenSticky() {
   if (window.pageYOffset > wideSticky) {
     menu.classList.add("wide-sticky");
+    document.body.style.paddingTop =`${wideSticky - 15}px`;
   } else {
     menu.classList.remove("wide-sticky");
+    document.body.style.paddingTop =`0`;
   }
 }

@@ -42,8 +42,11 @@
                 <a href="">
                 <i class="fas fa-shopping-basket"></i>
                 <span class="header-discription-element">Koszyk</span>
+                <div class="items-count">
+                  <span>0</span>
+                </div>
                 </a> 
-            <div class="cart">
+              <div class="cart">
                 <h3>Koszyk</h3>
                 <div class="cart-items-container">
                     <!-- <div class="cart-item">
@@ -216,58 +219,58 @@
                 <div class="filter-type">
                     <ul class="filter-list">
                         <li>
-                            <input type="checkbox" name="jeansowe" id="jeansowe">
+                            <input type="checkbox" name="category" id="jeansowe" value="Jeansowa">
                             <label for="jeansowe"><span>Jeansowe</span></li></label> 
                         <li>
-                            <input type="checkbox" name="skorzane" id="skorzane">
+                            <input type="checkbox" name="category" id="skorzane" value="Skórzana">
                             <label for="skorzane"><span>Skórzane</span></label>
                         </li>
                         <li>
-                            <input type="checkbox" name="przejsciowe" id="przejsciowe">
+                            <input type="checkbox" name="category" id="przejsciowe" value="Przejściowa">
                             <label for="przejsciowe"><span>Przejściowe</span></label>
                         </li>
                     </ul>
                 </div>
-                <button class ="btn" id="filter-btn">Zastosuj</button>
+                <button class ="btn filter-btn">Zastosuj</button>
             </div>
             <div class="filter">
                 <h4>Kolor</h4>
                 <div class="filter-type">
                     <ul class="filter-list">
                         <li>
-                            <input type="checkbox" name="niebieski" id="niebieski">
+                            <input type="checkbox" name="color" id="niebieski" value="Niebieska">
                             <label for="niebieski"><span>Niebieski</span></label>
                         </li>
                         <li>
-                            <input type="checkbox" name="czerwony" id="czerwony">
+                            <input type="checkbox" name="color" id="czerwony" value="Czerwona">
                             <label for="czerwony"><span>Czerwony</span></label> 
                         </li>    
                         <li>
-                            <input type="checkbox" name="czarny" id="czarny">
+                            <input type="checkbox" name="color" id="czarny" value="Czarna">
                             <label for="czarny"><span>Czarny</span></label> 
                         </li>  
                     </ul>
                 </div>
-                <button class ="btn" id="filter-btn">Zastosuj</button>
+                <button class ="btn filter-btn">Zastosuj</button>
             </div>
             <div class="filter">
                 <h4>Rozmiar</h4>
                 <div class="filter-type">
                     <ul class="filter-list">
                         <li>
-                            <input type="checkbox" name="M" id="M">
+                            <input type="checkbox" name="size" id="M" value="M">
                             <label for="M"><span>M</span></label>
                         </li>
                         <li>
-                            <input type="checkbox" name="L" id="L">
+                            <input type="checkbox" name="size" id="L" value="L">
                             <label for="L"><span>L</span></label>
                         </li>
                         <li>
-                            <input type="checkbox" name="XL" id="XL">
+                            <input type="checkbox" name="size" id="XL" value="XL">
                             <label for="XL"><span>XL</span></label>
                     </ul>
                 </div>
-                <button class ="btn" id="filter-btn">Zastosuj</button>
+                <button class ="btn filter-btn">Zastosuj</button>
             </div>
             <div class="filter">
                 <h4>Cena</h4>
@@ -280,41 +283,41 @@
                         <input type="text" class="price-value" id="max-price" value="300"> zł
                     </div>
                 </div>
-                <button class ="btn" id="filter-btn">Zastosuj</button>
+                <button class ="btn filter-btn">Zastosuj</button>
             </div>
         </div>  
         <div class="items-container">
-            <!-- <div class="item">
-                <div class="photo">
-                  <img src="img/jacket-2.jpg" alt="item">
+    <!--  <div class="item">
+              <div class="photo">
+                <img src="img/jacket-2.jpg" alt="item">
+              </div>
+              <div class="disc">
+                <div class="name">
+                  <h3>Lorem ipsum dolor sit.</h3>
                 </div>
-                <div class="disc">
-                  <div class="name">
-                    <h3>Lorem ipsum dolor sit.</h3>
+                <div class="price">
+                  <h3>100.00 zł</h3>
+                </div>
+              </div>
+              <div class="add-btn">
+                  <div class="sizes">
+                    <ul class="size-list" id="a1">
+                      <li>
+                        <input type="radio" name="size" id="M1" value ="M">
+                        <label for="M1"><span>M</span></label>
+                      </li>
+                      <li>
+                        <input type="radio" name="size" id="L1" value ="L">
+                        <label for="L1"><span>L</span></label>
+                      </li>
+                      <li>
+                        <input type="radio" name="size" id="XL1" value ="XL">
+                        <label for="XL1"><span>XL</span></label>
+                      </li>
+                    </ul>
                   </div>
-                  <div class="price">
-                    <h3>100.00 zł</h3>
-                  </div>
-                </div>
-                <div class="add-btn">
-                    <div class="sizes">
-                      <ul class="size-list" id="a1">
-                        <li>
-                          <input type="radio" name="size" id="M1" value ="M">
-                          <label for="M1"><span>M</span></label>
-                        </li>
-                        <li>
-                          <input type="radio" name="size" id="L1" value ="L">
-                          <label for="L1"><span>L</span></label>
-                        </li>
-                        <li>
-                          <input type="radio" name="size" id="XL1" value ="XL">
-                          <label for="XL1"><span>XL</span></label>
-                        </li>
-                      </ul>
-                    </div>
-                    <button class="btn" id="0">Dodaj Do Koszyka</button>
-                </div>
+                  <button class="btn" id="0">Dodaj Do Koszyka</button>
+              </div>
             </div> -->
         </div>  
     </div>
@@ -351,6 +354,11 @@
     </div>
   </section>
 
+  <section id="errors">
+    <div class="no-size-error">
+      <span>Proszę wybrać rozmiar!</span>
+    </div>
+  </section>
   <!-- Jquery CDN -->
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"

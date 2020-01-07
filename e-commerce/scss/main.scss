@@ -75,6 +75,23 @@
             font-size: 12px;
           }
         }
+        .items-count {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          top: 5px;
+          right: 0;
+          background: #2222EC;
+          color: #fff;
+          padding: 0.1rem;
+          border-radius: 50%;
+          span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
         .cart {
           display: none;
           position:absolute;
@@ -894,6 +911,8 @@
 
 #item-showcase {
   padding: 1rem;
+  margin-bottom: 1.3rem;
+  position: relative;
   .container {
     padding: 1rem 0;
     display: flex;
@@ -946,19 +965,20 @@
   }
   .items-container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     width: 80%;
     padding-left: 3rem;
+    position: relative;
     .item {
-      max-width: 250px;
+      width: 290px;
       height: 400px;
+      padding: 0 1.5rem;
       margin-bottom: 1rem;
       position: relative;
       display: flex;
       flex-direction: column;
       .photo {
-        max-width: 250px;
+        width: 250px;
         max-height: 350px;
         cursor: pointer;
         img {
@@ -969,6 +989,7 @@
       .disc {
         display: flex;
         cursor: pointer;
+        width: 250px;
         .name{
           width: 70%;
           text-align: left;
@@ -984,13 +1005,14 @@
         transition: all .2s ease;
         position: absolute;
         bottom: -70px;
-        width: 100%;
+        width: 250px;
         padding: .5rem 0;
         background: #fff;
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid #ccc;
         cursor: initial;
+        z-index: 1;
         .size-list {
           width: 50%;
           display: flex;
@@ -1015,9 +1037,27 @@
       &:hover {
         .add-btn {
           opacity: 1;
-          z-index: 10;
         }
       }
     }
+  }
+}
+
+#errors {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 105;
+  .no-size-error {
+    padding: 1rem;
+    background: red;
+    color: #fff;
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+    backface-visibility: hidden;
+  }
+  .error {
+    opacity: 1 !important;
   }
 }
