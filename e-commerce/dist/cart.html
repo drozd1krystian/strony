@@ -49,30 +49,30 @@
               <div class="cart">
                 <h3>Koszyk</h3>
                 <div class="cart-items-container">
-              <!-- <div class="cart-item">
-                        <div class="photo">
-                            <img src="img/jacket-2.jpg" alt="item">
-                        </div>
-                        <div class="disc">
-                            <p>Lorem, ipsum.</p>
-                            <div class="details">
-                                <div class="order-details">
-                                    <span>Ilosc: 1</span>
-                                    <span>Kolor: Czarny</span>
-                                    <span>Rozmiar: M</span>
-                                </div>
-                                <div class="price">
-                                    <span>100zł</span>
-                                </div>
+         <!--     <div class="cart-item" id="${item.id}">
+                    <div class="photo">
+                        <img src="img/jacket-2.jpg" alt="item">
+                    </div>
+                    <div class="disc">
+                        <p>${item.name} ${item.category} ${item.color}</p>
+                        <div class="details">
+                            <div class="order-details">
+                                <span>Ilosc: <span id="${item.id}-amount">${item.amount}</span></span>
+                                <span>Kolor: ${item.color}</span>
+                                <span>Rozmiar: ${item.size}</span>
+                            </div>
+                            <div class="price">
+                                <span><span id="${item.id}-price">${item.price}</span> zł</span>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+                  </div>> -->
                 </div>
                 <div class="summary">
                     <div class="summary-disc">
                         <div class="price-disc">
                             <span class="price-tag">Wartość zamówienia:</span> 
-                            <span class="total">0 zł</span>
+                            <span class="total order-total">0 zł</span>
                         </div>
                         <div class="price-disc">
                             <span class="price-tag">Dostawa:</span> 
@@ -211,122 +211,60 @@
     </ul>
   </header>
 
-  <section id="item-showcase">
+  <section id="cart">
     <div class="container">
-        <button class="btn" id="mobile-filter">Filtrowanie</button>
-        <div class="filters">
-            <div class="filter">
-                <h4>Kategoria</h4>
-                <div class="filter-type">
-                    <ul class="filter-list">
-                        <li>
-                            <input type="checkbox" name="category" id="jeansowe" value="Jeansowa">
-                            <label for="jeansowe"><span>Jeansowe</span></li></label> 
-                        <li>
-                            <input type="checkbox" name="category" id="skorzane" value="Skórzana">
-                            <label for="skorzane"><span>Skórzane</span></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="category" id="przejsciowe" value="Przejściowa">
-                            <label for="przejsciowe"><span>Przejściowe</span></label>
-                        </li>
-                    </ul>
+      <div class="cart-data">
+        <div class="cart-items">
+          <h1 class="cart-header">Koszyk</h1>
+          <!-- <div class="cart-item">
+            <div class="photo">
+                <img src="img/jacket-2.jpg" alt="item">
+            </div>
+            <div class="disc">
+                <p>Lorem, ipsum.</p>
+                <div class="details">
+                      <span>Kolor: Czarny</span>
+                      <span>Rozmiar: M</span>
                 </div>
             </div>
-            <div class="filter">
-                <h4>Kolor</h4>
-                <div class="filter-type">
-                    <ul class="filter-list">
-                        <li>
-                            <input type="checkbox" name="color" id="niebieski" value="Niebieska">
-                            <label for="niebieski"><span>Niebieski</span></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="color" id="czerwony" value="Czerwona">
-                            <label for="czerwony"><span>Czerwony</span></label> 
-                        </li>    
-                        <li>
-                            <input type="checkbox" name="color" id="czarny" value="Czarna">
-                            <label for="czarny"><span>Czarny</span></label> 
-                        </li>  
-                    </ul>
+            <div class="price">
+              <span id="id-price">100,00</span><span> zł</span>
+            </div>
+            <div class="amount">
+              <button id="reduce">-</button>
+              <input type="text" value ="1" id="id0-amount" min ="1">
+              <button id="add">+</button>
+            </div>
+            <div class="item-total">
+              <span>Suma: </span><span id="id-total">100,00 zł</span>
+            </div>
+            <div class="delete-icon">
+              <i class="fas fa-trash"></i>
+            </div>
+          </div> -->
+        </div>
+        <div class="cart-summary">
+          <h1 class="summary-header">Całkowita wartość koszyka</h1>
+          <div class="summary">
+            <div class="summary-disc">
+                <div class="price-disc">
+                    <span class="price-tag">Wartość zamówienia:</span> 
+                    <span class="total order-total">0 zł</span>
+                </div>
+                <div class="price-disc">
+                    <span class="price-tag">Dostawa:</span> 
+                    <span class="total">8,99 zł</span>
                 </div>
             </div>
-            <div class="filter">
-                <h4>Rozmiar</h4>
-                <div class="filter-type">
-                    <ul class="filter-list">
-                        <li>
-                            <input type="checkbox" name="size" id="M" value="M">
-                            <label for="M"><span>M</span></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="size" id="L" value="L">
-                            <label for="L"><span>L</span></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="size" id="XL" value="XL">
-                            <label for="XL"><span>XL</span></label>
-                    </ul>
-                </div>
+            <hr>
+            <div class="total-amount">
+                <span class="price-disc big">SUMA: </span> 
+                <span class="total big" id="totalAmount">0 zł</span>
             </div>
-            <div class="filter">
-                <h4>Cena</h4>
-                <input type="range" min="1" max="300" value="300" class="price-slider" id="priceRange">
-                <div class="price-tags">
-                    <div class="price-tag-min">
-                        <span class="price-value" id="min-price">0 zł</span>
-                    </div>
-                    <div class="price-tag-max">
-                        <input type="text" class="price-value" id="max-price" value="300"> zł
-                    </div>
-                </div>
-                <button class ="btn" id="filter-btn">Zastosuj</button>
-            </div>
-        </div>  
-        <div class="items-container">
-          <div class="no-items">
-            <p>Brak przedmiotów!!</p>
+            <a href="" class="btn">Do Kasy</a>
           </div>
-      <!--  <div class="cart-item" id="${item.id}">
-                <div class="photo">
-                    <img src="img/jacket-2.jpg" alt="item">
-                </div>
-                <div class="disc">
-                    <p>${item.name} ${item.category} ${item.color}</p>
-                    <div class="details">
-                        <div class="order-details">
-                            <span>Ilosc: <span id="${item.id}-amount">1</span></span>
-                            <span>Kolor: ${item.color}</span>
-                            <span>Rozmiar: ${item.size}</span>
-                        </div>
-                        <div class="price">
-                            <span><span id="${item.id}-price">${item.price}</span> zł</span>
-                        </div>
-                    </div>
-                </div>
-              </div>`
-              <div class="add-btn">
-                  <div class="sizes">
-                    <ul class="size-list" id="a1">
-                      <li>
-                        <input type="radio" name="item-size" id="M1" value ="M">
-                        <label for="M1"><span>M</span></label>
-                      </li>
-                      <li>
-                        <input type="radio" name="item-size" id="L1" value ="L">
-                        <label for="L1"><span>L</span></label>
-                      </li>
-                      <li>
-                        <input type="radio" name="item-size" id="XL1" value ="XL">
-                        <label for="XL1"><span>XL</span></label>
-                      </li>
-                    </ul>
-                  </div>
-                  <button class="btn" id="0">Dodaj Do Koszyka</button>
-              </div>
-            </div> -->
-        </div>  
+        </div>
+      </div>
     </div>
   </section>
 
@@ -361,11 +299,6 @@
     </div>
   </section>
 
-  <section id="errors">
-    <div class="no-size-error">
-      <span>Proszę wybrać rozmiar!</span>
-    </div>
-  </section>
   <!-- Jquery CDN -->
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -373,6 +306,6 @@
   crossorigin="anonymous"></script>
 
   <script src ="js/menu.js"></script>
-  <script src ="js/controllers.js"></script>
+  <script src="js/CartViewController.js"></script>
 </body>
 </html>

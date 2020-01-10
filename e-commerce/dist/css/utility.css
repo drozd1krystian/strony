@@ -55,4 +55,10 @@ h3{font-size: 1rem;}
 .btn {
   border: none;
   background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.height-auto {
+  height: auto !important;
 }

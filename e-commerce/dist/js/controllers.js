@@ -1,26 +1,74 @@
+const StorageCtrl = (function() {
+
+    return {
+        storeItem: function(item){
+            let data;
+            if(localStorage.getItem('data') == null) {
+                data = {
+                    items: [],
+                    total: 0,
+                    count: 0,
+                }
+                data.items.push(item);
+                data.total += item.price;
+                data.count += 1;
+                localStorage.setItem('data', JSON.stringify(data));
+            } else {
+                data = JSON.parse(localStorage.getItem('data'));
+                data.items.push(item);
+                data.total += item.price;
+                data.count += 1;
+                localStorage.setItem('data', JSON.stringify(data));
+            }
+        },
+        updateItem: function(item, id) {
+            let data = JSON.parse(localStorage.getItem('data'));
+            data.items[id] = item;
+            data.total += item.price;
+            data.count += 1;
+            localStorage.setItem('data', JSON.stringify(data));
+        },
+        getItemsFromStorage: function() {
+            let data;
+            if(localStorage.getItem('data') == null){
+                data = {
+                    items: [],
+                    total: 0,
+                    count: 0,
+                }
+            } else {
+                data = JSON.parse(localStorage.getItem('data'));
+            }
+            return data;
+        }
+    }
+})();
+
 const ItemCtrl = (function () {
 
-    const Item = function(id, name, size, price, amount, category, color) {
+    const Item = function(id, productId, name, size, price, amount, category, color) {
         this.id = id;
+        this.productId = productId;
         this.name = name;
         this.size = size;
         this.price = price;
-        this.amout = amount;
+        this.amount = amount;
+        this.totalPrice = price;
         this.category = category;
         this.color = color;
     }
 
     const data = {
         items: [
-            {id: 'a1', name: 'Kurtka Męska Trosso', sizes: ['M', 'L', 'XL'], price: 80, amout: 1, category: 'Jeansowa', color: 'Czerwona'},
-            {id: 'a2', name: 'Kurtka Męska Trosso', sizes: ['M', 'XL'], price: 82, amout: 1, category: 'Skórzana', color: 'Czarna'},
-            {id: 'a3', name: 'Kurtka Męska Trosso', sizes: ['L', 'XL'], price: 86, amout: 1, category: 'Przejściowa', color: 'Niebieska'},
-            {id: 'a4', name: 'Kurtka Męska Trosso', sizes: ['L', 'XL'], price: 190, amout: 1, category: 'Jeansowa', color: 'Niebieska'},
-            {id: 'a5', name: 'Kurtka Męska Trosso', sizes: ['L', 'XL'], price: 225, amout: 1, category: 'Skórzana', color: 'Czerwona'},
-            {id: 'a6', name: 'Kurtka Męska Trosso', sizes: ['M', 'L', 'XL'], price: 230, amout: 1, category: 'Jeansowa', color: 'Czarna'},
-            {id: 'a7', name: 'Kurtka Męska Trosso', sizes: ['M', 'L'], price: 52, amout: 2, category: 'Przejściowa', color: 'Czarna'},
-            {id: 'a8', name: 'Kurtka Męska Trosso', sizes: ['M', 'XL'], price: 55, amout: 2, category: 'Przejściowa', color: 'Czerwona'},
-            {id: 'a9', name: 'Kurtka Męska Trosso', sizes: ['M', 'L', 'XL'], price: 51, amout: 2, category: 'Skórzana', color: 'Niebieska'},
+            {id: 'a1', name: 'Kurtka Męska Trosso', sizes: ['M', 'L', 'XL'], price: 80, amount: 1, category: 'Jeansowa', color: 'Czerwona'},
+            {id: 'a2', name: 'Kurtka Męska Trosso', sizes: ['M', 'XL'], price: 82, amount: 1, category: 'Skórzana', color: 'Czarna'},
+            {id: 'a3', name: 'Kurtka Męska Trosso', sizes: ['L', 'XL'], price: 86, amount: 1, category: 'Przejściowa', color: 'Niebieska'},
+            {id: 'a4', name: 'Kurtka Męska Trosso', sizes: ['L', 'XL'], price: 190, amount: 1, category: 'Jeansowa', color: 'Niebieska'},
+            {id: 'a5', name: 'Kurtka Męska Trosso', sizes: ['L', 'XL'], price: 225, amount: 1, category: 'Skórzana', color: 'Czerwona'},
+            {id: 'a6', name: 'Kurtka Męska Trosso', sizes: ['M', 'L', 'XL'], price: 230, amount: 1, category: 'Jeansowa', color: 'Czarna'},
+            {id: 'a7', name: 'Kurtka Męska Trosso', sizes: ['M', 'L'], price: 52, amount: 1, category: 'Przejściowa', color: 'Czarna'},
+            {id: 'a8', name: 'Kurtka Męska Trosso', sizes: ['M', 'XL'], price: 55, amount: 1, category: 'Przejściowa', color: 'Czerwona'},
+            {id: 'a9', name: 'Kurtka Męska Trosso', sizes: ['M', 'L', 'XL'], price: 51, amount: 1, category: 'Skórzana', color: 'Niebieska'},
         ]
     }
 
@@ -28,9 +76,20 @@ const ItemCtrl = (function () {
         returnData: function() {
             return data;
         },
-        createItem: function(el, selRadio) {
-            const item = new Item(el.id, el.name, selRadio, el.price, 1, el.category, el.color);
-            return item;
+        createId() {
+             return Math.random().toString(36).substring(2, 15) 
+                + Math.random().toString(36).substring(2, 15);
+        },
+        checkId(c) {
+            return c.toUpperCase() != c.toLowerCase();
+        },
+
+        createItem: function(el, size) {
+            let id = this.createId();
+            while(!this.checkId(id.charAt(0))) {
+                id = this.createId();
+            }
+            return new Item(id, el.id, el.name, size, el.price, 1, el.category, el.color);
         }
     }
 })();
@@ -45,10 +104,13 @@ const UICtrl = (function () {
         totalAmount: document.getElementById('totalAmount'),
         cartItemsCounter: document.querySelector('.items-count span'),
         noSizeError: document.querySelector('.no-size-error'),
+        filtersContainer: document.querySelector('.filters'),
         categoryFilter: document.getElementsByName('category'),
         colorFilter: document.getElementsByName('color'),
         sizeFilter: document.getElementsByName('size'),
-        filterButton: document.querySelectorAll('.filter-btn'),
+        filterButton: document.getElementById('filter-btn'),
+        noItemsError: document.querySelector('.no-items'),
+        mobileFilterBtn: document.getElementById('mobile-filter'),
     }
 
     return {
@@ -71,13 +133,13 @@ const UICtrl = (function () {
             el.sizes.forEach(size => {
                 sizeMarkup += `
                 <li>
-                    <input type="radio" name="size" id="${size}${el.id}" value="${size}">
+                    <input type="radio" name="${el.id}-size" id="${size}${el.id}" value="${size}">
                     <label for="${size}${el.id}"><span>${size}</span></label>
                 </li>
                 `
             })
             const item = 
-            `<div class="item">
+            `<div class="item" id="${el.id}">
                 <div class="photo">
                     <img src="img/jacket-2.jpg" alt="item">
                 </div>
@@ -89,18 +151,18 @@ const UICtrl = (function () {
                         <h3>${el.price} zł</h3>
                     </div>
                 </div>
-                <div class="add-btn">
+                <div class="add-btn" id="${el.id}-add">
                     <ul class="size-list" id="list-${el.id}">
                         ${sizeMarkup}
                      </ul>
-                    <button class="btn" id="${el.id}">Dodaj Do Koszyka</button>
+                    <button class="btn">Dodaj Do Koszyka</button>
                 </div>
             </div>`;
             selectors.itemsContainer.insertAdjacentHTML('beforeend', item);
         },
         addToCartView: function(item) {
             const markup = `    
-            <div class="cart-item">
+            <div class="cart-item" id="${item.id}">
                 <div class="photo">
                     <img src="img/jacket-2.jpg" alt="item">
                 </div>
@@ -108,12 +170,12 @@ const UICtrl = (function () {
                     <p>${item.name} ${item.category} ${item.color}</p>
                     <div class="details">
                         <div class="order-details">
-                            <span>Ilosc: 1</span>
+                            <span>Ilosc: <span id="${item.id}-amount">${item.amount}</span></span>
                             <span>Kolor: ${item.color}</span>
                             <span>Rozmiar: ${item.size}</span>
                         </div>
                         <div class="price">
-                            <span>${item.price} zł</span>
+                            <span><span id="${item.id}-price">${item.price}</span> zł</span>
                         </div>
                     </div>
                 </div>
@@ -124,28 +186,39 @@ const UICtrl = (function () {
             selectors.priceTotal.innerHTML = `${cartData.total} zł`;
             selectors.totalAmount.innerHTML = `${cartData.total + 8.99} zł`;
             selectors.cartItemsCounter.innerHTML = cartData.count;
+        },
+        updateItem: function(item) {
+            let itemAmount = document.getElementById(`${item.id}-amount`);
+            let itemPrice = document.getElementById(`${item.id}-price`);
+
+            itemAmount.innerHTML = item.amount;
+            itemPrice.innerHTML = item.totalPrice;
         }
     }
 })();
 
-const CartCtrl = (function() {
-    const data = {
-        items: [],
-        total: 0,
-        count: 0,
-    }
+const CartCtrl = (function(StorageCtrl) {
+    const data = StorageCtrl.getItemsFromStorage();
 
     return {
         addToCart: function(item) {
-            data.items.push(item);
-            data.total += item.price;
+                data.items.push(item);
+                data.total += item.price;
+                data.count += 1;
+                StorageCtrl.storeItem(item);
+        },
+        updateItem: function(id) {
+            data.items[id].amount += 1;
+            data.items[id].totalPrice = data.items[id].amount * data.items[id].price;
+            data.total += data.items[id].price;
             data.count += 1;
+            StorageCtrl.updateItem(data.items[id], id);
         },
         returnData: function() {
             return data;
         }
     }
-})();
+})(StorageCtrl);
 
 const App = (function(ItemCtrl, UICtrl, CartCtrl) {
     const data = ItemCtrl.returnData();
@@ -159,36 +232,57 @@ const App = (function(ItemCtrl, UICtrl, CartCtrl) {
     }
     function addItemsToView(items) {
         selectors.itemsContainer.innerHTML = '';
+        if(items.length == 0) {
+            selectors.itemsContainer.appendChild(selectors.noItemsError);
+            return
+        }
         items.forEach(el => {
             UICtrl.addItem(el);
-            const addBtn = document.querySelector(`#${el.id}`);
+            const addBtn = document.querySelector(`#${el.id}-add button`);
             addBtn.onclick = () => {       
-                const radioValue = checkRadio(el.id);  
-                console.log(radioValue); 
-                if(!radioValue) {
+                const pickedSize = checkRadio(el.id);  
+                if(!pickedSize) {
                     selectors.noSizeError.style.display = 'block';
                     selectors.noSizeError.classList.add('error');
                     setTimeout(() => selectors.noSizeError.style.display = 'none', 3000);
                 }else {
-                    const item = ItemCtrl.createItem(el, radioValue);
-                    UICtrl.addToCartView(item);
-                    CartCtrl.addToCart(item);
+                    let productId = addBtn.parentElement.parentElement.id;            
+                    let itemExistId = cartData.items.findIndex(el => {
+                        if(el.productId == productId && el.size == pickedSize) {
+                            return true;
+                        }return false
+                    });
+
+                    if(itemExistId != -1) {
+                        CartCtrl.updateItem(itemExistId);
+                        UICtrl.updateItem(cartData.items[itemExistId]);
+                    }else {
+                        const item = ItemCtrl.createItem(el, pickedSize);
+                        UICtrl.addToCartView(item);
+                        CartCtrl.addToCart(item);
+                    }
                     UICtrl.updateCartSummary(cartData);
                 }
             };
         })
     }
     function filterItems() {
-        let categoryFilter = Array.from(selectors.categoryFilter).map(el => {return el.checked ? el.value : false}).filter(el => el != false);
-        let colorFIlter = Array.from(selectors.colorFilter).map(el => {return el.checked ? el.value : false}).filter(el => el != false);
-        let sizeFilter = Array.from(selectors.sizeFilter).map(el => {return el.checked ? el.value : false}).filter(el => el != false);
+        let categoryFilter = Array.from(selectors.categoryFilter)
+            .map(el => {return el.checked ? el.value : false})
+            .filter(el => el != false);
+        let colorFIlter = Array.from(selectors.colorFilter)
+            .map(el => {return el.checked ? el.value : false})
+            .filter(el => el != false);
+        let sizeFilter = Array.from(selectors.sizeFilter)
+            .map(el => {return el.checked ? el.value : false})
+            .filter(el => el != false);
         let priceFilter = selectors.priceRange.value;
-        let filteredItems = [];
-
-        if(sizeFilter.length == 0 && categoryFilter.length == 0 && colorFIlter.length == 0){
-            filteredItems = data.items;
-            addItemsToView(filteredItems);
-            return;
+        let filteredItems = []; 
+        if(sizeFilter.length == 0 && categoryFilter.length == 0 
+            && colorFIlter.length == 0 && priceFilter == 300){
+                filteredItems = data.items;
+                addItemsToView(filteredItems);
+                return;
         }
 
         if(categoryFilter.length > 0) {        
@@ -196,9 +290,11 @@ const App = (function(ItemCtrl, UICtrl, CartCtrl) {
         }
 
         if(sizeFilter.length > 0 && filteredItems.length == 0) {
-            filteredItems = data.items.filter(el => sizeFilter.some(size => el.sizes.some(s => s == size)));
-        }else if(sizeFilter > 0){
-            filteredItems = filteredItems.filter(el => sizeFilter.some(size => el.sizes.some(s => s == size)));
+            filteredItems = data.items
+                .filter(el => sizeFilter.some(size => el.sizes.some(s => s == size)));
+        }else if(sizeFilter.length > 0){
+            filteredItems = filteredItems
+                .filter(el => sizeFilter.some(size => el.sizes.some(s => s == size)));
         }
 
         if(colorFIlter.length > 0 && filteredItems.length == 0) {
@@ -214,12 +310,42 @@ const App = (function(ItemCtrl, UICtrl, CartCtrl) {
         }
         addItemsToView(filteredItems);
     }
+    function addListeners() {
+        if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
+            selectors.filterButton.onclick = () => {
+                filterItems();
+                selectors.filtersContainer.classList.toggle('height-auto');
+            }
+        }else {
+            selectors.filterButton.onclick = filterItems;
+            selectors.colorFilter.forEach(el => el.onchange = filterItems);
+            selectors.sizeFilter.forEach(el => el.onchange = filterItems);
+            selectors.categoryFilter.forEach(el => el.onchange = filterItems); 
+        }  
+        selectors.mobileFilterBtn.onclick = () => {
+            selectors.filtersContainer.classList.toggle('height-auto');
+        } 
+    }
+
+    function populateCart(){
+        cartData.items.forEach(el => {
+            UICtrl.addToCartView(el);
+            UICtrl.updateCartSummary(cartData);
+        })
+    }
 
     return {
         init: function() {
             UICtrl.updatePriceRange();
             addItemsToView(data.items);
-            selectors.filterButton.forEach(el => el.onclick = filterItems);
+            addListeners();
+            populateCart();
         }
     }
 })(ItemCtrl, UICtrl, CartCtrl);
