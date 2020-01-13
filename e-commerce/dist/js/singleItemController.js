@@ -285,13 +285,14 @@ const SingleItemCtrl = (function(UICtrl, StorageCtrl, CartCtrl, ItemCtrl) {
         setTimeout(() => selectors.noSizeError.style.display = 'none', 3000);
       }else {
         const amountToAdd = parseInt(selectors.itemAmount.value);
-        const itemExistId = cartData.items.find(el => {
-          if(el.id == itemId && sizeSelected == el.size){
+        const itemExistId = cartData.items.findIndex(el => {
+          console.log(el, sizeSelected, itemId)
+          if(el.productId == itemId && sizeSelected == el.size){
             return el.id;
           } 
           return false;
         })
-        if(itemExistId) {
+        if(itemExistId != -1) {
           CartCtrl.updateItem(itemExistId, amountToAdd);
           UICtrl.updateItem(cartData.items[itemExistId]);
         } else {
