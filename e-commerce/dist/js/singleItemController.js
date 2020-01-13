@@ -195,17 +195,18 @@ const CartCtrl = (function(StorageCtrl) {
 
   return {
       addToCart: function(item, amount) {
-              data.items.push(item);
-              data.total += item.price * amount;
-              data.count += amount;
-              StorageCtrl.updateStorage(data);
+        item.totalPrice = item.price * amount;
+        data.items.push(item);
+        data.total += item.price * amount;
+        data.count += amount;
+        StorageCtrl.updateStorage(data);
       },
       updateItem: function(id, amount) {
-          data.items[id].amount += amount;
-          data.items[id].totalPrice = data.items[id].amount * data.items[id].price;
-          data.total += data.items[id].price * amount;
-          data.count += amount;
-          StorageCtrl.updateStorage(data);
+        data.items[id].amount += amount;
+        data.items[id].totalPrice = data.items[id].amount * data.items[id].price;
+        data.total += data.items[id].price * amount;
+        data.count += amount;
+        StorageCtrl.updateStorage(data);
       },
       returnData: function() {
           return data;
@@ -299,9 +300,10 @@ const SingleItemCtrl = (function(UICtrl, StorageCtrl, CartCtrl, ItemCtrl) {
           const item = ItemCtrl.createItem(itemData, amountToAdd, sizeSelected);
           UICtrl.addToCartView(item);
           CartCtrl.addToCart(item, amountToAdd);
+          UICtrl.updateItem(item);
+        }
       }
       UICtrl.updateCartSummary(cartData);
-      }
     }
   }
 
