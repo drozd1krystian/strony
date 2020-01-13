@@ -211,61 +211,75 @@
     </ul>
   </header>
 
-  <section id="cart">
+  <section id="single-item">
     <div class="container">
-      <div class="cart-data">
-        <div class="cart-items">
-          <h1 class="cart-header">Koszyk</h1>
-          <!-- <div class="cart-item">
-            <div class="photo">
-                <img src="img/jacket-2.jpg" alt="item">
-            </div>
-            <div class="disc">
-                <p>Lorem, ipsum.</p>
-                <div class="details">
-                      <span>Kolor: Czarny</span>
-                      <span>Rozmiar: M</span>
-                      <span id ="id-price">Cena: 0</span>
-                </div>
-            </div>
-            <div class="price">
-              <span id="id-price">100,00</span><span> zł</span>
-            </div>
-            <div class="amount">
-              <button id="reduce">-</button>
-              <input type="text" value ="1" id="id0-amount" min ="1">
-              <button id="add">+</button>
-            </div>
-            <div class="item-total">
-              <span>Suma: </span><span id="id-total">100,00 zł</span>
-            </div>
-            <div class="delete-icon">
-              <i class="fas fa-trash"></i>
-            </div>
-          </div> -->
+      <!-- <div class="single-item">
+        <div class="gallery">
+          <img src="img/jacket-2.jpg" alt="item">
+          <img src="img/jacket-2.jpg" alt="item">
+          <img src="img/jacket-2.jpg" alt="item">
+          <img src="img/jacket-2.jpg" alt="item">
+          <img src="img/jacket-2.jpg" alt="item">
         </div>
-        <div class="cart-summary">
-          <h1 class="summary-header">Całkowita wartość koszyka</h1>
-          <div class="summary">
-            <div class="summary-disc">
-                <div class="price-disc">
-                    <span class="price-tag">Wartość zamówienia:</span> 
-                    <span class="total order-total">0 zł</span>
-                </div>
-                <div class="price-disc">
-                    <span class="price-tag">Dostawa:</span> 
-                    <span class="total">8,99 zł</span>
-                </div>
-            </div>
-            <hr>
-            <div class="total-amount">
-                <span class="price-disc big">SUMA: </span> 
-                <span class="total big" id="totalAmount">0 zł</span>
-            </div>
-            <a href="" class="btn">Do Kasy</a>
+        <div class="slider">
+          <div class="arrow-left">
+            <i class="fas fa-arrow-left"></i>
+          </div>
+          <div class="photo">
+            <img src="img/jacket-2.jpg" alt="item">
+          </div>
+          <div class="arrow-right">
+            <i class="fas fa-arrow-right"></i>
           </div>
         </div>
+        <div class="disc">
+            <h1>Lorem, ipsum.</h1>
+            <div class="rating-price">
+                <div class="stars">
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <div class="price">
+                    <h1>100 zł</h1>
+                </div>
+            </div>
+            <div class="sizes">
+                <ul class="size-list">
+                  <li>
+                      <div class="label">
+                        <input type="radio" name="id-size" value ="M" id="id-M">
+                        <label for="id-M">M</label>
+                      </div>
+                  </li>
+                </ul>
+            </div>
+            <div class="amount">
+              <div class="reduce">-</div>
+              <input type="text" value="1" id="id-amount">
+              <div class="add">+</div>
+            </div>
+            <div class="btn-add">
+                <button class ="btn">DODAJ DO KOSZYKA</button>
+            </div>
+        </div>
       </div>
+      <div class="item-disc">
+        <h3>Opis produktu:</h3>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, incidunt? Eos, nisi mollitia? Voluptatem illo nisi dolor praesentium voluptas autem.
+      </div> -->
     </div>
   </section>
 
@@ -300,6 +314,12 @@
     </div>
   </section>
 
+  <section id="errors">
+    <div class="no-size-error">
+      <span>Proszę wybrać rozmiar!</span>
+    </div>
+  </section>
+  
   <!-- Jquery CDN -->
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -307,6 +327,6 @@
   crossorigin="anonymous"></script>
 
   <script src ="js/menu.js"></script>
-  <script src="js/CartViewController.js"></script>
+  <script src="js/singleItemController.js"></script>
 </body>
 </html>

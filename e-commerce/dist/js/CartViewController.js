@@ -13,26 +13,10 @@ const StorageCtrl = (function(){
             }
             return data;
         },
-        updateItem: function(item, id) {
-            let data = JSON.parse(localStorage.getItem('data'));
-            data.items[id] = item;
-            localStorage.setItem('data', JSON.stringify(data));
-        },
-        updateCartTotal: function(price) {
-            let data = JSON.parse(localStorage.getItem('data'));
-            data.total += price;
-            if(price < 0) {
-                data.count -= 1;
-            } else {
-                data.count += 1;
-            }
-            localStorage.setItem('data', JSON.stringify(data));
-        },
-        deleteItem: function(data) {
+        updateStorage(data) {
             localStorage.setItem('data', JSON.stringify(data));
         }
     }
-
 })()
 
 const CartUICtrl = (function() {
@@ -89,6 +73,7 @@ const CartUICtrl = (function() {
                     <div class="details">
                         <span>Kolor: ${item.color}</span>
                         <span>Rozmiar: ${item.size}</span>
+                        <span id="item-price">Cena: ${item.price} zł</span>
                     </div>
                 </div>
                 <div class="price">
@@ -133,8 +118,7 @@ const CartCtrl = (function(CartUICtrl, StorageCtrl){
                 CartUICtrl.updateCartSummary(data);
                 elInputAmount.value = el.amount;
                 CartUICtrl.updateMainCartItem(el);
-                StorageCtrl.updateItem(el, index);
-                StorageCtrl.updateCartTotal(el.price);
+                StorageCtrl.updateStorage(data);
             }
 
             const elReduceBtn = document.getElementById(`${el.id}-reduce`);
@@ -150,8 +134,7 @@ const CartCtrl = (function(CartUICtrl, StorageCtrl){
                     CartUICtrl.updateCartSummary(data);
                     elInputAmount.value = el.amount;
                     CartUICtrl.updateMainCartItem(el);
-                    StorageCtrl.updateItem(el, index);
-                    StorageCtrl.updateCartTotal(-el.price);
+                    StorageCtrl.updateStorage(data);
                 }
             }
 
@@ -163,7 +146,7 @@ const CartCtrl = (function(CartUICtrl, StorageCtrl){
                 data.count -= el.amount;
                 data.total -= el.price * el.amount;
                 CartUICtrl.updateCartSummary(data);
-                StorageCtrl.deleteItem(data);       
+                StorageCtrl.updateStorage(data);       
             }
         });
         CartUICtrl.updateCartSummary(data);

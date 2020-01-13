@@ -57,6 +57,7 @@ const isInViewport = el => {
 const container = document.querySelector('.items-container');
 const items = document.querySelectorAll('.item');
 
+
 let currentFirst = 0;
 const showItem = (n) => {
   currentFirst += n;

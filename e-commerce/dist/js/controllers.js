@@ -40,6 +40,9 @@ const StorageCtrl = (function() {
                 data = JSON.parse(localStorage.getItem('data'));
             }
             return data;
+        },
+        storePickedItem: function(item) {
+            localStorage.setItem(`${item.id}`, JSON.stringify(item));
         }
     }
 })();
@@ -141,11 +144,11 @@ const UICtrl = (function () {
             const item = 
             `<div class="item" id="${el.id}">
                 <div class="photo">
-                    <img src="img/jacket-2.jpg" alt="item">
+                   <a href="item.html?id=${el.id}" name ="${el.id}-link"> <img src="img/jacket-2.jpg" alt="item"></a>
                 </div>
                 <div class="disc">
                     <div class="name">
-                        <h3>${el.name} ${el.category} ${el.color}</h3>
+                        <a href="item.html?id=${el.id}"<h3>${el.name} ${el.category} ${el.color}</h3></a>
                     </div>
                     <div class="price">
                         <h3>${el.price} zł</h3>
@@ -154,7 +157,7 @@ const UICtrl = (function () {
                 <div class="add-btn" id="${el.id}-add">
                     <ul class="size-list" id="list-${el.id}">
                         ${sizeMarkup}
-                     </ul>
+                    </ul>
                     <button class="btn">Dodaj Do Koszyka</button>
                 </div>
             </div>`;
@@ -264,6 +267,12 @@ const App = (function(ItemCtrl, UICtrl, CartCtrl) {
                     UICtrl.updateCartSummary(cartData);
                 }
             };
+            const links = document.getElementsByName(`${el.id}-link`);
+            links.forEach(link =>  {
+                link.onclick = () => {
+                    StorageCtrl.storePickedItem(el);
+                }
+            })
         })
     }
     function filterItems() {

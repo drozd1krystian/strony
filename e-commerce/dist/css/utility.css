@@ -62,3 +62,18 @@ h3{font-size: 1rem;}
 .height-auto {
   height: auto !important;
 }
+
+.active {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.sticky {
+  position: fixed !important;
+}
+
+.sticky-right {
+  position: fixed !important;
+  right: 2rem;
+  top: 90px;
+}

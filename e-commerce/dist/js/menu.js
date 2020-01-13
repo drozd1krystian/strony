@@ -27,16 +27,27 @@ subMenu.forEach(el => el.addEventListener('click', () => {
 
 
 window.onscroll = () => {
-  makeSticky()
-  wideScreenSticky();
+  if( navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/webOS/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPad/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)) {
+      makeSticky();
+  }else {
+    wideScreenSticky();
+  }
 };
 let sticky = menuBasket.offsetTop;
 
 function makeSticky() {
   if (window.pageYOffset > sticky) {
     menuBasket.classList.add("sticky");
+    document.body.style.paddingTop =`${sticky - 60}px`;
   } else {
     menuBasket.classList.remove("sticky");
+    document.body.style.paddingTop =`0`;
   }
 }
 
