@@ -116,13 +116,12 @@ h1 {
 }
 
 #services, #open-hr {
-  background: url('/dist/img/services-bg.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  padding: 5rem 0;
+  background: $light-color;
+  padding: 3rem 0;
   height: 70vh;
   h1, h2 {
     text-align: center;
-    color: $light-color;
+    color: $dark-color;
     img {
       height: 100px;
     }
@@ -132,14 +131,12 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem 0;
+    margin: 1rem 0;
     hr {width: 50%; margin: 0 auto;}
 
     .service, .day {
-      width: 200px;
-      height: 200px;
-      background: rgba($color: $supp-color, $alpha: 0.9);
-      box-shadow: 0px 0px 5px 1px rgba($dark-color,0.75);
+      width: 250px;
+      height: 250px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -147,9 +144,15 @@ h1 {
       animation: opacity;
       animation-duration: 1s;
       animation-timing-function: ease-in;
+      img {
+        width: 50%;
+        height: 50%;
+        display: block;
+        margin: 0 auto;
+      }
       .service-price {
-        color: $light-color;
-        text-shadow: 3px 3px $dark-color;
+        color: $supp-color;
+        text-shadow: 1px 1px $dark-color;
       }
     }
   }
@@ -159,13 +162,17 @@ h1 {
 #open-hr {
   background: url('/dist/img/open-hr.jpg') no-repeat center center/cover;
   background-attachment: fixed;
-  h1 {text-shadow: 2px 2px $dark-color;}
+  h1 {
+    text-shadow: 2px 2px $dark-color;
+    color: $light-color;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   .open-hr-content{
+
     .day {
       width: 150px;
       height: 150px;
@@ -250,7 +257,6 @@ h1 {
 
 
 // Smartphone
-
 @media screen and (max-width: 768px) {
 
   #navbar {
@@ -264,11 +270,24 @@ h1 {
       right: 0;
       width: 60%;
       height: 88vh;
-      background: rgba($color: $dark-color, $alpha:1 );
+      background: rgba($color: $light-color, $alpha:1 );
       justify-content: space-around;
-      box-shadow: 0px 0px 5px 1px $light-color;
       transform: translateX(100%);
       transition: transform 0.5s ease-in-out;
+      &::before {
+        content: '';
+        position: absolute;
+        left: -70%;
+        top: 0;
+        width: 70%;
+        height: 88vh;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        background: rgba($color: $dark-color, $alpha: 0.4);
+      }
+      a {
+        color: $dark-color;
+      }
     }
     .burger {
       display: block;
@@ -278,14 +297,18 @@ h1 {
     }
     .active {
       transform: translateX(0%);
+      &::before {
+        transform: translateX(0%);
+      }
     } 
     .toggle{
       .line-1 {transform: rotate(-45deg) translate(-7px, 8px);}
       .line-2 {opacity: 0;}
-      .line-3 {transform: rotate(45deg) translate(-5px, -7px);}
+      .line-3 {transform: rotate(45deg) translate(-6px, -7px);}
     }
   }
   #showcase {
+    margin-top: 0;
     .showcase-content {
       text-align: center;
       h1 {
@@ -307,7 +330,6 @@ h1 {
         padding: .5rem;
         .service {
           box-shadow: none;
-          background: $supp-color;
           margin: .5rem 0;
           width: 100%;
         }
@@ -317,6 +339,7 @@ h1 {
 
   #open-hr {
     background: $dark-color;
+    padding-bottom: 0;
     height: initial;
     width: 100%;
     .container {
@@ -329,6 +352,9 @@ h1 {
         background: $light-color;
         width: 100%;
         height: 100px;
+      }
+      .weekend {
+        background: $supp-color;
       }
     }
   }
