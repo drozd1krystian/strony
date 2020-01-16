@@ -84,7 +84,7 @@ h1 {
 }
 
 #showcase{
-  background: url('/dist/img/showcase.jpg') no-repeat center center/cover;
+  background: url('../img/showcase.jpg') no-repeat center center/cover;
   height: 95vh;
   margin-top: -12vh;
   .showcase-content {
@@ -153,7 +153,7 @@ h1 {
 
 // Changed only few properties - the rest is the same as in services
 #open-hr {
-  background: url('/dist/img/open-hr.jpg') no-repeat center center/cover;
+  background: url('../img/open-hr.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   h1 {
     text-shadow: 2px 2px $dark-color;
@@ -200,7 +200,7 @@ h1 {
       font-size: 2rem;
     }
     .img {
-      background: url('/dist/img/opinion-img.jpg') no-repeat center center/cover;
+      background: url('../img/opinion-img.jpg') no-repeat center center/cover;
       width: 100px;
       height: 100px;
       border-radius: 50%;
@@ -219,7 +219,7 @@ h1 {
 
 #contact {
   height: 70vh;
-  background: url('/dist/img/contact-bg.jpg') no-repeat center center/cover;
+  background: url('../img/contact-bg.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   .contact-content {
     background: rgba($color: #000000, $alpha: .6);
