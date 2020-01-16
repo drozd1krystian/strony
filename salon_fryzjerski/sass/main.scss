@@ -108,17 +108,10 @@ h1 {
     }
   }
 }
-#separator {
-  height: 10vh;
-  width: 100%;
-  color: $light-color;
-  z-index: 1;
-}
 
 #services, #open-hr {
   background: $light-color;
-  padding: 3rem 0;
-  height: 70vh;
+  padding: 5rem 0;
   h1, h2 {
     text-align: center;
     color: $dark-color;
@@ -172,7 +165,6 @@ h1 {
   align-items: center;
   width: 100%;
   .open-hr-content{
-
     .day {
       width: 150px;
       height: 150px;
@@ -340,7 +332,7 @@ h1 {
   #open-hr {
     background: $dark-color;
     padding-bottom: 0;
-    height: initial;
+
     width: 100%;
     .container {
       width: 100%;
