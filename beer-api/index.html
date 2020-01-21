@@ -18,7 +18,7 @@
             <div id="favorites">
                 <i class="fas fa-star px-2"></i> 
                 <div class="beer-container">
-                    <div class="wrapper p-1">
+                    <!-- <div class="wrapper p-1">
                         <div class="beer">
                             <div class="photo">
                                 <img src="dist/img/beer.jpg" alt="beer">
@@ -26,10 +26,11 @@
                             <div class="disc p-1">
                                 <div class="title">
                                     <span>Beer Title</span>
+                                    <i class="fas fa-trash" id ="del-id"></i>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>  
             </div>
         </div>
@@ -39,7 +40,7 @@
         <div class="container">
             <div class="search-wrapper p-1">
                 <input type="text" placeholder="Type bear name or submit for random beer..." id ="search" autocomplete="off">
-                <button class ="btn">Submit</button>
+                <button class ="btn" id ="search-btn">Submit</button>
             </div>
         </div>
     </section>
@@ -47,8 +48,24 @@
     <section id="beers" class ="p-1">
         <div class="container">
             <div class="beer-container">
+               <!-- <div class="wrapper p-1">
+                    <div class="beer" id ="beer-id">
+                        <div class="photo p-1">
+                            <img src="dist/img/beer.jpg" alt="beer">
+                        </div>
+                        <div class="disc p-1">
+                            <div class="title">
+                                <span>Beer Title</span>
+                                <i class="fas fa-star" id="id-add"></i>   
+                            </div>
+                            <div class="about">
+                                <p class="pg py-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime perferendis obcaecati dolorem ad quidem nobis officia eaque ex libero.</p c>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="wrapper p-1">
-                    <div class="beer">
+                    <div class="beer" id ="beer-id">
                         <div class="photo p-1">
                             <img src="dist/img/beer.jpg" alt="beer">
                         </div>
@@ -71,70 +88,52 @@
                         <div class="disc p-1">
                             <div class="title">
                                 <span>Beer Title</span>
-                                <i class="fas fa-star" id="id-add"></i>   
+                                <i class="fas fa-star" name="id-add"></i>   
                             </div>
                             <div class="about">
                                 <p class="pg py-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime perferendis obcaecati dolorem ad quidem nobis officia eaque ex libero.</p c>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="wrapper p-1">
-                    <div class="beer">
-                        <div class="photo p-1">
-                            <img src="dist/img/beer.jpg" alt="beer">
-                        </div>
-                        <div class="disc p-1">
-                            <div class="title">
-                                <span>Beer Title</span>
-                                <i class="fas fa-star" id="id-add"></i>   
-                            </div>
-                            <div class="about">
-                                <p class="pg py-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime perferendis obcaecati dolorem ad quidem nobis officia eaque ex libero.</p c>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrapper p-1">
-                    <div class="beer">
-                        <div class="photo p-1">
-                            <img src="dist/img/beer.jpg" alt="beer">
-                        </div>
-                        <div class="disc p-1">
-                            <div class="title">
-                                <span>Beer Title</span>
-                                <i class="fas fa-star" id="id-add"></i>   
-                            </div>
-                            <div class="about">
-                                <p class="pg py-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime perferendis obcaecati dolorem ad quidem nobis officia eaque ex libero.</p c>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
+    <section id="nav-btns">
+        <div class="container">
+            <button class="prev btn" value ="1"><i class="fas fa-chevron-left"></i> Prev page</button>
+            <button class="next btn" value ="2">Next page <i class="fas fa-chevron-right"></i></button>
+        </div>
+
+    </section>
     <section id="beer-modal">
         <div class="beer-container">
-            <div class="wrapper p-1">
+            <!-- <div class="wrapper p-1">
                 <div class="beer">
                     <div class="photo p-1">
                         <img src="dist/img/beer.jpg" alt="beer">
                     </div>
+                    <div class ="fav-icon"><i class="fas fa-star"></i></div>
                     <div class="disc p-1">
                         <div class="title">
-                            <span>Beer Title</span>
-                            <i class="fas fa-star" id="id-add"></i>   
+                            <span>Beer Title</span>  
                         </div>
                         <div class="about">
                             <p class="pg py-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime perferendis obcaecati dolorem ad quidem nobis officia eaque ex libero.</p c>
                         </div>
                         <div class="ingredients py-1">
                             <h3>Ingredients: </h3>
+                            <h4>Malt: </h4>
                             <ul>
-                                <li>- Ingredient</li>
+                                <li>Ing 1</li>
                             </ul>
+                            <h4>Hops: </h4>
+                            <ul>
+                                <li>Ing 1</li>
+                            </ul>
+                            <h4>Yeast: </h4>
+                            <p>Ing</p>
                         </div>
                         <div class="tips py-1">
                             <h3>Brewing Tips:</h3>
@@ -142,14 +141,17 @@
                         </div>
                         <div class="food-pairing py-1">
                             <h3>Food Pairing:</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolore atque aut aliquam magni ipsum, fugiat sit totam harum commodi!</p>
+                             <ul>
+                                <li>Ing 1</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>           
             <div class="exit">
                 <i class="fas fa-times"></i>
             </div>
+              -->
         </div>
     </section>
 

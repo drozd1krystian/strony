@@ -25,6 +25,7 @@
   }
   #favorites {
     position: relative;
+    z-index: 10;
     .beer-container {
       border: 1px solid #333;
       background: #fff;
@@ -33,20 +34,37 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 200px;
-      transform: translateY(calc(100% + 5px));
+      width: 300px;
       max-height: 400px;
+      transform: translateY(calc(100% + 5px));
       display: none;
       .beer {
-        align-items: center;
+        position: relative;
+        height: 200px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.2rem;
+        &:last-child {
+          border-bottom: none;
+        }
       }
       .photo {
-        max-height: 200px;
-        width: 50%;
+        width: 30%;
+        margin-top: 0;
+        height: 100%;
+        img {
+          height: 100%;
+        }
       }
       .disc {
-        width: 50%;
+        width: 70%;
         height: 100%;
+        margin-top: 10px;
+        i {
+          color: red;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+        }
       }
     }
     &::after {
@@ -89,45 +107,63 @@
 }
 
 #beers {
+  z-index: 9;
   .beer-container {
     flex-direction: row;
     flex-wrap: wrap;
     .wrapper {
       width: 33.333%;
+      z-index: 1;
+      position: relative;
+      .fav-icon {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        z-index: 10;
+        i {
+          color: $dark;
+          cursor: pointer;
+          background: transparent;
+          transition: all 0.4s ease;
+          position: relative;
+          font-size: 1.2rem;
+          text-shadow: 1px 0px 1px #000;
+          &:hover {
+            color: $blue;
+            text-shadow: 1px 0px 1px $blue;
+          }
+        }
+      }
       .beer {
         box-shadow: 0px 4px 6px 0px rgba(#000, 0.3);
         cursor: pointer;
         .title {
-          i {
-            color: $dark;
-            cursor: pointer;
-            background: transparent;
-            transition: all 0.4s ease;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.2rem;
-            text-shadow: 1px 0px 1px #000;
-            .active {
-              color: $blue;
-              text-shadow: 1px 0px 1px $blue;
-            }
-            &:hover {
-              color: $blue;
-              text-shadow: 1px 0px 1px $blue;
-            }
-          }
+          margin-top: 20px;
         }
       }
     }
   }
 }
 
+#nav-btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  .prev,
+  .next {
+    padding: 0.5rem 1rem;
+  }
+  .prev {
+    display: none;
+  }
+}
+
 #beer-modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   background: rgba(#000, 0.4);
   width: 100%;
   z-index: -1;
@@ -139,21 +175,38 @@
   .beer-container {
     width: 70%;
     height: 70%;
+    overflow: auto;
     position: relative;
     transform: translateX(-50%, -50%);
     background: #fff;
     .wrapper {
       width: 100%;
-      height: 100%;
       .beer {
         width: 100%;
-        height: 100%;
+        z-index: 1;
+        .photo {
+          width: 15%;
+        }
+        .disc {
+          height: 100%;
+          width: 85%;
+          h4 {
+            padding: 0.5rem 0.2rem;
+          }
+          ul {
+            padding: 0 0.5rem;
+          }
+          p {
+            padding: 0.5rem 0.5rem 0 0.5rem;
+          }
+        }
       }
     }
     .exit {
       position: absolute;
       top: 10px;
       right: 10px;
+      z-index: 10;
       i {
         font-size: 2rem;
         cursor: pointer;
@@ -169,10 +222,13 @@
 .fadein {
   animation-name: fade-in;
   animation-duration: 0.4s;
+  opacity: 1 !important;
+  z-index: 10 !important;
 }
 .fadeout {
   animation-name: fade-out;
   animation-duration: 0.4s;
+  opacity: 0 !important;
 }
 
 @keyframes fade-in {
