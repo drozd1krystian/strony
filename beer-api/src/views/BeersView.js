@@ -2,11 +2,11 @@ import { selectors } from "../selectors";
 
 export function addBeer(beer) {
   const markup = `
-    <div class="wrapper p-1">
+    <div class="wrapper p-1" id="beer-${beer.id}">
       <div class="fav-icon" id="add-${beer.id}">
         <i class="fas fa-star"></i>
       </div>
-      <div class="beer" name="{beer.id}-add" >
+      <div class="beer" >
         <div class="photo p-1">
             <img src="${beer.image_url}" alt="beer">
         </div>

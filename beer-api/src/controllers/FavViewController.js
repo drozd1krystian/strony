@@ -1,24 +1,34 @@
 import {
   getFavoritesFromStorage,
   addFavoriteToStorage,
-  delFavoriteFromStorage
+  delFavoriteFromStorage,
+  getBeersFromStorage
 } from "./StorageController";
 import { addFavorite, removeFavorite } from "../views/FavView";
 import { selectors } from "../selectors";
 
 export function addFavorites() {
   const favBeers = getFavoritesFromStorage();
+
   favBeers.forEach(el => {
     addFavorite(el);
     delFavoriteListener(el);
-    document
-      .querySelector(`#add-${el.id}`)
-      .childNodes[1].classList.add("active");
+    const beer = document.getElementById(`beer-${el.id}`);
+    if (selectors.beersContainer.contains(beer)) {
+      document
+        .querySelector(`#add-${el.id}`)
+        .childNodes[1].classList.add("active");
+    }
   });
 }
 
 export function addFavoritesListeners(beers) {
   beers.forEach(el => {
+    if (checkIfInFavorites(el)) {
+      document
+        .getElementById(`add-${el.id}`)
+        .childNodes[1].classList.add("active");
+    }
     document.querySelector(`#add-${el.id}`).onclick = function() {
       if (checkIfInFavorites(el)) {
         delIfInFavorites(el);
@@ -33,7 +43,7 @@ export function addFavoritesListeners(beers) {
   });
 }
 
-function delFavoriteListener(beer) {
+export function delFavoriteListener(beer) {
   document.querySelector(`#del-${beer.id}`).onclick = function() {
     document
       .querySelector(`#add-${beer.id}`)
@@ -49,7 +59,7 @@ function delIfInFavorites(beer) {
   removeFavorite(`fav-${beer.id}`);
 }
 
-function checkIfInFavorites(beer) {
+export function checkIfInFavorites(beer) {
   const item = document.querySelector(`#fav-${beer.id}`);
   return selectors.favContainer.contains(item);
 }

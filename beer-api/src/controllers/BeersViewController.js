@@ -3,7 +3,7 @@ import { addBeer } from "../views/BeersView";
 import { addModalListeners } from "../controllers/ModalViewController";
 import { getBeersFromStorage, addBeersToStorage } from "./StorageController";
 import { selectors } from "../selectors";
-import { addFavoritesListeners } from "./FavViewController";
+import { addFavoritesListeners, checkIfInFavorites } from "./FavViewController";
 
 export function addBeers(page = 1, pageSize = 27, data = []) {
   if (data.length == 0) {
