@@ -1,10 +1,10 @@
 body {
   background: url("../img/background.jpg") no-repeat center center/cover;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Roboto", sans-serif;
+  padding: 1rem;
   .wrapper {
     background: #24323d;
     .change-btns {
@@ -96,5 +96,25 @@ body {
   }
   to {
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 95%;
+    padding: 0;
+    .change-btns a {
+      width: 50%;
+      padding: 1rem 2rem;
+    }
+    form h1 {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  body {
+    height: auto !important;
   }
 }

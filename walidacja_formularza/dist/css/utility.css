@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  height: 100vh;
+}
 ul {
   list-style: none;
 }
@@ -52,6 +54,7 @@ a {
   transition: all 0.2s ease;
   outline: none;
   color: rgb(173, 173, 173);
+  text-align: center;
 }
 .active,
 a:hover {
