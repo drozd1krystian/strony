@@ -5,29 +5,28 @@ const prev = document.querySelector(".left");
 const container = document.querySelector(".container");
 let current = 0;
 
-function moveSlide(sign = "-") {
-  console.log(current);
-  if (current == imgs.length - 1) {
+function moveSlide() {
+  if (current == imgs.length) {
     current = 0;
-    container.style.marginLeft = `${0}px`;
+    container.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
     return;
   }
-  let offWidth = imgs[current].offsetWidth;
-  let margin = 0;
-  if (sign == "-") {
-    margin = container.offsetLeft - offWidth - 5;
-  } else {
-    margin = container.offsetLeft + offWidth + 5;
-  }
-  console.log(margin, offWidth);
-  container.style.marginLeft = `${margin}px`;
+  container.scrollTo({
+    top: 0,
+    left: imgs[current].offsetLeft,
+    behavior: "smooth"
+  });
 }
 
 next.onclick = () => {
-  moveSlide();
   current += 1;
+  moveSlide();
 };
 prev.onclick = () => {
-  moveSlide("+");
-  current == 0 ? (current = 0) : (current -= 1);
+  current == 0 ? (current = imgs.length - 1) : (current -= 1);
+  moveSlide();
 };
