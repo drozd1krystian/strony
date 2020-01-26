@@ -62,3 +62,34 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #333;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-height: 500px;
+    padding-bottom: 0.2rem;
+    padding-top: 0.5rem;
+    width: 100vw;
+    .big,
+    .small {
+      width: initial;
+    }
+    @supports (object-fit: cover) {
+      .big img,
+      .small img {
+        height: 100%;
+        display: inline-block;
+        object-fit: cover;
+      }
+    }
+  }
+  .buttons {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .container {
+    max-height: 320px;
+    padding-right: 1rem;
+  }
+}
