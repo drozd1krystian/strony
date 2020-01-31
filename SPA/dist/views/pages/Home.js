@@ -17,7 +17,10 @@ let Home = {
         <h1> Memes </h1>
         <ul>
           ${memes
-            .map(meme => `<li><a href="${meme.url}">${meme.title}</a></li>`)
+            .map(
+              meme =>
+                `<li><a href="${meme.url}" target="_blank">${meme.title}</a></li>`
+            )
             .join("\n ")}
           <li> </li>
         </ul>
