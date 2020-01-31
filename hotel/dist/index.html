@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Gilda+Display|Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3c70acfb9a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/main.min.css" />
+    <title>Beer Api</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <a href="index.html" class ="logo">Hotel Booking</a>
+      <ul class="links">
+        <li><a href="">Home</a></li>
+        <li><a href="">Pokoje</a></li>
+        <li><a href="">O Nas</a></li>
+        <li><a href="">Kontakt</a></li>
+      </ul>
+      </div>
+    </nav>
+
+    <section id="showcase">
+      <div class="showcase-content">
+        <div class="container">
+          <h1>Ciesz się luksusowym doświadczeniem</h1>
+          <div class="date-container">
+            <div class="box date-in">
+              <form>
+                <label for="checkIn">Check-Out</label>
+                <input type="date"  id="checkIn">
+                <span id ="inDay"></span>
+                <span id ="inMonth"></span>
+              </form>
+            </div>
+            <div class="box date-out">
+              <form>
+                <label for="checkOut">Check-Out</label>
+                <input type="date"  id="checkOut">
+                <span id ="outDay"></span>
+                <span id ="outMonth"></span>
+              </form>
+            </div>
+            <div class="box guest">
+              <form >
+                <label for="guests">Guests</label>
+                <input type="text" id="guests" value ="1" min="1">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src ="js/main.js"></script>
+  </body>
+</html>

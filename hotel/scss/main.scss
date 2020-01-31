@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #ccc;
+  position: relative;
+  z-index: 1;
+}
+
+#navbar {
+  padding: 2rem;
+  background: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  .links {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    a:after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      border-bottom: 3px solid #ccc;
+      z-index: 2;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    a:hover::after {
+      opacity: 1;
+    }
+  }
+  .logo {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: "Gilda Display", sans-serif;
+    color: #fff;
+    position: relative;
+    &::after {
+      content: "The best hotel";
+      position: absolute;
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+      text-align: center;
+      color: #ccc;
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+#showcase {
+  background: url("../img/showcase.jpg") no-repeat center center/cover;
+  height: calc(100vh - 89px);
+  .showcase-content {
+    height: 100%;
+    width: 100%;
+    background: rgba(#000, 0.6);
+    display: flex;
+    align-items: center;
+    h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      font-family: "Gilda Display", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 2;
+    }
+    .container {
+      width: 60%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .date-container {
+      display: flex;
+      width: 100%;
+      .box {
+        width: 33%;
+        background: #fff;
+        height: 150px;
+        border-right: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        &:last-child {
+          border: none;
+        }
+        form {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          flex-direction: column;
+          position: relative;
+          input[type="date"] {
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            z-index: 10;
+          }
+          ::-webkit-calendar-picker-indicator {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+          }
+          label {
+            position: absolute;
+            top: 30px;
+            text-transform: uppercase;
+            color: rgba(#000, 0.5);
+          }
+          #inDay,
+          #outDay {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            font-weight: bold;
+            font-family: "Gilda Display", sans-serif;
+          }
+          #outMonth,
+          #inMonth {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            font-size: 1rem;
+            color: rgba(#000, 0.5);
+            &::after {
+              content: "\f078";
+              font-family: FontAwesome;
+              display: block;
+            }
+          }
+          #guests {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 4rem;
+            font-weight: bold;
+            font-family: "Gilda Display", sans-serif;
+            outline: none;
+            border: none;
+            padding-top: 10%;
+          }
+        }
+      }
+    }
+  }
+}
