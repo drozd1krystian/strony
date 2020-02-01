@@ -46,6 +46,9 @@ h4 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   .links {
     display: flex;
     width: 50%;
@@ -87,6 +90,7 @@ h4 {
 
 #showcase {
   background: url("../img/showcase.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
   height: calc(100vh - 89px);
   .showcase-content {
     height: 100%;
@@ -117,6 +121,7 @@ h4 {
   display: flex;
   width: 100%;
   align-items: center;
+
   .box {
     width: 33%;
     background: #fff;
@@ -126,6 +131,7 @@ h4 {
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
+    user-select: none;
     &:last-child {
       border: none;
     }

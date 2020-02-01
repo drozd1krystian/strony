@@ -83,8 +83,7 @@ function detectmob() {
     const aboutSection = document.querySelector("#about .container");
     aboutSection.insertBefore(piker, aboutSection.firstChild);
   } else {
-    return false;
   }
 }
 
-detectmob();
+window.setInterval(detectmob, 10);
