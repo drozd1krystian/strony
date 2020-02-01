@@ -1,7 +1,24 @@
 let today = new Date();
 let nextMonth = new Date(today.getFullYear(), today.getMonth() + 2, 0);
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
+];
 
-inDay.innerHTML = today.getDate();
+inDay.innerHTML = `0${today
+  .getDate()
+  .toString()
+  .slice(-2)}`;
 inMonth.innerHTML = today
   .toString()
   .split(" ")
@@ -40,9 +57,34 @@ checkOut.onchange = () => {
     .split("-")
     .slice(2, 4)
     .join("");
-  inMonth.innerHTML = nextMonth
-    .toString()
-    .split(" ")
-    .slice(1, 2)
-    .join("");
+  outMonth.innerHTML =
+    months[
+      checkOut.value
+        .toString()
+        .split("-")
+        .slice(1, 2)
+        .join("")
+        .slice(1, 2) - 1
+    ];
 };
+
+function detectmob() {
+  if (
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i)
+  ) {
+    const datepicker = document.querySelector(".date-container");
+    const piker = datepicker.parentElement.removeChild(datepicker);
+    const aboutSection = document.querySelector("#about .container");
+    aboutSection.insertBefore(piker, aboutSection.firstChild);
+  } else {
+    return false;
+  }
+}
+
+detectmob();

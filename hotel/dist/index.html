@@ -13,16 +13,16 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/main.min.css" />
-    <title>Beer Api</title>
+    <title>Best Hotel</title>
   </head>
   <body>
     <nav id="navbar">
       <a href="index.html" class ="logo">Hotel Booking</a>
       <ul class="links">
         <li><a href="">Home</a></li>
-        <li><a href="">Pokoje</a></li>
-        <li><a href="">O Nas</a></li>
-        <li><a href="">Kontakt</a></li>
+        <li><a href="">Rooms</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Contact</a></li>
       </ul>
       </div>
     </nav>
@@ -30,30 +30,63 @@
     <section id="showcase">
       <div class="showcase-content">
         <div class="container">
-          <h1>Ciesz się luksusowym doświadczeniem</h1>
+          <h1>Enjoy A Luxury Experience</h1>
           <div class="date-container">
             <div class="box date-in">
               <form>
-                <label for="checkIn">Check-Out</label>
                 <input type="date"  id="checkIn">
-                <span id ="inDay"></span>
-                <span id ="inMonth"></span>
+                <div class="input-visible">
+                  <label for="checkIn">Check-In</label>
+                  <div class="wrapper">
+                    <span id ="inDay"></span>
+                    <span id ="inMonth"></span>
+                  </div>
+                </div>
               </form>
             </div>
             <div class="box date-out">
               <form>
-                <label for="checkOut">Check-Out</label>
                 <input type="date"  id="checkOut">
-                <span id ="outDay"></span>
-                <span id ="outMonth"></span>
+                <div class="input-visible">
+                  <label for="checkOut">Check-Out</label>
+                  <div class="wrapper">
+                    <span id ="outDay"></span>
+                    <span id ="outMonth"></span>
+                  </div>
+                </div>
               </form>
-            </div>
+              </div>
             <div class="box guest">
               <form >
-                <label for="guests">Guests</label>
-                <input type="text" id="guests" value ="1" min="1">
+                <div class="input-visible">
+                  <label for="checkOut">Guests</label>
+                  <input type="text" id="guests" value ="1" min="1">
+                </div>
               </form>
             </div>
+            <div class="box box-dark">
+              <h4 class ="upcase">Check Availability</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="content">
+          <div class="wrapper">
+            <p class ="upcase">Best Hotel</p>
+            <h1 >Relax in our Hotel</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id culpa beatae deleniti architecto unde soluta labore maxime, doloribus consequuntur earum cum inventore omnis, quibusdam distinctio natus iure? Incidunt, totam ad natus esse, eveniet eligendi porro consequuntur earum, quasi voluptate deserunt?</p>
+            <div class="btn-wrapper">
+              <a href="about.html" class="btn btn-brown">About Us</a>
+            </div>
+          </div>
+          <div class="wrapper">
+            <img src="./img/room-1.jpg" alt="room-1" id="img-1">
+            <img src="./img/room-2.jpg" alt="room-2"  id="img-2">
+            <img src="./img/room-3.jpg" alt="room-3"  id="img-3">
           </div>
         </div>
       </div>
