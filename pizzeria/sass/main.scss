@@ -1,10 +1,10 @@
-@import 'config';
+@import "config";
 // Utility classes
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Solway', sans-serif;
+  font-family: "Solway", sans-serif;
 }
 body {
   max-width: $website-width;
@@ -19,7 +19,7 @@ ul {
   line-height: 1.7rem;
 }
 
-a{
+a {
   text-decoration: none;
   color: $light-color;
   &:hover {
@@ -28,7 +28,9 @@ a{
     transition: all 0.2s ease-in-out;
   }
 }
-.dist-word {color: $dist-color;}
+.dist-word {
+  color: $dist-color;
+}
 
 .button {
   padding: 1rem 3rem;
@@ -51,14 +53,28 @@ a{
   margin: auto;
 }
 
-.bg-light { background: $light-color;}
-.bg-dark {background: $dark-color;}
+.bg-light {
+  background: $light-color;
+}
+.bg-dark {
+  background: $dark-color;
+}
 
-h1,h2,h3 { color: $light-color;}
+h1,
+h2,
+h3 {
+  color: $light-color;
+}
 
-.p1 {padding: 1rem 1rem;}
-.p2 {padding: 2rem 2rem;}
-.p3 {padding: 3rem 3rem;}
+.p1 {
+  padding: 1rem 1rem;
+}
+.p2 {
+  padding: 2rem 2rem;
+}
+.p3 {
+  padding: 3rem 3rem;
+}
 
 #navbar {
   height: 8vh;
@@ -72,7 +88,7 @@ h1,h2,h3 { color: $light-color;}
   justify-content: space-between;
   box-shadow: 0 0 10px $light-color;
 
-  h2{
+  h2 {
     margin-left: 2rem;
   }
   ul {
@@ -93,7 +109,7 @@ h1,h2,h3 { color: $light-color;}
 
 //Showase
 #showcase {
-  background: url('../img/showcase.jpg') no-repeat center center/cover;
+  background: url("../img/showcase.jpg") no-repeat center center/cover;
   width: 100%;
   height: 92vh;
   margin-top: 8vh;
@@ -104,8 +120,9 @@ h1,h2,h3 { color: $light-color;}
     display: flex;
     flex-direction: column;
     align-items: center;
-    .data{
-      width: 100%; height: 50%;
+    .data {
+      width: 100%;
+      height: 50%;
       display: flex;
       justify-content: space-around;
       .online-order {
@@ -121,10 +138,10 @@ h1,h2,h3 { color: $light-color;}
           display: inline-block;
         }
         .button {
-          padding: .5rem 4rem;
+          padding: 0.5rem 4rem;
         }
       }
-      .local-data{
+      .local-data {
         flex: 1;
         margin-top: 3rem;
         max-width: 300px;
@@ -136,15 +153,20 @@ h1,h2,h3 { color: $light-color;}
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        h3 {color: $mid-color;}
-        h3 span {font-size: 1.5rem; color: $light-color;}
+        h3 {
+          color: $mid-color;
+        }
+        h3 span {
+          font-size: 1.5rem;
+          color: $light-color;
+        }
       }
     }
     .showcase-header {
       display: flex;
       flex-direction: column;
       align-items: center;
-      a{
+      a {
         display: inline-block;
         margin-top: 2rem;
       }
@@ -153,11 +175,12 @@ h1,h2,h3 { color: $light-color;}
 }
 
 // About
-#about{
+#about {
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
-  h1, h2 { 
+  h1,
+  h2 {
     color: $dark-color;
     text-align: center;
     margin-bottom: 1rem;
@@ -165,10 +188,10 @@ h1,h2,h3 { color: $light-color;}
   h2 {
     margin: 1rem 0;
   }
-  .about-content{
+  .about-content {
     display: flex;
-    .photo{
-      background: url('../img/restaurant.jpg') no-repeat center center/cover;
+    .photo {
+      background: url("../img/restaurant.jpg") no-repeat center center/cover;
       min-width: 690px;
       min-height: 400px;
     }
@@ -178,20 +201,22 @@ h1,h2,h3 { color: $light-color;}
   }
 }
 
-
 // Opinions
 #opinions {
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     text-align: center;
     color: $dark-color;
   }
-  h1{
+  h1 {
     margin: 2rem 0;
     color: $light-color;
   }
-  background: url('../img/opinion.jpg') no-repeat center center/cover;
-  .opinions-content{
-    width: 100%; height: 100%;
+  background: url("../img/opinion.jpg") no-repeat center center/cover;
+  .opinions-content {
+    width: 100%;
+    height: 100%;
     background: rgba($color: $dark-color, $alpha: 0.4);
     display: flex;
     flex-direction: column;
@@ -228,7 +253,9 @@ h1,h2,h3 { color: $light-color;}
 
 #main-footer {
   background: $light-color;
-  h1,h2,h3 {
+  h1,
+  h2,
+  h3 {
     color: $dark-color;
     margin: 1rem 0;
   }
@@ -244,7 +271,7 @@ h1,h2,h3 { color: $light-color;}
       flex: 2;
       min-width: 200px;
       min-height: 200px;
-      background: url('../img/logo.png') no-repeat center center/cover;
+      background: url("../img/logo.png") no-repeat center center/cover;
     }
     .other-inf {
       margin-top: 2rem;
@@ -260,7 +287,7 @@ h1,h2,h3 { color: $light-color;}
   h2 {
     color: $light-color;
     background: $dark-color;
-    font-size: .8rem;
+    font-size: 0.8rem;
     padding: 0.5rem;
   }
   text-align: center;
@@ -276,32 +303,43 @@ h1,h2,h3 { color: $light-color;}
     width: 100%;
     height: 100%;
   }
-  p {font-size: 0.8rem;}
-  h4 {color: $light-color;}
-  h2{
+  p {
+    font-size: 0.8rem;
+  }
+  h4 {
+    color: $light-color;
+  }
+  h2 {
     margin-bottom: 2rem;
     text-align: center;
-    background: rgba(238, 238, 238,0.3);
-    padding: .5rem;
+    background: rgba(238, 238, 238, 0.3);
+    padding: 0.5rem;
   }
 
   table {
     border-collapse: collapse;
     width: 100%;
 
-    th, td {
-      padding: .5rem;
+    th,
+    td {
+      padding: 0.5rem;
       text-align: left;
       border-bottom: 1px solid $mid-color;
     }
-    td {border: none;}
-    td {color: $mid-color;}
-    tr:nth-child(even) {
-      background-color: rgba(238, 238, 238,0.2);
-      
+    td {
+      border: none;
     }
-    tr td:nth-child(2),tr td:nth-child(3), th:nth-child(2),th:nth-child(3){
-      text-align: center ;
+    td {
+      color: $mid-color;
+    }
+    tr:nth-child(even) {
+      background-color: rgba(238, 238, 238, 0.2);
+    }
+    tr td:nth-child(2),
+    tr td:nth-child(3),
+    th:nth-child(2),
+    th:nth-child(3) {
+      text-align: center;
     }
   }
 }
@@ -309,29 +347,33 @@ h1,h2,h3 { color: $light-color;}
 // Contact
 .showcase-contact {
   height: 100% !important;
-  padding-bottom: 2rem;
-  h2{
+  h2 {
     margin: 2rem 0;
     text-align: center;
-    background: rgba(238, 238, 238,0.3);
-    padding: .5rem 0 ;
+    background: rgba(238, 238, 238, 0.3);
+    padding: 0.5rem 0;
   }
   .container {
     width: 100%;
     height: 100%;
-    .contact-content-container{
+    .contact-content-container {
       display: flex;
       flex-direction: column;
     }
     .contact-container {
       display: flex;
       justify-content: space-between;
-      h3 {color: $light-color;}
-      p{color: $mid-color;}
+      h3 {
+        color: $light-color;
+      }
+      p {
+        color: $mid-color;
+      }
     }
-    .map{
+    .map {
       min-height: 300px;
-      background: url('/dist/img/map.PNG') no-repeat center center/cover;
+      background: url("../img/map.png") no-repeat center center/cover;
+      margin-bottom: 2rem;
     }
   }
 }
@@ -339,7 +381,7 @@ h1,h2,h3 { color: $light-color;}
 // Media smartphone
 @media screen and (max-width: 500px) {
   #navbar {
-    h2{
+    h2 {
       margin-left: 1rem;
     }
   }
@@ -353,13 +395,13 @@ h1,h2,h3 { color: $light-color;}
     .showcase-header {
       h1 {
         text-align: center;
-        line-height:3rem;
+        line-height: 3rem;
       }
     }
   }
 
   #about {
-    .photo{
+    .photo {
       display: none;
     }
   }
@@ -378,6 +420,7 @@ h1,h2,h3 { color: $light-color;}
 
   // Contact
   .showcase-contact {
+    padding-bottom: 2rem;
     .container {
       width: 90%;
       max-width: 90vh;
@@ -396,7 +439,7 @@ h1,h2,h3 { color: $light-color;}
 @media screen and (min-width: 501px) and (max-width: 850px) {
   #showcase {
     .data {
-      .local-data{
+      .local-data {
         margin-bottom: 1rem;
         margin-top: 2rem !important;
       }
@@ -404,7 +447,7 @@ h1,h2,h3 { color: $light-color;}
   }
 
   #about {
-    .photo{
+    .photo {
       display: none;
     }
   }
@@ -415,7 +458,6 @@ h1,h2,h3 { color: $light-color;}
     }
   }
   #main-footer {
-    
     .footer-content {
       flex-direction: column;
     }
