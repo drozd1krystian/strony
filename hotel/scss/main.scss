@@ -262,13 +262,20 @@ h4 {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+  #navbar {
+    height: 12vh;
+    position: fixed;
+    top: 0;
+  }
   #showcase {
+    background-attachment: initial;
     .showcase-content h1 {
       font-size: 2rem;
     }
   }
   #about {
+    padding-bottom: 0rem;
     .content {
       flex-direction: column;
       .wrapper {
@@ -282,21 +289,22 @@ h4 {
           font-size: 40px;
           line-height: 40px;
         }
-        p {
-          padding: 1rem;
+        img {
+          height: 40% !important;
         }
         #img-1 {
           top: auto;
           left: 50px;
         }
         #img-2 {
-          height: 60%;
           top: 20%;
         }
         #img-3 {
           left: auto;
-          top: 60%;
-          height: 40%;
+          top: 45%;
+        }
+        &:first-child {
+          min-height: 300px;
         }
       }
     }
@@ -309,6 +317,67 @@ h4 {
     }
     .box-dark {
       width: 60%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #navbar {
+    height: 12vh;
+    position: fixed;
+    top: 0;
+  }
+  #about {
+    .date-container {
+      padding: 0 2rem;
+    }
+    .content {
+      flex-direction: column;
+      .wrapper {
+        width: 100%;
+        height: 450px;
+        #img-3 {
+          width: 50%;
+          left: 5%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  #navbar {
+    height: 12vh;
+    position: fixed;
+    top: 0;
+  }
+  #about {
+    .content {
+      .wrapper {
+        &:first-child {
+          height: auto;
+        }
+        &:last-child {
+          padding: 3rem;
+          height: 600px;
+        }
+        img {
+          height: 50% !important;
+        }
+        #img-1 {
+          top: auto;
+          left: 100px;
+        }
+        #img-2 {
+          top: 20%;
+          height: 65% !important;
+        }
+        #img-3 {
+          left: auto;
+          top: 45%;
+          width: 50% !important;
+        }
+      }
     }
   }
 }

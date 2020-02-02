@@ -69,6 +69,8 @@ checkOut.onchange = () => {
 };
 
 function detectmob() {
+  const datepicker = document.querySelector(".date-container");
+  const aboutSection = document.querySelector("#about .container");
   if (
     navigator.userAgent.match(/Android/i) ||
     navigator.userAgent.match(/webOS/i) ||
@@ -78,12 +80,13 @@ function detectmob() {
     navigator.userAgent.match(/BlackBerry/i) ||
     navigator.userAgent.match(/Windows Phone/i)
   ) {
-    const datepicker = document.querySelector(".date-container");
     const piker = datepicker.parentElement.removeChild(datepicker);
-    const aboutSection = document.querySelector("#about .container");
     aboutSection.insertBefore(piker, aboutSection.firstChild);
   } else {
+    const showcase = document.querySelector("#showcase .container");
+    datepicker.remove();
+    showcase.appendChild(datepicker);
   }
 }
 
-window.setInterval(detectmob, 10);
+window.addEventListener("resize", detectmob);
