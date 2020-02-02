@@ -1,2 +1,2 @@
-# html-css
-html &amp; css - strony internetowe
+# html-css, javascript
+html &amp; css, javascript - strony internetowe
