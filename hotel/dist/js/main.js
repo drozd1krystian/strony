@@ -32,11 +32,15 @@ checkIn.onchange = () => {
     .slice(2, 4)
     .join("");
 
-  inMonth.innerHTML = today
-    .toString()
-    .split(" ")
-    .slice(1, 2)
-    .join("");
+  inMonth.innerHTML =
+    months[
+      checkIn.value
+        .toString()
+        .split("-")
+        .slice(1, 2)
+        .join("")
+        .slice(1, 2) - 1
+    ];
 };
 
 checkOut.valueAsDate = nextMonth;
