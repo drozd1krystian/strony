@@ -54,9 +54,6 @@ export function fillModal(beer) {
       </div>
     </div>
   </div>
-  <div class="exit">
-    <i class="fas fa-times"></i>
-  </div>
   `;
   selectors.beer.insertAdjacentHTML("beforeend", markup);
 }

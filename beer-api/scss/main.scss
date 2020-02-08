@@ -173,6 +173,20 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
+  .exit {
+    position: absolute;
+    z-index: 11;
+    top: 16%;
+    right: 18%;
+    i {
+      font-size: 2rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      &:hover {
+        color: $dark-grey;
+      }
+    }
+  }
   .beer-container {
     width: 70%;
     height: 70%;
@@ -200,20 +214,6 @@
           p {
             padding: 0.5rem 0.5rem 0 0.5rem;
           }
-        }
-      }
-    }
-    .exit {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 10;
-      i {
-        font-size: 2rem;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        &:hover {
-          color: $dark-grey;
         }
       }
     }

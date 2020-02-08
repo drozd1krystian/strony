@@ -31,10 +31,10 @@ export function addFavoriteToStorage(beer) {
   }
 }
 
-export function delFavoriteFromStorage(beer) {
+export function delFavoriteFromStorage(id) {
   let favBeers = [];
   favBeers = JSON.parse(localStorage.getItem("favBeers"));
-  let el = favBeers.findIndex(el => el.id == beer.id);
+  let el = favBeers.findIndex(el => el.id == id);
   favBeers.splice(el, 1);
   localStorage.setItem("favBeers", JSON.stringify(favBeers));
 }

@@ -18,7 +18,7 @@ async function getBeer(beerName = "random") {
   return axios(endPoint);
 }
 
-export function addSearchListeners() {
+export function searchForBear() {
   selectors.searchBtn.onclick = () => {
     const beerName = getBeerName();
     let searchData = [];
