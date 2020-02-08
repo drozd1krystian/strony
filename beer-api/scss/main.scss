@@ -249,3 +249,123 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+  #nav-bar {
+    padding: 1rem 0;
+    .logo a,
+    .left-menu a,
+    h1 {
+      font-size: 1rem;
+    }
+  }
+  #search-bar {
+    padding: 0;
+    .search-wrapper {
+      padding: 1rem 0;
+    }
+  }
+  #beers {
+    .beer-container {
+      .wrapper {
+        width: 100%;
+        .fav-icon i:hover {
+          color: #333;
+          text-shadow: none !important;
+        }
+      }
+    }
+  }
+  #beer-modal {
+    .exit {
+      top: 7%;
+      right: 15%;
+    }
+    .beer-container {
+      width: 80%;
+      height: 90%;
+      .wrapper {
+        .beer {
+          flex-direction: column;
+          .disc {
+            width: 100%;
+            padding: 0;
+          }
+          .photo {
+            width: 50%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  .beer {
+    .photo {
+      width: 25% !important;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #nav-bar a {
+    font-size: 1.4rem !important;
+  }
+  #nav-bar h1 a {
+    font-size: 2rem !important;
+  }
+  #search-bar .search-wrapper input,
+  #search-bar .search-wrapper button {
+    font-size: 1.2rem !important;
+  }
+  #beers {
+    .beer-container {
+      .wrapper {
+        width: 50%;
+        .fav-icon i:hover {
+          color: #333;
+          text-shadow: none !important;
+        }
+        .beer {
+          font-size: 1.2rem !important;
+          .disc {
+            .title span {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  #beer-modal {
+    .exit {
+      top: 7%;
+      right: 15%;
+    }
+    .beer-container {
+      width: 80%;
+      height: 90%;
+      .wrapper {
+        .beer {
+          flex-direction: column;
+          font-size: 1.2rem !important;
+          h3 {
+            font-size: 1.5rem !important;
+          }
+          h4 {
+            font-size: 1.4rem !important;
+          }
+          .disc {
+            width: 100%;
+            padding: 0;
+          }
+          .photo {
+            width: 30%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
