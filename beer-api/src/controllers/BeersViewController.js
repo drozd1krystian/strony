@@ -49,9 +49,9 @@ export function prevNextBtnCtrl() {
 }
 
 export function openModal() {
-  const beers = getBeersFromStorage();
   document.querySelector(".exit").onclick = hideModal;
   beerContainer.onclick = function(e) {
+    const beers = getBeersFromStorage();
     const target = e.target;
     const beer = target.closest(".beer");
     if (!beer && target.tagName != "I") {
