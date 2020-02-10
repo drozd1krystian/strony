@@ -91,3 +91,4 @@ function detectmob() {
 }
 
 window.addEventListener("resize", detectmob);
+window.addEventListener("load", detectmob);
