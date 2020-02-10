@@ -15,10 +15,7 @@ let months = [
   "Dec"
 ];
 
-inDay.innerHTML = `0${today
-  .getDate()
-  .toString()
-  .slice(-2)}`;
+inDay.innerHTML = ("0" + today.getDate()).slice(-2);
 inMonth.innerHTML = today
   .toString()
   .split(" ")
