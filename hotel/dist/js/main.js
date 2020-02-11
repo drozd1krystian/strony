@@ -1,5 +1,5 @@
 let today = new Date();
-let nextMonth = new Date(today.getFullYear(), today.getMonth() + 2, 0);
+let tommorow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
 let months = [
   "Jan",
   "Feb",
@@ -15,6 +15,8 @@ let months = [
   "Dec"
 ];
 
+checkIn.valueAsDate = today;
+checkIn.setAttribute("min", checkIn.value);
 inDay.innerHTML = ("0" + today.getDate()).slice(-2);
 inMonth.innerHTML = today
   .toString()
@@ -40,13 +42,10 @@ checkIn.onchange = () => {
     ];
 };
 
-checkOut.valueAsDate = nextMonth;
-outDay.innerHTML = new Date(
-  today.getFullYear(),
-  today.getMonth() + 2,
-  0
-).getDate();
-outMonth.innerHTML = nextMonth
+checkOut.valueAsDate = tommorow;
+checkOut.setAttribute("min", checkOut.value);
+outDay.innerHTML = tommorow.getDate();
+outMonth.innerHTML = tommorow
   .toString()
   .split(" ")
   .slice(1, 2)
@@ -90,5 +89,7 @@ function detectmob() {
   }
 }
 
-window.addEventListener("resize", detectmob);
-window.addEventListener("load", detectmob);
+if (window.location.pathname.split("/")[2] == "index.html") {
+  window.addEventListener("resize", detectmob);
+  window.addEventListener("load", detectmob);
+}

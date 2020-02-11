@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Gilda+Display|Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3c70acfb9a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/main.min.css" />
+    <link rel="stylesheet" href="css/burger_menu.css" />
+    <title>Best Hotel</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <a href="index.html" class ="logo">Hotel Booking</a>
+      <ul class="links">
+        <li><a href="">Home</a></li>
+        <li><a href="">Rooms</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line-1"></div>
+        <div class="line-2"></div>
+        <div class="line-3"></div>
+      </div>
+      </div>
+    </nav>
+    <section id="search-rooms" >
+        <h1 class ="upcase text-white small-showcase-header">Search</h1>
+        <div class="content">
+          <div class="expand-wrapper">
+            <h4 class ="grey upcase">Stay price <i class="fas fa-chevron-down"></i></h4>
+            <ul class ="expand-menu">
+              <li class="upcase grey"><a href="">Lowest price</a> </li>
+              <li class="upcase grey"><a href="">Highest price</a> </li>
+            </ul>
+          </div>
+          <div class="expand-wrapper">
+            <h4 class ="grey upcase">Room size <i class="fas fa-chevron-down"></i></h4>
+            <ul class ="expand-menu">
+              <li class="upcase grey"><a href="">Smallest Room</a> </li>
+              <li class="upcase grey"><a href="">Biggest Room</a> </li>
+            </ul>
+          </div>
+        </div>
+    </section>
+    <section id="rooms-content" class ="section-padd">
+        <div class="left">
+          <div class="date-container">
+            <div class="box date-in">
+              <form>
+                <input type="date"  id="checkIn">
+                <div class="input-visible">
+                  <label for="checkIn">Check-In</label>
+                  <div class="wrapper">
+                    <span id ="inDay"></span>
+                    <span id ="inMonth"></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="box date-out">
+              <form>
+                <input type="date"  id="checkOut">
+                <div class="input-visible">
+                  <label for="checkOut">Check-Out</label>
+                  <div class="wrapper">
+                    <span id ="outDay"></span>
+                    <span id ="outMonth"></span>
+                  </div>
+                </div>
+              </form>
+              </div>
+            <div class="box guest">
+              <form >
+                <div class="input-visible">
+                  <label for="checkOut">Guests</label>
+                  <input type="text" id="guests" value ="1" min="1">
+                </div>
+              </form>
+            </div>
+            <div class="box guest">
+              <form >
+                <div class="input-visible">
+                  <label for="nights">Nights</label>
+                  <input type="text" id="nights" value ="1" min="1" disabled>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="filters">
+            <div class="input">
+              <div class="text">
+                <label for="priceRange">Max Night Price: </label> 
+                <span id="priceValue">350$</span>
+              </div>
+              <div class="range">
+                <input type="range" name="" id="priceRange" min="1" max="700" value="350">
+                <div></div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="header">
+              <h1>Services</h1>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <ul>           
+                <li><input type="checkbox" name="services" value="swimming pool"><span>Swimming Pool</span></li>
+                <li><input type="checkbox" name="services" value="television"><span>Television</span> </li>
+                <li><input type="checkbox" name="services" value="no smoking"><span>No Smoking</span></li>
+                <li><input type="checkbox" name="services" value="private bath"><span>Private Bathroom</span> </li>
+                <li><input type="checkbox" name="services" value="kingBeds"><span>King Beds</span> </li>
+              </ul>
+            </div>
+            <div class="list">
+              <div class="header">
+                <h1>Extra Services</h1>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <ul>           
+                <li><input type="checkbox" name="ex-services" value="breakfast"><span>Breakfast</span></li>
+                <li><input type="checkbox" name="ex-services" value="laundry"><span>Laundry</span> </li>
+                <li><input type="checkbox" name="ex-services" value="car rental"><span>Car Rental</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="right" id="roomsContainer">
+           <!-- <div class="card" >
+              <div class="photo img-cover">
+                <img src="./img/room5.jpg" alt="room5">
+              </div>
+              <div class="disc">
+                <h2>Small Room</h2>
+                <div class="icons">
+                  <span class ="upcase"><i class="far fa-user"></i>1 Guests</span>
+                  <span lass ="upcase"><i class="fas fa-border-none"></i>15m<sup>2</sup></span c>
+                </div>
+                <p class ="grey">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum quibusdam sit architecto veniam eaque aperiam asperiores ex qui, exercitationem temporibus!</p>
+                <div class="link-wrapper">
+                  <a href="#" class="upcase btn bg-dark">Book now from 30$</a>
+                </div>
+                <div class="room-services">
+                  <div class="icons">
+                    <div class="icon">
+                      <i class ="fas fa-smoking-ban"></i>
+                      <span class="info upcase">No smoking</span>
+                    </div>
+                  </div>
+                    <a href="room.html"><span class="upcase grey">Full info <i class="fas fa-chevron-right"></i></span></a>
+                </div>
+            </div>
+          </div>  -->
+        </div>
+      </div>
+    </section>
+    <footer id="main-footer" class ="bg-dark section-padd">
+      <div class="container">
+        <div class="content">
+          <div class="footer-box">
+            <h2 >Phone Number</h2>
+            <h5 class ="upcase">24h a Day</h5>
+            <h2 class ="phone">+48 123 456 789</h2>
+          </div>
+          <div class="footer-box">
+            <h2>Connect With Us</h2>
+            <h5 class ="upcase">social media channels</h5>
+            <div class="icons">
+              <a href=""><i class="fab fa-instagram fa-2x"></i></a>
+              <a href=""><i class="fab fa-twitter fa-2x"></i></a>
+              <a href=""><i class="fab fa-facebook fa-2x"></i></a>
+              <a href=""><i class="fab fa-youtube fa-2x"></i></a>
+            </div>
+          </div>
+          <div class="footer-box">
+            <h2>Newsletter</h2>
+            <h5 class="upcase">Sign up for special offers</h5>
+            <form action="">
+              <input type="text" placeholder="Email">
+              <button type="submit" class ="btn bg-brown upcase">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="js/burger_menu.js"></script>
+    <script src ="js/main.js"></script>
+    <script src="js/rooms.js"></script>
+  </body>
+</html>
