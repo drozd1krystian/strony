@@ -1,6 +1,6 @@
 const rooms = [
   {
-    img: "./img/room5.jpg",
+    img: "./img/room1.jpg",
     name: "Small Room",
     guests: "1",
     size: "15",
@@ -14,7 +14,7 @@ const rooms = [
     exServices: [{ text: "breakfast" }, { text: "car rental" }]
   },
   {
-    img: "./img/room5.jpg",
+    img: "./img/room2.jpg",
     name: "Double Room",
     guests: "2",
     size: "20",
@@ -27,7 +27,7 @@ const rooms = [
     exServices: [{ text: "breakfast" }, { text: "laundry" }]
   },
   {
-    img: "./img/room5.jpg",
+    img: "./img/room3.jpg",
     name: "Family Room",
     guests: "3",
     size: "30",
@@ -58,30 +58,10 @@ const rooms = [
   }
 ];
 
-const dates = document.querySelector(".date-container");
-
-function calculatePrice() {
-  const nights = document.querySelector("#nights");
-  const checkIn = document.querySelector("#checkIn");
-  const checkOut = document.querySelector("#checkOut");
-  let checkInDate = new Date(checkIn.value);
-  let checkOutDate = new Date(checkOut.value);
-  let timeDiff = Math.abs(checkInDate.getTime() - checkOutDate.getTime());
-  let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-  nights.value = diffDays;
-
-  dates.onchange = e => {
-    checkInDate = new Date(checkIn.value);
-    checkOutDate = new Date(checkOut.value);
-    timeDiff = Math.abs(checkInDate.getTime() - checkOutDate.getTime());
-    diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    nights.value = diffDays;
-    const filteredData = filterData();
-    fillData(filteredData);
-  };
-}
-
-calculatePrice();
+dateContainer.addEventListener("change", () => {
+  const filteredData = filterData();
+  fillData(filteredData);
+});
 
 function filterData() {
   let filteredArray = [];

@@ -86,6 +86,8 @@ a {
 .grey {
   color: #878788 !important;
   line-height: 1.5rem;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .section-padd {
@@ -137,7 +139,7 @@ h6 {
     display: flex;
     width: 50%;
     justify-content: space-around;
-    a:after {
+    a::after {
       content: "";
       position: absolute;
       bottom: -5px;
@@ -147,6 +149,9 @@ h6 {
       z-index: 2;
       opacity: 0;
       transition: all 0.3s ease;
+    }
+    .link-active::after {
+      opacity: 1 !important;
     }
     a:hover::after {
       opacity: 1;
@@ -768,49 +773,63 @@ h6 {
     }
   }
 }
+
+.date-container-dark {
+  flex-wrap: wrap;
+  background: #1c1c1c;
+  padding: 2rem 0;
+  .box {
+    width: 50%;
+    background: #1c1c1c;
+    border: none;
+    form {
+      width: 80%;
+      height: 100%;
+      margin-bottom: 10px;
+      margin: 0 auto;
+      background: #000;
+      input {
+        background: #000;
+      }
+      input,
+      span,
+      i {
+        color: #c19b76;
+      }
+      .input-visible {
+        label {
+          color: #fff;
+        }
+        #inMonth,
+        #outMonth,
+        #inDay,
+        #outDay,
+        #nights,
+        #guests {
+          color: #c19b76 !important;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 1rem 0 1rem;
+    button {
+      border: none;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
 #rooms-content {
   display: flex;
   .left {
     width: 30%;
-    .date-container {
-      flex-wrap: wrap;
-      background: #1c1c1c;
-      padding: 2rem 0;
-      .box {
-        width: 50%;
-        background: #1c1c1c;
-        border: none;
-        form {
-          width: 80%;
-          height: 100%;
-          margin-bottom: 10px;
-          margin: 0 auto;
-          background: #000;
-          input {
-            background: #000;
-          }
-          input,
-          span,
-          i {
-            color: #c19b76;
-          }
-          .input-visible {
-            label {
-              color: #fff;
-            }
-            #inMonth,
-            #outMonth,
-            #inDay,
-            #outDay,
-            #nights,
-            #guests {
-              color: #c19b76;
-              font-weight: 100;
-            }
-          }
-        }
-      }
-    }
     .filters {
       padding: 2rem 0;
       .input {
@@ -994,6 +1013,12 @@ h6 {
 }
 .showcase-small {
   position: relative;
+  & > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    max-height: 45vh;
+  }
   .content {
     position: absolute;
     bottom: 0;
@@ -1028,6 +1053,193 @@ h6 {
         font-size: 2rem;
         span {
           font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+#room-disc {
+  .header {
+    padding: 1rem 0;
+    h1 {
+      font-size: 40px;
+      font-family: "Gilda Display", sans-serif;
+    }
+  }
+  .content {
+    display: flex;
+    .left {
+      width: 70%;
+      .room {
+        padding-right: 2rem;
+        .photo {
+          width: 100%;
+          height: 400px;
+          background: url("../img/room-1.jpg") center center/cover;
+        }
+        .icons {
+          display: flex;
+          width: 100%;
+          padding: 3rem 0;
+          justify-content: space-around;
+          .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            & > i {
+              font-size: 2.5rem;
+            }
+            & > span {
+              padding: 1rem 0;
+              font-weight: 100;
+              font-size: 14px;
+            }
+          }
+        }
+        .disc {
+          border-top: 1px solid #eee;
+          p {
+            padding: 2rem 1rem 2rem 0;
+            letter-spacing: 1px;
+            font-weight: 100;
+            font-size: 14px;
+          }
+        }
+        .room-services {
+          border-top: 1px solid #eee;
+          border-bottom: 1px solid #eee;
+          padding: 1rem 0 2rem 0;
+          width: 100%;
+          .icon {
+            display: inline-block;
+            width: 32%;
+            span {
+              padding-left: 1rem;
+            }
+          }
+        }
+      }
+      .room-services,
+      .around-hotel {
+        h4 {
+          font-size: 25px;
+          padding: 1.3rem 0;
+        }
+      }
+      .around-hotel {
+        .card-container {
+          display: flex;
+          padding: 2rem 1rem 0 0;
+          flex-wrap: wrap;
+        }
+        .wrapper {
+          padding: 0 1rem;
+          width: 33.333%;
+          .room-card {
+            position: relative;
+            min-height: 350px;
+            .disc {
+              padding: 1rem;
+              position: absolute;
+              bottom: 0;
+              left: 30px;
+              color: #fff;
+              font-size: 12px;
+              z-index: 11;
+            }
+            &::before {
+              content: "";
+              width: 100%;
+              height: 100%;
+              background-image: linear-gradient(
+                180deg,
+                rgba(#fff, 0.1),
+                rgba(#eee, 0.1),
+                rgba(#000, 0.5)
+              );
+              z-index: 10;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+          .card-1 {
+            background: url("../img/rest-1.jpg") no-repeat center center/cover;
+          }
+          .card-2 {
+            background: url("../img/rest-2.jpg") no-repeat center center/cover;
+          }
+          .card-3 {
+            background: url("../img/rest-1.jpg") no-repeat center center/cover;
+          }
+          &:first-child {
+            padding-left: 0;
+          }
+          &::last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    .right {
+      width: 30%;
+      .best-rooms,
+      .search,
+      .categories,
+      .branches {
+        padding: 2rem 0 0 0;
+      }
+      .box-small {
+        display: flex;
+        padding: 0.5rem 0;
+        .photo {
+          width: 100px;
+          height: 100px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .disc {
+          padding: 0 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          a {
+            padding: 0.3rem 0.3rem;
+            text-align: center;
+          }
+        }
+      }
+      .search {
+        input {
+          border: 1px solid #eee;
+          outline: none;
+          padding: 0.5rem;
+          width: 100%;
+          margin-top: 10px;
+        }
+        a {
+          border: none;
+          padding: 0.3rem 1rem;
+        }
+      }
+      .link-wrapper {
+        padding: 1rem 0;
+      }
+      .categories {
+        div {
+          border-top: 1px solid #ccc;
+          &:nth-child(2) {
+            border-top: none;
+          }
+          a {
+            text-transform: initial;
+            font-size: 14px;
+            color: #878788;
+          }
         }
       }
     }
@@ -1089,6 +1301,16 @@ h6 {
     .box {
       width: 100%;
       border: none;
+    }
+    .box-dark {
+      width: 60%;
+    }
+  }
+  .date-container-dark {
+    flex-direction: row !important;
+    .box {
+      border: none;
+      width: 50%;
     }
     .box-dark {
       width: 60%;
@@ -1211,8 +1433,10 @@ h6 {
       font-size: 2rem;
     }
   }
-  #rooms-content {
+  .section-padd {
     padding: 3rem 1rem;
+  }
+  #rooms-content {
     flex-direction: column;
     .left,
     .right {
@@ -1233,6 +1457,85 @@ h6 {
             }
           }
         }
+      }
+    }
+  }
+
+  #showcase-small {
+    margin-top: 12vh;
+    img {
+      height: 70vh;
+      max-height: 70vh;
+    }
+    .content {
+      flex-direction: column;
+      .left {
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        a {
+          padding: 0.5rem 0;
+        }
+        .underscore {
+          width: 35%;
+          &:after {
+            bottom: 2px;
+          }
+        }
+      }
+      .right {
+        padding: 1rem 0 0 0;
+      }
+    }
+  }
+  #room-disc {
+    .header {
+      text-align: center;
+    }
+    .content {
+      flex-wrap: wrap;
+      .left,
+      .right {
+        width: 100%;
+      }
+      .left {
+        .room {
+          padding: 0;
+          .icons {
+            flex-direction: column;
+            padding: 2rem 0 0 0;
+            .wrapper {
+              padding: 0.5rem 0;
+            }
+          }
+          .disc p {
+            padding: 1rem 2rem;
+          }
+          .room-services {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 2rem;
+            .icon {
+              width: 100%;
+              i {
+                width: 15px;
+              }
+            }
+          }
+        }
+        .around-hotel {
+          padding: 1rem 2rem;
+          .card-container {
+            padding: 0;
+            .wrapper {
+              width: 100%;
+              padding: 0 !important;
+            }
+          }
+        }
+      }
+      .right {
+        padding: 1rem 2rem;
       }
     }
   }
@@ -1380,6 +1683,65 @@ h6 {
             i {
               font-size: 1.4rem;
               color: #878788;
+            }
+          }
+        }
+      }
+    }
+  }
+  .section-padd {
+    padding: 3rem 1.5rem;
+  }
+  #showcase-small {
+    margin-top: 12vh;
+    img {
+      height: 70vh;
+      max-height: 70vh;
+    }
+    .content {
+      flex-direction: column;
+      .left {
+        flex-wrap: wrap;
+        width: 100%;
+        a {
+          padding: 0.5rem 0;
+        }
+        .underscore {
+          &:after {
+            bottom: 2px;
+          }
+        }
+      }
+      .right {
+        padding: 1rem 0 0 0;
+      }
+    }
+  }
+  #room-disc {
+    .header {
+      text-align: center;
+    }
+    .content {
+      flex-wrap: wrap;
+      .left,
+      .right {
+        width: 100%;
+      }
+      .left {
+        .room {
+          padding: 0;
+        }
+        .around-hotel {
+          padding: 1rem 0 2rem 0;
+          .card-container {
+            padding: 0;
+            .wrapper {
+              padding: 0 0.5rem;
+              &:first-child,
+              &:last-child {
+                padding-right: 0;
+                padding-left: 0;
+              }
             }
           }
         }

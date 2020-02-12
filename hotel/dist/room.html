@@ -20,10 +20,10 @@
     <nav id="navbar">
       <a href="index.html" class ="logo">Hotel Booking</a>
       <ul class="links">
-        <li><a href="">Home</a></li>
-        <li><a href="">Rooms</a></li>
-        <li><a href="">About Us</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="burger">
         <div class="line-1"></div>
@@ -32,7 +32,7 @@
       </div>
       </div>
     </nav>
-    <section id="showcase-small">
+    <section id="showcase-small" class ="showcase-small">
       <img src="./img/rooms-showcase.jpg" alt="room-showcase">
       <div class="container">
         <div class="content">
@@ -47,6 +47,215 @@
           </div>
         </div>
       </div>
+    </section>
+    <section id="room-disc" class="section-padd">
+      <div class="header">
+        <h1>Single Room</h1>
+      </div>
+      <div class="content">
+        <div class="left">
+          <div class="room">
+            <div class="photo">
+            </div>
+            <div class="icons">
+              <div class="wrapper">
+                <i class="far fa-user grey"></i>
+                <span class ="upcase grey">1 Guests</span>
+              </div>
+              <div class="wrapper">
+                <i class="fas fa-border-none grey"></i>
+                <span class ="upcase grey"></i>15m<sup>2</sup></span>
+              </div>
+              <div class="wrapper">
+                <i class="fas fa-bed grey"></i>
+                <span class ="upcase grey"></i>25$ / per night</span>
+              </div>
+              <div class="wrapper">
+                <i class="fas fa-calendar-times grey"></i>
+                <span class ="upcase grey">Week price <i class="far fa-question-circle"></i></span>
+              </div>
+            </div>
+            <div class="disc grey" id="description">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel molestie nisl. Duis ac mi leo. Mauris at convallis erat. Aliquam interdum semper luctus. Aenean ex tellus, gravida ut rutrum dignissim, malesuada vitae nulla. Sed viverra, nisl dapibus lobortis porttitor, risus risus dictum risus, sed rhoncus orci urna dignissim leo. Cras id nunc nulla. Aliquam a tortor fermentum, finibus elit ac, dictum purus. Nulla mollis ex interdum commodo luctus. In hac habitasse platea dictumst. Quisque vel rutrum ipsum. Praesent at imperdiet diam. Ut vel vulputate massa. Duis condimentum tincidunt tristique. Donec sollicitudin efficitur venenatis. Integer ex lectus, lobortis nec cursus ac, suscipit ut magna.</p>
+            </div>
+            <div class="room-services" id="room-services">
+              <h4>Room Services</h4>
+              <div class="icon">
+                <i class ="fas fa-smoking-ban grey"></i>
+                <span class="grey">No smoking</span>
+              </div>
+              <div class="icon">
+                <i class ="fas fa-swimming-pool grey"></i>
+                <span class="grey">Swimming Pool</span>
+              </div>
+              <div class="icon">
+                <i class ="fas fa-tv grey"></i>
+                <span class="grey">Television</span>
+              </div>
+            </div>
+          </div>
+          <div class="around-hotel">
+            <h4>Around The Hotel</h4>
+            <div class="card-container">
+              <div class="wrapper">
+                <div class="room-card card-1">            
+                  <div class="disc">
+                    <h1>Lounge Bar</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper">
+                <div class="room-card card-2">
+                  <div class="disc">
+                    <h1>Restaurant</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper">
+                <div class="room-card card-3">
+                  <div class="disc">
+                    <h1>Wellness</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="date-container date-container-dark" id="dateContainer">
+            <div class="box date-in">
+              <form>
+                <input type="date"  id="checkIn">
+                <div class="input-visible">
+                  <label for="checkIn">Check-In</label>
+                  <div class="wrapper">
+                    <span id ="inDay"></span>
+                    <span id ="inMonth"></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="box date-out">
+              <form>
+                <input type="date"  id="checkOut">
+                <div class="input-visible">
+                  <label for="checkOut">Check-Out</label>
+                  <div class="wrapper">
+                    <span id ="outDay"></span>
+                    <span id ="outMonth"></span>
+                  </div>
+                </div>
+              </form>
+              </div>
+            <div class="box guest">
+              <form >
+                <div class="input-visible">
+                  <label for="checkOut">Guests</label>
+                  <input type="text" id="guests" value ="1" min="1">
+                </div>
+              </form>
+            </div>
+            <div class="box guest">
+              <form >
+                <div class="input-visible">
+                  <label for="nights">Nights</label>
+                  <input type="text" id="nights" value ="1" min="1" disabled>
+                </div>
+              </form>
+            </div>
+            <div class="wrapper">
+              <button type="submit" class ="upcase bg-brown text-white">Book now</button>
+            </div>
+          </div>
+          <div class="best-rooms">
+            <h2>Best Rooms</h2>
+            <div class="box-small">
+              <div class="photo">
+                <img src="./img/room-1.jpg" alt="double-room">
+              </div>
+              <div class="disc">
+                <h3>Small Room</h3>
+                <h3 class ="grey">From 30$ per night</h3>
+                <a href="#" class="bg-dark upcase text-white">Book Now</a>
+              </div>
+            </div>
+            <div class="box-small">
+              <div class="photo">
+                <img src="./img/room5.jpg" alt="double-room">
+              </div>
+              <div class="disc">
+                <h3 class ="grey">Room With View</h3>
+                <h3 class ="grey">From 120$ per night</h3>
+                <a href="#" class="bg-brown upcase text-white">Book Now</a>
+              </div>
+            </div>
+            <div class="box-small">
+              <div class="photo">
+                <img src="./img/room2.jpg" alt="double-room">
+              </div>
+              <div class="disc">
+                <h3>Double Room</h3>
+                <h3 class ="grey">From 80$ per night</h3>
+                <a href="#" class="bg-brown upcase text-white">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="search">
+            <h2>Search</h2>
+            <form action="">
+              <input type="text" name="" id="" class="bg-cream">
+              <div class="link-wrapper">
+                <a href="#" class="bg-brown text-white upcase">Search</a>
+              </div>
+            </form>
+          </div>
+          <div class="categories">
+            <h2>Categories</h2>
+            <div class="link-wrapper">
+              <a href="#">Around Us</a>
+            </div>
+            <div class="link-wrapper">
+              <a href="#">Hotel Luxury</a>
+            </div>
+            <div class="link-wrapper">
+              <a href="">News</a>
+            </div>
+          </div>
+          <div class="branches">
+            <h2>Our Branches</h2>
+            <div class="box-small">
+              <div class="photo">
+                <img src="./img/room4.jpg" alt="double-room">
+              </div>
+              <div class="disc">
+                <h3 class ="">Hotel Rome</h3>
+                <h3 class ="grey">Rome (Italy)</h3>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="box-small">
+              <div class="photo">
+                <img src="./img/room-3.jpg" alt="double-room">
+              </div>
+              <div class="disc">
+                <h3 class ="">Hotel Berlin</h3>
+                <h3 class ="grey">Berlin (Germany)</h3>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </section>
     <footer id="main-footer" class ="bg-dark section-padd">
       <div class="container">
@@ -82,5 +291,6 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
     <script src="js//burger_menu.js"></script>
+    <script src="js/date_picker.js"></script>
   </body>
 </html>
