@@ -82,10 +82,10 @@ function calculatePrice() {
 }
 
 calculatePrice();
-let checker = (arr, target) => target.every(v => arr.includes(v));
 
 function filterData() {
   let filteredArray = [];
+  let checker = (arr, target) => target.every(v => arr.includes(v));
   const services = Array.from(
     document.querySelectorAll('input[name="services"]:checked')
   ).map(el => el.value);
@@ -112,7 +112,7 @@ function filterData() {
 }
 
 function fillData(data) {
-  //roomsContainer.innerHTML = "";
+  roomsContainer.innerHTML = "";
   if (data.length == 0) {
     let markup = `<p class ="error"> No results for this search!</p>`;
     roomsContainer.insertAdjacentHTML("beforeend", markup);
@@ -195,4 +195,34 @@ filter.onclick = e => {
     const filteredData = filterData();
     fillData(filteredData);
   };
+};
+
+// Sorting
+
+function compare(a, b, rev = 1, key) {
+  let comparison = 0;
+  let fieldA = parseInt(a[key]);
+  let fieldB = parseInt(b[key]);
+
+  if (fieldA > fieldB) {
+    comparison = 1;
+  } else if (fieldB > fieldA) {
+    comparison = -1;
+  }
+  return comparison * rev;
+}
+
+const filterButtons = document.querySelectorAll(".expand-menu a");
+sorting.onclick = e => {
+  e.preventDefault();
+  const target = e.target;
+  if (target.tagName != "A") {
+    return;
+  }
+  const key = target.dataset.key;
+  const rev = target.dataset.sort;
+  const sortedArr = rooms.sort((a, b) => compare(a, b, rev, key));
+  filterButtons.forEach(el => el.classList.remove("text-white"));
+  target.classList.add("text-white");
+  fillData(sortedArr);
 };

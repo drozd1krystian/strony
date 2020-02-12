@@ -34,19 +34,19 @@
     </nav>
     <section id="search-rooms" >
         <h1 class ="upcase text-white small-showcase-header">Search</h1>
-        <div class="content">
+        <div class="content" id="sorting">
           <div class="expand-wrapper">
             <h4 class ="grey upcase">Stay price <i class="fas fa-chevron-down"></i></h4>
             <ul class ="expand-menu">
-              <li class="upcase grey"><a href="">Lowest price</a> </li>
-              <li class="upcase grey"><a href="">Highest price</a> </li>
+              <li class="upcase grey"><a href="" data-sort="1" data-key="price">Lowest price</a> </li>
+              <li class="upcase grey"><a href="" data-sort="-1" data-key="price">Highest price</a> </li>
             </ul>
           </div>
           <div class="expand-wrapper">
             <h4 class ="grey upcase">Room size <i class="fas fa-chevron-down"></i></h4>
             <ul class ="expand-menu">
-              <li class="upcase grey"><a href="">Smallest Room</a> </li>
-              <li class="upcase grey"><a href="">Biggest Room</a> </li>
+              <li class="upcase grey"><a href="" data-sort="1" data-key="size">Smallest Room</a> </li>
+              <li class="upcase grey"><a href="" data-sort="-1" data-key="size">Biggest Room</a> </li>
             </ul>
           </div>
         </div>

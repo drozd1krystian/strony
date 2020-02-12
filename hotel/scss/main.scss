@@ -744,6 +744,7 @@ h6 {
         display: none;
         text-align: center;
         position: absolute;
+        z-index: 20;
         transform: translateY(100%);
         bottom: 0;
         left: 0;
