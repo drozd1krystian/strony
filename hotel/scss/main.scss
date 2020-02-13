@@ -543,7 +543,6 @@ h6 {
     h1,
     i {
       font-size: 60px;
-      font-weight: bold;
     }
     i {
       transition: all 0.4s ease;
@@ -1450,6 +1449,104 @@ h6 {
   }
 }
 
+#contact {
+  display: flex;
+  .left,
+  .right {
+    width: 50%;
+  }
+  .left {
+    padding-right: 2rem;
+    h1 {
+      padding: 0 0 1rem 0;
+    }
+    p {
+      padding: 1rem 0 2rem 0;
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-weight: 100;
+      line-height: 27px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      input,
+      textarea {
+        border: 1px solid #eee;
+      }
+      input {
+        padding: 0.5rem;
+      }
+      label {
+        padding: 1rem 0;
+      }
+      .wrapper {
+        padding: 1rem 0;
+        button {
+          border: none;
+          padding: 0.7rem 4rem;
+        }
+      }
+    }
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    #map {
+      width: 100%;
+      height: 300px;
+    }
+    .contact-info {
+      padding: 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      div {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        span {
+          width: 50%;
+          border-bottom: 1px solid #eee;
+          padding: 0.5rem 0 0.5rem 0.5rem;
+          letter-spacing: 1px;
+          font-size: 14px;
+          font-weight: 100;
+          &:last-child {
+            text-align: right;
+          }
+          &:first-child {
+            padding-left: 0.5rem;
+            color: #1c1c1c;
+          }
+        }
+        &:nth-child(odd) {
+          padding: 1rem 2rem 1rem 0;
+        }
+        &:nth-child(even) {
+          padding: 1rem 0 1rem 2rem;
+        }
+      }
+    }
+    .phone {
+      h2 {
+        text-align: left !important;
+        position: relative;
+        padding-left: 0;
+        letter-spacing: 1px;
+        font-size: 14px;
+      }
+      .small-header::after {
+        left: 0;
+        transform: translateX(0) !important;
+        bottom: 10px;
+      }
+      h1 {
+        font-size: 60px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
   #navbar {
     height: 12vh;
@@ -1808,6 +1905,33 @@ h6 {
       }
     }
   }
+  #contact {
+    flex-wrap: wrap;
+    padding: 3rem;
+    .left,
+    .right {
+      width: 100%;
+    }
+    .left {
+      padding: 0;
+      padding-bottom: 2rem;
+    }
+    .right {
+      .contact-info {
+        padding-bottom: 0;
+        div {
+          width: 100%;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+      .phone {
+        h1 {
+          font-size: 40px;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1931,6 +2055,9 @@ h6 {
         }
       }
     }
+  }
+  #video {
+    margin-top: 12vh;
   }
   #rooms-content {
     padding: 3rem 1rem;
@@ -2071,6 +2198,42 @@ h6 {
         padding-right: 0 !important;
         .link-wrapper {
           margin: 0 auto;
+        }
+      }
+    }
+  }
+  #contact {
+    flex-wrap: wrap;
+    padding: 3rem;
+    .left,
+    .right {
+      width: 100%;
+    }
+    .left {
+      padding: 0;
+      padding-bottom: 2rem;
+      p {
+        font-size: 16px;
+      }
+    }
+    .right {
+      .contact-info {
+        padding-bottom: 0;
+        div {
+          width: 100%;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          span {
+            font-size: 16px;
+          }
+        }
+      }
+      .phone {
+        h1 {
+          font-size: 60px;
+        }
+        h2 {
+          font-size: 16px;
         }
       }
     }
