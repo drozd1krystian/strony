@@ -14,7 +14,6 @@ a {
   position: relative;
   z-index: 1;
   font-size: 0.8rem;
-  text-transform: uppercase;
 }
 .btn {
   padding: 0.7rem 2.4rem;
@@ -266,7 +265,6 @@ h6 {
           #inDay,
           #outDay {
             font-size: 3.5rem;
-            font-weight: bold;
             font-family: "Gilda Display", sans-serif;
             text-align: center;
           }
@@ -555,6 +553,9 @@ h6 {
     }
   }
 }
+.smaller-height {
+  min-height: 40vh !important;
+}
 
 #blog {
   .grid {
@@ -826,6 +827,83 @@ h6 {
   }
 }
 
+.card {
+  width: 50%;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 1.5s ease;
+  .photo {
+    img {
+      height: 250px;
+    }
+  }
+  .disc {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    h2,
+    p,
+    .icons {
+      padding: 0.5rem 2rem;
+    }
+    p,
+    .icons {
+      color: #878788;
+      font-weight: 100;
+      i {
+        padding: 0 0.5rem;
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+    span {
+      font-size: 14px;
+    }
+    .link-wrapper {
+      padding: 2rem 2rem;
+    }
+  }
+  .room-services {
+    width: 100%;
+    padding: 2rem 0 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i {
+      font-size: 1.5rem;
+      position: relative;
+    }
+    span {
+      font-size: 0.7rem;
+      padding: 0 1rem;
+      i {
+        font-size: 0.7rem;
+      }
+    }
+    .icons {
+      display: flex;
+    }
+    .icon {
+      position: relative;
+      padding: 0.2rem 0;
+      .info {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        padding: 0.2rem 0.5rem;
+        transform: translate(-50%, -100%);
+        background: #1c1c1c;
+        font-size: 0.7rem;
+        transition: all 0.4s ease;
+        opacity: 0;
+      }
+      &:hover .info {
+        opacity: 1;
+      }
+    }
+  }
+}
 #rooms-content {
   display: flex;
   .left {
@@ -928,78 +1006,6 @@ h6 {
     width: 70%;
     display: flex;
     flex-wrap: wrap;
-    .card {
-      width: 50%;
-      padding: 0 1rem;
-      margin-bottom: 2rem;
-      animation: fadeIn 1.5s ease;
-      .disc {
-        border-left: 1px solid #eee;
-        border-right: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-        h2,
-        p,
-        .icons {
-          padding: 0.5rem 2rem;
-        }
-        p,
-        .icons {
-          color: #878788;
-          font-weight: 100;
-          i {
-            padding: 0 0.5rem;
-            &:first-child {
-              padding-left: 0;
-            }
-          }
-        }
-        span {
-          font-size: 14px;
-        }
-        .link-wrapper {
-          padding: 1rem 2rem;
-        }
-      }
-      .room-services {
-        width: 100%;
-        padding: 2rem 0 1rem 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        i {
-          font-size: 1.5rem;
-          position: relative;
-        }
-        span {
-          font-size: 0.7rem;
-          padding: 0 1rem;
-          i {
-            font-size: 0.7rem;
-          }
-        }
-        .icons {
-          display: flex;
-        }
-        .icon {
-          position: relative;
-          padding: 0.2rem 0;
-          .info {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            padding: 0.2rem 0.5rem;
-            transform: translate(-50%, -100%);
-            background: #1c1c1c;
-            font-size: 0.7rem;
-            transition: all 0.4s ease;
-            opacity: 0;
-          }
-          &:hover .info {
-            opacity: 1;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -1246,6 +1252,204 @@ h6 {
   }
 }
 
+#similiar-rooms {
+  border-top: 1px solid #eee;
+  h1 {
+    font-size: 40px;
+    padding: 1rem 0;
+  }
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 33.333%;
+    padding: 0;
+    &:first-child {
+      padding-right: 1rem;
+    }
+    &:last-child {
+      padding-left: 1rem;
+    }
+    &:nth-child(2) {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+#about-header {
+  display: flex;
+  align-items: center;
+  .left,
+  .right {
+    width: 50%;
+  }
+  .left {
+    padding-right: 4rem;
+    p {
+      text-align: right;
+      font-size: 40px;
+      font-family: "Gilda Display", sans-serif;
+      font-weight: 700;
+    }
+  }
+  .right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    p {
+      width: 50%;
+      line-height: 27px;
+      &:nth-child(even) {
+        padding-left: 1.5rem;
+      }
+      &:nth-child(odd) {
+        padding-right: 1.5rem;
+      }
+      &:nth-child(1),
+      &:nth-child(2) {
+        padding-bottom: 1.5rem;
+      }
+    }
+  }
+}
+#attractions {
+  display: flex;
+  .box {
+    width: 33.333%;
+    .photo {
+      height: 400px;
+      z-index: 9;
+      position: relative;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(
+          rgba(#fff, 0.3),
+          rgba(#ccc, 0.3),
+          rgba(#888, 0.3),
+          rgba(#000, 0.8)
+        );
+        z-index: 10;
+      }
+    }
+    &:first-child {
+      padding-right: 1rem;
+    }
+    &:last-child {
+      padding-left: 1rem;
+    }
+    &:nth-child(2) {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+    .header {
+      position: absolute;
+      z-index: 11;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      h1,
+      h2 {
+        font-family: "Gilda Display", sans-serif;
+        text-align: center;
+      }
+      h1 {
+        font-size: 20px;
+        font-weight: 100;
+        letter-spacing: 1px;
+        padding-bottom: 0.3rem;
+      }
+      h2 {
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+#services {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  & > div {
+    padding: 0 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    .service {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding: 2rem 0 2rem 0;
+      .disc {
+        display: flex;
+        .icon {
+          padding: 0 0.5rem;
+          font-size: 2rem;
+          color: #878787;
+        }
+        p {
+          padding-left: 0.5rem;
+        }
+      }
+      .link-wrapper {
+        a {
+          font-size: 11px;
+        }
+      }
+      &:nth-child(even) {
+        padding-right: 0;
+        padding-left: 1rem;
+      }
+      &:nth-child(odd) {
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+.full-width {
+  .text-content {
+    width: 100% !important;
+    align-items: flex-start !important;
+    padding: 2rem 5rem;
+    & > h1 {
+      font-size: 40px !important;
+      font-family: "Gilda Display", sans-serif;
+      text-align: left !important;
+      width: 40% !important;
+      padding-left: 2rem !important;
+    }
+    .text-container {
+      display: flex;
+      width: 60%;
+      justify-content: space-between;
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    div > h1 {
+      font-size: 50px !important;
+      font-family: "Gilda Display", sans-serif !important;
+      text-align: center !important;
+      width: 100% !important;
+      font-weight: 100 !important;
+    }
+    div h2 {
+      font-size: 15px;
+      letter-spacing: 2px;
+      font-weight: lighter;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
   #navbar {
     height: 12vh;
@@ -1367,6 +1571,7 @@ h6 {
     }
   }
   #video {
+    height: 100vh;
     .text-content {
       width: 100%;
       h1 {
@@ -1536,6 +1741,70 @@ h6 {
       }
       .right {
         padding: 1rem 2rem;
+      }
+    }
+  }
+  #similiar-rooms {
+    padding: 1rem 2rem;
+    .card {
+      width: 100%;
+      padding: 0 !important;
+    }
+  }
+  #about-header {
+    flex-wrap: wrap;
+    padding: 1rem 3rem;
+    .left,
+    .right {
+      width: 100%;
+    }
+    .left {
+      padding-right: 0;
+      p {
+        text-align: center;
+        padding: 2rem 0;
+      }
+    }
+    .right p {
+      width: 100%;
+      padding: 1rem 0 !important;
+      text-align: center;
+    }
+  }
+  #attractions {
+    flex-wrap: wrap;
+    .box {
+      width: 100%;
+      padding: 0 !important;
+    }
+  }
+  .full-width {
+    .text-content {
+      padding: 0 !important;
+      & > h1 {
+        font-size: 35px !important;
+        width: 100% !important;
+        padding-left: 1rem !important;
+      }
+    }
+    .text-container {
+      flex-wrap: wrap;
+      width: 100% !important;
+      div {
+        width: 50%;
+      }
+    }
+  }
+  #services {
+    & > div {
+      padding: 0;
+      .service {
+        width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        .link-wrapper {
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -1744,6 +2013,64 @@ h6 {
               }
             }
           }
+        }
+      }
+    }
+  }
+  #about-header {
+    flex-wrap: wrap;
+    padding: 1rem 3rem;
+    .left,
+    .right {
+      width: 100%;
+    }
+    .left {
+      padding-right: 0;
+      p {
+        text-align: center;
+        padding: 2rem 0;
+      }
+    }
+    .right p {
+      width: 100%;
+      padding: 1rem 0 !important;
+      text-align: center;
+    }
+  }
+  #attractions {
+    flex-wrap: wrap;
+    .box {
+      width: 100%;
+      padding: 0 !important;
+    }
+  }
+  .full-width {
+    .text-content {
+      padding: 0 !important;
+      & > h1 {
+        font-size: 35px !important;
+        width: 100% !important;
+        padding-left: 1rem !important;
+        text-align: center !important;
+      }
+    }
+    .text-container {
+      flex-wrap: wrap;
+      width: 100% !important;
+      div {
+        width: 50%;
+      }
+    }
+  }
+  #services {
+    & > div {
+      padding: 0;
+      .service {
+        width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        .link-wrapper {
+          margin: 0 auto;
         }
       }
     }

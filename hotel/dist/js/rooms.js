@@ -1,6 +1,6 @@
 const rooms = [
   {
-    img: "./img/room1.jpg",
+    img: "./img/room-1.jpg",
     name: "Small Room",
     guests: "1",
     size: "15",
@@ -55,6 +55,19 @@ const rooms = [
       { text: "private bath", icon: "fas fa-bath" }
     ],
     exServices: [{ text: "breakfast" }]
+  },
+  {
+    img: "./img/room4.jpg",
+    name: "Apartment",
+    guests: "5",
+    size: "70",
+    price: "80",
+    services: [
+      { text: "swimming pool", icon: "fas fa-swimming-pool" },
+      { text: "no smoking", icon: "fas fa-smoking-ban" },
+      { text: "private bath", icon: "fas fa-bath" }
+    ],
+    exServices: [{ text: "breakfast" }, { text: "car rental" }]
   }
 ];
 
