@@ -82,6 +82,8 @@ function calculateDays() {
     nights.value = diffDays;
   });
 }
-if (window.location.pathname.split("/")[2] != "index.html") {
+
+const page = window.location.pathname.split("/");
+if (page[page.length - 1].toString() != "index.html") {
   calculateDays();
 }

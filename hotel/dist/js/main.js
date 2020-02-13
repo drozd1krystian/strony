@@ -19,7 +19,8 @@ function detectmob() {
   }
 }
 
-if (window.location.pathname.split("/")[2] == "index.html") {
+let index = window.location.pathname.split("/");
+if (index[index.length - 1].toString() == "index.html") {
   window.addEventListener("resize", detectmob);
   window.addEventListener("load", detectmob);
 }
