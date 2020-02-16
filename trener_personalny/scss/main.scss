@@ -1,4 +1,4 @@
-@import 'config';
+@import "config";
 
 * {
   margin: 0;
@@ -7,14 +7,14 @@
 }
 
 body {
-  font-family: 'Solway', sans-serif;
+  font-family: "Solway", sans-serif;
   line-height: 1.5;
 }
 
 ul {
   text-decoration: none;
   list-style: none;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 a {
   text-decoration: none;
@@ -37,7 +37,7 @@ a {
 }
 .active {
   color: $supp-color;
-  transition: all .4s ease;
+  transition: all 0.4s ease;
   &:hover {
     color: $light-color;
   }
@@ -53,12 +53,12 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba($color: $dark-color, $alpha: .9);
+  background: rgba($color: $dark-color, $alpha: 0.9);
   .logo {
     width: 350px;
     height: 100%;
-    background: url('../img/default.png') no-repeat center center/cover;
-    a{
+    background: url("../img/default.png") no-repeat center center/cover;
+    a {
       display: block;
       height: 100%;
       margin: 0 auto;
@@ -69,7 +69,9 @@ a {
     div {
       transition: all 0.5s ease-in-out;
     }
-    .line-1, .line-2, .line-3 {
+    .line-1,
+    .line-2,
+    .line-3 {
       width: 30px;
       height: 5px;
       padding: 0 10px;
@@ -90,31 +92,31 @@ a {
       font-size: 1.1rem;
       margin: 0;
       z-index: 0;
-      a{
-        padding: 1.9rem 1.5rem; 
-        display: block; 
-        position: relative; 
+      a {
+        padding: 1.9rem 1.5rem;
+        display: block;
+        position: relative;
         background: transparent;
         z-index: 2;
         font-style: italic;
       }
       &:hover:after {
         background: $supp-color;
-        opacity: 1; 
+        opacity: 1;
         width: 100%;
         left: 0;
         right: 2;
       }
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         bottom: 0;
         left: 50%;
         right: 50%;
-        opacity:0;
+        opacity: 0;
         transform: skew(-15deg);
-        transition: all .3s ease-in;
+        transition: all 0.3s ease-in;
         width: 0;
         z-index: 1;
       }
@@ -133,15 +135,16 @@ a {
     display: none;
   }
   .slide-1 {
-    background: url('../img/header-bg-1.jpg') no-repeat center center/cover; 
+    background: url("../img/header-bg-1.jpg") no-repeat center center/cover;
     width: 100%;
-    height: 100%; 
+    height: 100%;
   }
   .slide-2 {
-    background: url('../img/header-bg-2.jpg') no-repeat center center/cover;
+    background: url("../img/header-bg-2.jpg") no-repeat center center/cover;
   }
-  
-  .next, .prev {
+
+  .next,
+  .prev {
     cursor: pointer;
     position: absolute;
     top: 40%;
@@ -156,7 +159,8 @@ a {
   .next {
     right: 0;
   }
-  .next:hover, .prev:hover {
+  .next:hover,
+  .prev:hover {
     background: rgba($supp-color, 0.9);
     color: $light-color;
   }
@@ -169,13 +173,13 @@ a {
   }
 }
 
-#offert{
+#offert {
   width: 100%;
   padding-bottom: 1rem;
   .offert-container {
     display: flex;
     width: 100%;
-    a{
+    a {
       flex: 1;
       height: 430px;
     }
@@ -185,19 +189,19 @@ a {
       height: 100%;
       position: relative;
       overflow: hidden;
-      img{
+      img {
         height: 100%;
         width: 100%;
       }
       .overlay {
-        background: rgba($color: $dark-color, $alpha: .4);
+        background: rgba($color: $dark-color, $alpha: 0.4);
         height: 100%;
         width: 100%;
         position: absolute;
         top: 0;
         left: 0;
         text-align: center;
-        &::after{
+        &::after {
           content: "";
           display: inline-block;
           padding-right: 3px;
@@ -211,7 +215,7 @@ a {
           background: $supp-color;
           color: $light-color;
           transform: skewX(-44.5deg);
-          transition: all .3s ease-in;
+          transition: all 0.3s ease-in;
         }
         &:hover::after {
           width: 100%;
@@ -225,9 +229,10 @@ a {
           bottom: 50px;
           color: rgba($color: $dark-color, $alpha: 0.3);
         }
-        h1 , h2{
+        h1,
+        h2 {
           position: absolute;
-          left:-300px;
+          left: -300px;
           top: 50%;
           transform: translate(-50%, -50%);
           font-size: 54px;
@@ -237,7 +242,7 @@ a {
           font-family: "Russo One", Times, serif;
           line-height: 1;
           z-index: 3;
-          transition: all .5s ease;
+          transition: all 0.5s ease;
           display: inline-block;
           color: $dark-color;
           opacity: 0;
@@ -246,13 +251,16 @@ a {
           font-size: 40px;
         }
         &:hover {
-          background: rgba($color: $supp-color, $alpha: .7);
+          background: rgba($color: $supp-color, $alpha: 0.7);
           z-index: 3;
-          h1, h2{
+          h1,
+          h2 {
             left: 50%;
             opacity: 1;
           }
-          h2 {top: 35%;}
+          h2 {
+            top: 35%;
+          }
         }
         i {
           position: absolute;
@@ -261,14 +269,14 @@ a {
           right: 5px;
           bottom: 5px;
           z-index: 1;
-          transition: all .3s ease-in;
+          transition: all 0.3s ease-in;
         }
       }
     }
     .offert-3 {
       h2 {
         top: 30% !important;
-      } 
+      }
     }
   }
 }
@@ -276,7 +284,9 @@ a {
 #about {
   display: flex;
   padding: 2rem 1rem 0 0;
-  div {flex: 1;}
+  div {
+    flex: 1;
+  }
   .photo {
     img {
       max-width: 100%;
@@ -292,7 +302,7 @@ a {
       padding: 0 24px;
       p {
         margin: 1rem 0;
-        color: rgba($color: $dark-color, $alpha: .7);
+        color: rgba($color: $dark-color, $alpha: 0.7);
       }
       a {
         padding: 1rem;
@@ -315,9 +325,9 @@ a {
 
 #whatIDo {
   padding: 5rem 1rem 4rem 1rem;
-  background: url('../img/whatIDo-bg.jpg') no-repeat center center/cover;
+  background: url("../img/whatIDo-bg.jpg") no-repeat center center/cover;
   margin-top: -10px;
-  color: $light-color; 
+  color: $light-color;
   h1 {
     text-align: center;
     text-transform: uppercase;
@@ -339,10 +349,12 @@ a {
     margin: 2rem 0 1rem 0;
     padding: 0 2rem;
     height: 500px;
-    .box{
+    .box {
       flex: 1;
     }
-    .slider{display: none;}
+    .slider {
+      display: none;
+    }
     .box {
       display: flex;
       flex-direction: column;
@@ -353,7 +365,7 @@ a {
         text-transform: uppercase;
         font-family: "Russo One", sans-serif;
       }
-      div{
+      div {
         display: flex;
         padding: 1rem;
         height: 50%;
@@ -370,7 +382,7 @@ a {
           }
           i {
             position: absolute;
-            top: 50%; 
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
           }
@@ -378,8 +390,8 @@ a {
             background: $supp-color;
             color: $light-color;
             border: none;
-            box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: .15);
-            animation: beat .5s;
+            box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: 0.15);
+            animation: beat 0.5s;
           }
         }
         .content {
@@ -387,16 +399,18 @@ a {
           display: flex;
           flex-direction: column;
           padding: 0 1rem;
-          p {color: $grey-color;}
+          p {
+            color: $grey-color;
+          }
         }
-      }  
+      }
     }
   }
 }
 
 #plans {
   padding: 4rem 0 4rem 0;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   .plans-container {
     display: flex;
     flex-wrap: wrap;
@@ -409,46 +423,46 @@ a {
       transition: all 0.4s ease;
       position: relative;
       min-width: 300px;
-      .photo{
+      .photo {
         height: 200px;
         width: 100%;
         position: relative;
         transition: all 0.4s ease;
-        .header{
-          background: rgba($color: $dark-color, $alpha: .6);
+        .header {
+          background: rgba($color: $dark-color, $alpha: 0.6);
           color: $light-color;
-          position:absolute;
+          position: absolute;
           z-index: 1;
           width: 100%;
           text-transform: uppercase;
           margin-left: 1px;
           h1 {
-            padding: .5rem;
+            padding: 0.5rem;
             text-align: center;
           }
         }
-        img{
+        img {
           width: 100%;
           height: 100%;
           position: relative;
           margin-left: 1px;
         }
       }
-      ul{
+      ul {
         border-bottom: none;
-        padding: 0 .1rem;
+        padding: 0 0.1rem;
       }
-      ul li{
-        padding: .3rem;
-        font-size: .9rem;
-        &:nth-child(even){
+      ul li {
+        padding: 0.3rem;
+        font-size: 0.9rem;
+        &:nth-child(even) {
           background: #f5f5f5;
         }
         &:nth-child(odd) {
           background: #ebebeb;
         }
-        i{
-          padding: .3rem;
+        i {
+          padding: 0.3rem;
         }
       }
       .price {
@@ -460,7 +474,9 @@ a {
         .price-data {
           display: flex;
           flex-direction: column;
-          h4, h1, a  {
+          h4,
+          h1,
+          a {
             text-align: center;
             margin-bottom: 5px;
           }
@@ -472,38 +488,38 @@ a {
           h1 {
             font-size: 2rem;
             font-weight: 900;
-            font-family: "Russo One",sans-serif;
+            font-family: "Russo One", sans-serif;
           }
           a {
-            padding: .4rem;
+            padding: 0.4rem;
             background: $supp-color;
             color: $light-color;
             border-radius: 5px;
             text-align: center;
             display: inline-block;
             &:hover {
-              opacity: .6;
+              opacity: 0.6;
             }
           }
         }
       }
-        &:hover {
-          .photo{
-           margin-top: -35px;
-         }
-         .price {
-           top: 35px;
-         }
-       }
+      &:hover {
+        .photo {
+          margin-top: -35px;
+        }
+        .price {
+          top: 35px;
+        }
+      }
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
         border: 1px solid $dark-color;
-        transition: all .4s ease;
+        transition: all 0.4s ease;
         z-index: -1;
         box-sizing: content-box !important;
       }
@@ -515,29 +531,28 @@ a {
   }
 }
 
- .picked {
-    &::after{
-      height: 110% !important;
-      top: -35px !important;     
-    }
-    .photo{
-      margin-top: -35px;
-    }
-    .price {
-      top: 35px !important;
-    }
- }
-
+.picked {
+  &::after {
+    height: 110% !important;
+    top: -35px !important;
+  }
+  .photo {
+    margin-top: -35px;
+  }
+  .price {
+    top: 35px !important;
+  }
+}
 
 #ppl-changes {
   padding: 2rem;
   background: #333;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h1{
+  h1 {
     text-align: center;
     color: $light-color;
     text-transform: uppercase;
@@ -546,7 +561,7 @@ a {
     letter-spacing: 1px;
     font-style: italic;
   }
-  h2{
+  h2 {
     text-align: center;
     color: $dark-color;
   }
@@ -555,13 +570,13 @@ a {
     padding: 1rem;
     color: $light-color;
     border-radius: 5px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     &:hover {
       color: $light-color;
       background: $supp-color;
     }
-    }
-  .changes-container{
+  }
+  .changes-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -570,8 +585,8 @@ a {
       width: 33.3%;
       min-width: 300px;
       position: relative;
-      .change{
-        padding: 20px 30px;;
+      .change {
+        padding: 20px 30px;
         background: $light-color;
         position: relative;
         box-shadow: 0 8px 16px 0 $dark-color;
@@ -584,8 +599,8 @@ a {
           img {
             width: 100%;
             height: 100%;
-            transition: all .3s ease;
-            &:hover{
+            transition: all 0.3s ease;
+            &:hover {
               transform: scale(1.3);
             }
           }
@@ -593,10 +608,10 @@ a {
         .discription {
           margin-bottom: 3rem;
           h3 {
-            padding: .2rem;
-            font-size: .9rem;
+            padding: 0.2rem;
+            font-size: 0.9rem;
             i {
-              padding: .2rem;
+              padding: 0.2rem;
             }
           }
         }
@@ -626,9 +641,11 @@ a {
   display: flex;
   flex-wrap: wrap;
   background: $dark-color;
-  .instagram, .questions, .social-media {
+  .instagram,
+  .questions,
+  .social-media {
     flex: 1;
-    width: 33,3333333%;
+    width: 33, 3333333%;
     min-width: 300px;
     min-height: 300px;
     padding: 2rem 1rem;
@@ -637,7 +654,7 @@ a {
     align-items: center;
     justify-content: space-around;
     color: $light-color;
-    h2{
+    h2 {
       color: $supp-color;
       font-family: "Russo One", sans-serif;
       font-style: italic;
@@ -671,7 +688,7 @@ a {
       &:hover {
         background: $supp-color;
         color: $light-color;
-        img{
+        img {
           transform: scale(1.2);
         }
       }
@@ -687,7 +704,7 @@ a {
       color: $grey-color;
       a {
         margin-top: 1rem;
-        position: relative; 
+        position: relative;
         display: block;
         width: 70px;
         height: 70px;
@@ -697,7 +714,7 @@ a {
         border-radius: 50%;
         font-size: 20px;
         color: #666;
-        transition: .5s;
+        transition: 0.5s;
         i {
           position: absolute;
           top: 50%;
@@ -705,7 +722,7 @@ a {
           transform: translate(-50%, -50%);
         }
         &:before {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: 0;
@@ -713,8 +730,8 @@ a {
           height: 100%;
           border-radius: 50%;
           background: $supp-color;
-          transition: .5s;
-          transform: scale(.9);
+          transition: 0.5s;
+          transform: scale(0.9);
           z-index: -1;
         }
         &:hover::before {
@@ -724,8 +741,8 @@ a {
         &:hover {
           color: $supp-color;
           box-shadow: 0 0 15px $supp-color;
-          border: 5px solid $supp-color;;
-          text-shadow: 0 0 15px $supp-color;;
+          border: 5px solid $supp-color;
+          text-shadow: 0 0 15px $supp-color;
         }
       }
     }
@@ -740,7 +757,7 @@ a {
   flex-grow: 1;
   align-items: stretch;
   justify-content: space-around;
-  div {
+  & > div {
     padding: 3rem 2rem;
   }
 }
@@ -756,10 +773,10 @@ a {
 
 #sub-page-showcase {
   height: 50vh;
-  background: url('../img/offer-1.jpg') no-repeat center center/cover;
+  background: url("../img/offer-1.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   .showcase-content {
-    background: rgba($color: $dark-color, $alpha: .5);
+    background: rgba($color: $dark-color, $alpha: 0.5);
     width: 100%;
     height: 100%;
     .container {
@@ -776,7 +793,7 @@ a {
       top: 50%;
       left: 0;
       transition: all 0.4s ease;
-      transform: translate(0,-50%);
+      transform: translate(0, -50%);
     }
     hr {
       width: 180px;
@@ -798,7 +815,7 @@ a {
       visibility: hidden;
       min-width: 400px;
       font-family: "Montserrat", sans-serif;
-      h2{
+      h2 {
         font-size: 30px;
         font-family: "Russo One", sans-serif;
         font-style: italic;
@@ -810,11 +827,11 @@ a {
         line-height: 1.5;
       }
     }
-    .photo{
+    .photo {
       width: 40%;
       visibility: hidden;
       min-height: 300px;
-      img{
+      img {
         width: 100%;
         height: 100%;
       }
@@ -823,12 +840,12 @@ a {
 }
 
 #first-tournament {
-  background: url('../img/offer-1.jpg') no-repeat center center/cover;
+  background: url("../img/offer-1.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   .section-content {
     width: 100%;
     height: 100%;
-    background: rgba($color: $dark-color, $alpha: .4);
+    background: rgba($color: $dark-color, $alpha: 0.4);
   }
   h2 {
     font-size: 30px;
@@ -869,16 +886,15 @@ a {
       font-weight: bold;
     }
   }
-  .photo  {
+  .photo {
     width: 55%;
     min-height: 600px;
-    img{
+    img {
       width: 100%;
       height: 100%;
     }
   }
 }
-
 
 // My Offert subpage
 .icons-animation {
@@ -912,7 +928,7 @@ a {
         letter-spacing: 1px;
         text-transform: uppercase;
         font-weight: 100;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
       }
       hr {
         width: 100px;
@@ -934,7 +950,8 @@ a {
         width: 100%;
         height: auto;
         img {
-          width: 100%; height: 100%;
+          width: 100%;
+          height: 100%;
         }
       }
     }
@@ -969,7 +986,7 @@ a {
       .content {
         width: 33.33%;
         padding: 1rem;
-        h2{
+        h2 {
           font-size: 20px;
           font-family: "Montserrat", sans-serif;
           text-transform: uppercase;
@@ -1016,7 +1033,7 @@ a {
       &::after {
         bottom: -30px;
         box-sizing: border-box;
-        content: '';
+        content: "";
         display: block;
         left: 80px;
         position: absolute;
@@ -1067,16 +1084,17 @@ a {
   .facebook {
     width: 100%;
     height: 400px;
-    background: url('../img/offer-1.jpg') center/cover no-repeat;
+    background: url("../img/offer-1.jpg") center/cover no-repeat;
     div {
       width: 100%;
       height: 100%;
-      background: rgba($color: $supp-color, $alpha: .8);
+      background: rgba($color: $supp-color, $alpha: 0.8);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      h1, h2 {
+      h1,
+      h2 {
         z-index: 2;
       }
       h2 {
@@ -1094,7 +1112,7 @@ a {
         background: $dark-color;
       }
     }
-  } 
+  }
 }
 #contact {
   padding: 2rem;
@@ -1102,7 +1120,7 @@ a {
     display: flex;
     flex-wrap: wrap;
   }
-  .contact-info{
+  .contact-info {
     width: 50%;
   }
   h1 {
@@ -1140,7 +1158,7 @@ a {
       }
       i {
         position: absolute;
-        top: 50%; 
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
@@ -1148,8 +1166,8 @@ a {
         background: $supp-color;
         color: $light-color;
         border: none;
-        box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: .35);
-        animation: beat .5s;
+        box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: 0.35);
+        animation: beat 0.5s;
       }
     }
     .info {
@@ -1177,7 +1195,9 @@ a {
   form {
     width: 50%;
     padding: 0 2rem;
-    input[type="text"], input[type="email"], textarea {
+    input[type="text"],
+    input[type="email"],
+    textarea {
       width: 100%;
       padding: 10px 10px;
       background: #eee;
@@ -1192,7 +1212,7 @@ a {
       text-transform: uppercase;
       font-family: "Russo One", sans-serif;
       font-style: italic;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       &:hover {
         color: $dark-color;
         background: $supp-color;
@@ -1201,19 +1221,15 @@ a {
   }
 }
 
-
-
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: 95%;
-  }
-
+@media screen and (max-width: 1024px) {
   #navbar {
     justify-content: space-around;
     position: fixed;
+    padding: 0;
     top: 0;
     .logo {
-      display: inline-block !important;
+      display: inline-block;
+      width: 200px;
       background-size: contain !important;
     }
     ul {
@@ -1223,7 +1239,7 @@ a {
       right: 0;
       width: 60%;
       height: 90vh;
-      background: rgba($color: #333, $alpha:1 );
+      background: rgba($color: #333, $alpha: 1);
       justify-content: space-around;
       transform: translateX(100%);
       transition: transform 0.5s ease-in-out;
@@ -1231,17 +1247,24 @@ a {
     }
     .active {
       transform: translateX(0%);
-    } 
-    .toggle{
-      .line-1 {transform: rotate(-45deg) translate(-7px, 8px);}
-      .line-2 {opacity: 0;}
-      .line-3 {transform: rotate(45deg) translate(-5px, -7px);}
+    }
+    .toggle {
+      .line-1 {
+        transform: rotate(-45deg) translate(-7px, 8px);
+      }
+      .line-2 {
+        opacity: 0;
+      }
+      .line-3 {
+        transform: rotate(45deg) translate(-5px, -7px);
+      }
     }
     .burger {
       display: initial;
     }
   }
-  #showcase, #offert {
+  #showcase,
+  #offert {
     display: none;
   }
   #about {
@@ -1253,21 +1276,21 @@ a {
     div {
       width: 100%;
     }
-    .photo{
+    .photo {
       padding: 0 1rem;
     }
     .disc div {
       a {
-        position: relative;      
+        position: relative;
       }
     }
   }
-  #whatIDo{
-    .box-container{
+  #whatIDo {
+    .box-container {
       padding: 0;
       flex-direction: column;
       height: auto;
-      .slider{
+      .slider {
         display: none !important;
       }
       .box {
@@ -1288,14 +1311,14 @@ a {
         }
       }
     }
-    
   }
 
   #sub-page-showcase {
     background-position: center center;
     margin-top: 0;
-    h1, hr {
-      left: 50% !important; 
+    h1,
+    hr {
+      left: 50% !important;
       transform: translate(-50%, -50%) !important;
       font-size: 40px !important;
       margin-bottom: 10px;
@@ -1309,6 +1332,7 @@ a {
       }
       .text {
         padding-bottom: 0;
+        min-width: 100%;
       }
     }
   }
@@ -1322,13 +1346,14 @@ a {
     }
   }
   #me-today {
-    .photo, .text {
+    .photo,
+    .text {
       width: 100%;
     }
   }
 
   #one-page {
-    p{
+    p {
       padding: 1rem;
     }
     .what-i-offer {
@@ -1354,54 +1379,127 @@ a {
       h1 {
         font-size: 35px;
       }
-      .icons-container{
+      .icons-container {
         .content {
           width: 100%;
         }
       }
     }
+    #plans {
+      .plans-container {
+        .plan {
+          width: 100%;
+          flex: none;
+        }
+      }
+    }
   }
   #contact {
-    .contact-info, form {
+    .contact-info,
+    form {
       width: 100%;
     }
     form {
       padding: 0;
     }
   }
+  #plans {
+    .plans-container {
+      .plan {
+        width: 100%;
+        flex: none;
+      }
+    }
+  }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #one-page {
+    #plans {
+      .plans-container {
+        .plan {
+          width: 100%;
+          flex: none;
+          .photo {
+            height: 400px;
+          }
+        }
+      }
+    }
+  }
+  #plans {
+    .plans-container {
+      .plan {
+        width: 100%;
+        flex: none;
+        .photo {
+          height: 400px;
+        }
+      }
+    }
+  }
+}
 
-
-
-// Animations 
+// Animations
 @keyframes beat {
-  0% {box-shadow: 0px 0px 0px 0px rgba($color: $grey-color, $alpha: .15);}
-  20% {box-shadow: 0px 0px 0px 3px rgba($color: $grey-color, $alpha: .15);}
-  40%{box-shadow: 0px 0px 0px 7px rgba($color: $grey-color, $alpha: .15);}
-  60%{box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: .15);}
-  80%{box-shadow: 0px 0px 0px 20px rgba($color: $grey-color, $alpha: .1);}
-  100%{box-shadow: 0px 0px 0px 25px rgba($color: $grey-color, $alpha: 0);}
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba($color: $grey-color, $alpha: 0.15);
+  }
+  20% {
+    box-shadow: 0px 0px 0px 3px rgba($color: $grey-color, $alpha: 0.15);
+  }
+  40% {
+    box-shadow: 0px 0px 0px 7px rgba($color: $grey-color, $alpha: 0.15);
+  }
+  60% {
+    box-shadow: 0px 0px 0px 10px rgba($color: $grey-color, $alpha: 0.15);
+  }
+  80% {
+    box-shadow: 0px 0px 0px 20px rgba($color: $grey-color, $alpha: 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 25px rgba($color: $grey-color, $alpha: 0);
+  }
 }
 
 @keyframes fade {
-  from {opacity: .1}
-  to {opacity: 1}
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slider {
-  from {margin-left: -50%;}
-  to {margin-left: 0;}
+  from {
+    margin-left: -50%;
+  }
+  to {
+    margin-left: 0;
+  }
 }
 
 @keyframes photo-right {
-  from {margin-left: 50%;}
-  to {margin-left: 0;}
+  from {
+    margin-left: 50%;
+  }
+  to {
+    margin-left: 0;
+  }
 }
 
 @keyframes popUp {
-  0% {top: 100%;}
-  50% {top: -5%;}
-  75% {top: 5%;}
-  100% {top: 0%;}
+  0% {
+    top: 100%;
+  }
+  50% {
+    top: -5%;
+  }
+  75% {
+    top: 5%;
+  }
+  100% {
+    top: 0%;
+  }
 }
