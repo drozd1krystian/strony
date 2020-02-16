@@ -63,15 +63,20 @@ body {
   background: #333;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 0;
+  }
   .container {
     max-height: 500px;
     padding-bottom: 0.2rem;
     padding-top: 0.5rem;
     width: 100vw;
-    .big,
-    .small {
+    .big {
       width: initial;
+    }
+    .small {
+      width: auto;
     }
     @supports (object-fit: cover) {
       .big img,
@@ -87,9 +92,26 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) and (orientation: landscape) {
+@media screen and (max-width: 767px) and (orientation: landscape) {
   .container {
     max-height: 320px;
     padding-right: 1rem;
+    .big,
+    .small {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    max-height: 500px;
+    padding-bottom: 0.2rem;
+    padding-top: 0.5rem;
+    width: 100vw;
+    .big,
+    .small {
+      width: 100%;
+    }
   }
 }
