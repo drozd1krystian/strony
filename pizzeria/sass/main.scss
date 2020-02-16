@@ -379,7 +379,7 @@ h3 {
 }
 
 // Media smartphone
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1024px) {
   #navbar {
     h2 {
       margin-left: 1rem;
@@ -409,7 +409,6 @@ h3 {
   #opinions {
     .opinion {
       flex-direction: column;
-      max-width: 100% !important;
     }
   }
   #main-footer {
@@ -436,30 +435,10 @@ h3 {
   }
 }
 
-@media screen and (min-width: 501px) and (max-width: 850px) {
-  #showcase {
-    .data {
-      .local-data {
-        margin-bottom: 1rem;
-        margin-top: 2rem !important;
-      }
-    }
-  }
-
-  #about {
-    .photo {
-      display: none;
-    }
-  }
-  #opinions {
-    .opinion {
-      flex-direction: column;
-      max-width: 100% !important;
-    }
-  }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   #main-footer {
     .footer-content {
-      flex-direction: column;
+      flex-direction: row;
     }
   }
 }
