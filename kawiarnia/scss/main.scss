@@ -1,7 +1,7 @@
-@import 'config';
+@import "config";
 
 // General Styles
-* { 
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@
 body {
   line-height: 1.6rem;
   background: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -74,14 +74,22 @@ h1 {
   margin-bottom: 0.3rem;
 }
 
-.p2 {padding: 2rem 2rem;}
-.p2-y {padding: 2rem 0;}
+.p2 {
+  padding: 2rem 2rem;
+}
+.p2-y {
+  padding: 2rem 0;
+}
 
-.leading-word {color: $pink-color;}
-.list li{border-bottom: 1px dotted $light-color;}
+.leading-word {
+  color: $pink-color;
+}
+.list li {
+  border-bottom: 1px dotted $light-color;
+}
 
-// Navigation 
-#navbar { 
+// Navigation
+#navbar {
   position: fixed;
   top: 0;
   height: 10vh;
@@ -128,9 +136,11 @@ h1 {
       right: 30px;
       cursor: pointer;
       div {
-        transition: all .4 ease;
+        transition: all 0.4 ease;
       }
-      .line-1, .line-2, .line-3 {
+      .line-1,
+      .line-2,
+      .line-3 {
         width: 30px;
         height: 5px;
         margin-bottom: 3px;
@@ -143,11 +153,12 @@ h1 {
 
 // Showcase
 #showcase {
-  background: url('../img/showcase_img.jpg') no-repeat center center/cover;
+  background: url("../img/showcase_img.jpg") no-repeat center center/cover;
   height: 90vh;
   margin-top: 10vh;
-  .showcase-content{
-    height: 100%; width: 100%;
+  .showcase-content {
+    height: 100%;
+    width: 100%;
     background: rgba($color: #000000, $alpha: 0.45);
     display: flex;
     flex-direction: column;
@@ -169,7 +180,8 @@ h1 {
 // Offert
 #offert {
   width: 100%;
-  h1, h2 {
+  h1,
+  h2 {
     text-transform: uppercase;
     text-align: center;
     color: $dark-color;
@@ -190,14 +202,14 @@ h1 {
       flex: 1;
       margin: 5px;
       .menu-img {
-        height: 90%; 
+        height: 90%;
 
         img {
           height: 100%;
           width: 100%;
           border-radius: 2%;
           border: 1px solid #ccc;
-          box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+          box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
         }
       }
       .discription {
@@ -220,18 +232,19 @@ h1 {
 #about {
   display: flex;
 
-  div{
+  div {
     flex: 1;
   }
 
   .about-img {
-    background: url('../img/cafe.jpg') no-repeat center center/cover;
+    background: url("../img/cafe.jpg") no-repeat center center/cover;
   }
 
   .about-team {
-   h2, p {
-     margin-bottom: 1rem;
-   }
+    h2,
+    p {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -239,29 +252,30 @@ h1 {
 #gallery {
   width: 100%;
 
-  .gallery-content{
+  .gallery-content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
 
-      img {
-        border: 1px solid #ccc;
-        box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-        width: 100%;  
-        height: auto;
-      }
+    img {
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
 // Contact
 #contact {
   display: flex;
-  div, a {
+  div,
+  a {
     flex: 1;
   }
   .map {
-    background: url('../img/map.PNG') no-repeat center center/cover;
+    background: url("../img/map.PNG") no-repeat center center/cover;
   }
 
   li {
@@ -271,9 +285,11 @@ h1 {
   h2 {
     font-size: 1.3rem;
     text-align: center;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
-  .social-media {margin-top: 2rem;}
+  .social-media {
+    margin-top: 2rem;
+  }
   .contact-data {
     display: flex;
     div {
@@ -285,12 +301,18 @@ h1 {
       justify-self: flex-end;
     }
     .addres {
-      p {margin-bottom: 2rem; }
-      i {color: $light-color;}
+      p {
+        margin-bottom: 2rem;
+      }
+      i {
+        color: $light-color;
+      }
       div {
         display: flex;
         justify-content: space-around;
-        i {color: $pink-color;}
+        i {
+          color: $pink-color;
+        }
       }
     }
   }
@@ -304,10 +326,10 @@ footer {
   h5 {
     text-align: center;
   }
-} 
+}
 
 // Smartphone
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   #navbar {
     padding: 0;
 
@@ -323,35 +345,35 @@ footer {
         right: 0;
         top: 10vh;
         transform: translateX(100%);
-        transition: all .4s ease;
+        transition: all 0.4s ease;
         li {
           a {
             color: #000;
           }
           a:hover {
             color: #333;
-            outline: none; 
+            outline: none;
           }
         }
         .logo {
           display: none;
         }
         &::before {
-          content: '';
+          content: "";
           width: 70%;
           height: 100%;
           left: -70%;
           transform: translateX(100%);
-          transition: all .4s ease;
+          transition: all 0.4s ease;
           position: absolute;
           background: rgba($color: #000000, $alpha: 0.45);
         }
       }
       .active {
+        transform: translateX(0%);
+        &::before {
           transform: translateX(0%);
-          &::before {
-            transform: translateX(0%);
-          }
+        }
       }
       .burger {
         display: block;
@@ -359,10 +381,16 @@ footer {
           transition: all 0.5s ease-in-out;
         }
       }
-      .toggle{
-        .line-1 {transform: rotate(-45deg) translate(-6px, 5px);}
-        .line-2 {opacity: 0;}
-        .line-3 {transform: rotate(45deg) translate(-6px, -5px);}
+      .toggle {
+        .line-1 {
+          transform: rotate(-45deg) translate(-6px, 5px);
+        }
+        .line-2 {
+          opacity: 0;
+        }
+        .line-3 {
+          transform: rotate(45deg) translate(-6px, -5px);
+        }
       }
       .mobile-logo {
         display: block;
@@ -371,7 +399,7 @@ footer {
   }
 
   // Showcase
-  #showcase{
+  #showcase {
     max-width: 100%;
   }
 
@@ -379,7 +407,7 @@ footer {
   #offert {
     .section-grid {
       flex-direction: column;
-    } 
+    }
   }
 
   // About
@@ -391,7 +419,7 @@ footer {
       font-size: 1.3rem;
     }
     p {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
   }
 
@@ -411,27 +439,19 @@ footer {
   }
 }
 
-@media screen and (max-width: 900px) and (min-width: 501px) {
+@media screen and (max-width: 1024px) and (min-width: 501px) {
   #navbar {
-    height: 20vh;
-    padding: 0;
-    .container{
-      max-width: 100%;
-      .logo {
-        img {
-          width: 35%;
-        }
-      }
+    .container .mobile-logo {
+      padding: 0.5rem 1rem;
+    }
+    .container img {
+      height: 100%;
+      width: 100%;
     }
   }
-  
-  #showcase {
-    margin-top: 20vh;
-  }
-
-  #offert .section-grid .offert  {
+  #offert .section-grid .offert {
     .discription span {
-      font-size: .8rem !important;
+      font-size: 0.8rem !important;
     }
     .menu-img {
       height: 80%;
@@ -445,7 +465,7 @@ footer {
   }
 
   #gallery {
-    .gallery-content{
+    .gallery-content {
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
   }
