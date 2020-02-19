@@ -28,21 +28,40 @@ i {
   margin: 0 auto;
 }
 
-.py-1 {padding: 1rem 0;}
-.py-2 {padding: 2rem 0;}
-.py-3 {padding: 3rem 0;}
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
 
-.p-1 {padding: 1rem 1rem;}
-.p-2 {padding: 2rem 2rem;}
-.p-3 {padding: 3rem 3rem;}
+.p-1 {
+  padding: 1rem 1rem;
+}
+.p-2 {
+  padding: 2rem 2rem;
+}
+.p-3 {
+  padding: 3rem 3rem;
+}
 
-h1, h2 {
-  font-family: 'Fjalla+One', sans-serif;
+h1,
+h2 {
+  font-family: "Fjalla+One", sans-serif;
   text-transform: uppercase;
 }
-h2{font-size: 1.5rem;}
-h1{font-size: 1.7rem;}
-h3{font-size: 1rem;}
+h2 {
+  font-size: 1.5rem;
+}
+h1 {
+  font-size: 1.7rem;
+}
+h3 {
+  font-size: 1rem;
+}
 
 .wide-sticky {
   position: fixed !important;
@@ -64,7 +83,6 @@ h3{font-size: 1rem;}
 }
 
 .active {
-  background: #000 !important;
   color: #fff !important;
 }
 
