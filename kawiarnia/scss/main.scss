@@ -332,7 +332,7 @@ footer {
 @media (max-width: 1024px) {
   #navbar {
     padding: 0;
-
+    height: auto;
     .container {
       max-width: 100%;
       ul {
@@ -343,8 +343,8 @@ footer {
         flex-direction: column;
         position: absolute;
         right: 0;
-        top: 10vh;
-        transform: translateX(100%);
+        bottom: 0;
+        transform: translate(100%, 100%);
         transition: all 0.4s ease;
         li {
           a {
@@ -370,7 +370,7 @@ footer {
         }
       }
       .active {
-        transform: translateX(0%);
+        transform: translate(0%, 100%);
         &::before {
           transform: translateX(0%);
         }
@@ -401,6 +401,7 @@ footer {
   // Showcase
   #showcase {
     max-width: 100%;
+    margin-top: 60px;
   }
 
   // MENU
@@ -439,14 +440,11 @@ footer {
   }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 501px) {
+@media screen and (max-width: 1024px) and (min-width: 787px) {
   #navbar {
+    height: auto;
     .container .mobile-logo {
       padding: 0.5rem 1rem;
-    }
-    .container img {
-      height: 100%;
-      width: 100%;
     }
   }
   #offert .section-grid .offert {
