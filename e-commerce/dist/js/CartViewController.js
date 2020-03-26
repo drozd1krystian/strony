@@ -1,35 +1,35 @@
-const StorageCtrl = (function(){
-    return {
-        getItemsFromStorage: function() {
-            let data;
-            if(localStorage.getItem('data') == null){
-                data = {
-                    items: [],
-                    total: 0,
-                    count: 0,
-                }
-            } else {
-                data = JSON.parse(localStorage.getItem('data'));
-            }
-            return data;
-        },
-        updateStorage(data) {
-            localStorage.setItem('data', JSON.stringify(data));
-        }
+const StorageCtrl = (function() {
+  return {
+    getItemsFromStorage: function() {
+      let data;
+      if (localStorage.getItem("data") == null) {
+        data = {
+          items: [],
+          total: 0,
+          count: 0
+        };
+      } else {
+        data = JSON.parse(localStorage.getItem("data"));
+      }
+      return data;
+    },
+    updateStorage(data) {
+      localStorage.setItem("data", JSON.stringify(data));
     }
-})()
+  };
+})();
 
 const CartUICtrl = (function() {
-    const selectors = {
-        cartContainer: document.querySelector('.cart-items-container'),
-        cartItemsCounter: document.querySelector('.items-count span'),
-        priceTotal: document.querySelectorAll('.price-disc .order-total'),
-        totalAmount: document.querySelectorAll('#totalAmount'),
-        mainCartContainer: document.querySelector('.cart-items'),
-    }
-    return {
-        addToCartView: function(item) {
-            const markup = `    
+  const selectors = {
+    cartContainer: document.querySelector(".cart-items-container"),
+    cartItemsCounter: document.querySelector(".items-count span"),
+    priceTotal: document.querySelectorAll(".price-disc .order-total"),
+    totalAmount: document.querySelectorAll("#totalAmount"),
+    mainCartContainer: document.querySelector(".cart-items")
+  };
+  return {
+    addToCartView: function(item) {
+      const markup = `    
             <div class="cart-item" name="item-${item.id}">
                 <div class="photo">
                     <img src="img/jacket-2.jpg" alt="item">
@@ -47,23 +47,27 @@ const CartUICtrl = (function() {
                         </div>
                     </div>
                 </div>
-            </div>`
-            selectors.cartContainer.insertAdjacentHTML('beforeend', markup);
-        },
-        updateItem: function(item) {
-            let itemAmount = document.getElementById(`${item.id}-amount`);
-            let itemPrice = document.getElementById(`${item.id}-price`);
+            </div>`;
+      selectors.cartContainer.insertAdjacentHTML("beforeend", markup);
+    },
+    updateItem: function(item) {
+      let itemAmount = document.getElementById(`${item.id}-amount`);
+      let itemPrice = document.getElementById(`${item.id}-price`);
 
-            itemAmount.innerHTML = item.amount;
-            itemPrice.innerHTML = item.totalPrice;
-        },
-        updateCartSummary: function(cartData) {
-            selectors.priceTotal.forEach(el => el.innerHTML = `${cartData.total} zł`);
-            selectors.totalAmount.forEach(el => el.innerHTML = `${cartData.total + 8.99} zł`);
-            selectors.cartItemsCounter.innerHTML = cartData.count;
-        },
-        addItemToMainCart: function(item) {
-            const markup = `
+      itemAmount.innerHTML = item.amount;
+      itemPrice.innerHTML = item.totalPrice;
+    },
+    updateCartSummary: function(cartData) {
+      selectors.priceTotal.forEach(
+        el => (el.innerHTML = `${cartData.total} zł`)
+      );
+      selectors.totalAmount.forEach(
+        el => (el.innerHTML = `${cartData.total + 8.99} zł`)
+      );
+      selectors.cartItemsCounter.innerHTML = cartData.count;
+    },
+    addItemToMainCart: function(item) {
+      const markup = `
             <div class="cart-item" name="item-${item.id}">
                 <div class="photo">
                     <img src="img/jacket-2.jpg" alt="item">
@@ -90,72 +94,83 @@ const CartUICtrl = (function() {
                 <div class="delete-icon">
                     <button class="btn"id="${item.id}-delete"><i class="fas fa-trash"></i></button>
                 </div>
-            </div>`
-            selectors.mainCartContainer.insertAdjacentHTML('beforeend', markup);
-        },
-        updateMainCartItem: function(item) {
-            document.getElementById(`${item.id}-total`).innerHTML = `${item.totalPrice} zł`;
-        },
+            </div>`;
+      selectors.mainCartContainer.insertAdjacentHTML("beforeend", markup);
+    },
+    updateMainCartItem: function(item) {
+      document.getElementById(
+        `${item.id}-total`
+      ).innerHTML = `${item.totalPrice} zł`;
+    },
+    getSelectors: function() {
+      return selectors;
     }
+  };
 })();
 
-const CartCtrl = (function(CartUICtrl, StorageCtrl){
-    const data = StorageCtrl.getItemsFromStorage();
+const CartCtrl = (function(CartUICtrl, StorageCtrl) {
+  const data = StorageCtrl.getItemsFromStorage();
+  const selectors = CartUICtrl.getSelectors();
 
-    function populateCarts(data) {
-        data.items.forEach((el, index) => {
-            CartUICtrl.addToCartView(el);
-            CartUICtrl.addItemToMainCart(el);
-
-            const elAddBtn = document.querySelector(`#${el.id}-add`);
-            const elInputAmount = document.getElementById(`input-${el.id}-amount`);
-            elAddBtn.onclick = () => {
-                el.amount += 1;
-                el.totalPrice += el.price;
-                data.count += 1;
-                data.total += el.price;
-                CartUICtrl.updateItem(el);
-                CartUICtrl.updateCartSummary(data);
-                elInputAmount.value = el.amount;
-                CartUICtrl.updateMainCartItem(el);
-                StorageCtrl.updateStorage(data);
-            }
-
-            const elReduceBtn = document.getElementById(`${el.id}-reduce`);
-            elReduceBtn.onclick = () => {
-                if(el.amount == 1) {
-                    return;
-                } else {
-                    el.amount -= 1;
-                    el.totalPrice -= el.price;
-                    data.count -= 1;
-                    data.total -= el.price;
-                    CartUICtrl.updateItem(el);
-                    CartUICtrl.updateCartSummary(data);
-                    elInputAmount.value = el.amount;
-                    CartUICtrl.updateMainCartItem(el);
-                    StorageCtrl.updateStorage(data);
-                }
-            }
-
-            const deleteBtn = document.getElementById(`${el.id}-delete`);
-            deleteBtn.onclick = () => {
-                Array.from(document.getElementsByName(`item-${el.id}`)).forEach(item => item.remove());
-                const id = data.items.findIndex(item => item.id == el.id);
-                data.items.splice(id, 1);
-                data.count -= el.amount;
-                data.total -= el.price * el.amount;
-                CartUICtrl.updateCartSummary(data);
-                StorageCtrl.updateStorage(data);       
-            }
-        });
+  function populateCarts(data) {
+    selectors.mainCartContainer.addEventListener("click", function(e) {
+      const target = e.target;
+      if (!target.closest(".cart-item")) {
+        return;
+      }
+      const itemId = target
+        .closest(".cart-item")
+        .getAttribute("name")
+        .slice(5);
+      const item = data.items.find(el => el.id == itemId);
+      const inputValue = document.getElementById(`input-${item.id}-amount`);
+      if (target.matches(".add")) {
+        item.amount += 1;
+        item.totalPrice += item.price;
+        data.count += 1;
+        data.total += item.price;
+        CartUICtrl.updateItem(item);
         CartUICtrl.updateCartSummary(data);
-    }
-    return {
-        init: function(){
-            populateCarts(data);
+        inputValue.value = item.amount;
+        CartUICtrl.updateMainCartItem(item);
+        StorageCtrl.updateStorage(data);
+      } else if (target.matches(".reduce")) {
+        if (item.amount == 1) {
+          return;
+        } else {
+          item.amount -= 1;
+          item.totalPrice -= item.price;
+          data.count -= 1;
+          data.total -= item.price;
+          CartUICtrl.updateItem(item);
+          CartUICtrl.updateCartSummary(data);
+          inputValue.value = item.amount;
+          CartUICtrl.updateMainCartItem(item);
+          StorageCtrl.updateStorage(data);
         }
+      } else if (target.parentElement.parentElement.matches(".delete-icon")) {
+        Array.from(document.getElementsByName(`item-${item.id}`)).forEach(el =>
+          el.remove()
+        );
+        const id = data.items.findIndex(el => item.id == el.id);
+        data.items.splice(id, 1);
+        data.count -= item.amount;
+        data.total -= item.price * item.amount;
+        StorageCtrl.updateStorage(data);
+        CartUICtrl.updateCartSummary(data);
+      }
+    });
+    data.items.forEach((el, index) => {
+      CartUICtrl.addToCartView(el);
+      CartUICtrl.addItemToMainCart(el);
+    });
+    CartUICtrl.updateCartSummary(data);
+  }
+  return {
+    init: function() {
+      populateCarts(data);
     }
-})(CartUICtrl, StorageCtrl)
+  };
+})(CartUICtrl, StorageCtrl);
 
 CartCtrl.init();
