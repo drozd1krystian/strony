@@ -241,7 +241,7 @@ const UICtrl = (function() {
                 </div>
                 <div class="disc">
                     <div class="name">
-                        <a href="item.html?id=${el.id}"<h3>${el.name} ${el.category} ${el.color}</h3></a>
+                        <a href="item.html?id=${el.id}" name ="${el.id}-link"><h3>${el.name} ${el.category} ${el.color}</h3></a>
                     </div>
                     <div class="price">
                         <h3>${el.price} zł</h3>
@@ -254,6 +254,7 @@ const UICtrl = (function() {
                     <button class="btn">Dodaj Do Koszyka</button>
                 </div>
             </div>`;
+      //
       selectors.itemsContainer.insertAdjacentHTML("beforeend", item);
     },
     addToCartView: function(item) {
@@ -337,10 +338,18 @@ const App = (function(ItemCtrl, UICtrl, CartCtrl) {
     selectors.itemsContainer.addEventListener("click", function(e) {
       target = e.target;
       let itemId;
+
+      if (target.parentElement.tagName == "A") {
+        itemId = target.closest(".item").id;
+        const itemData = data.items.find(el => el.id == itemId);
+        StorageCtrl.storePickedItem(itemData);
+        return;
+      }
       if (!target.matches("button")) {
         return;
       }
       itemId = target.closest(".item").id;
+      const itemData = data.items.find(el => el.id == itemId);
       const pickedSize = checkRadio(itemId);
       if (!pickedSize) {
         selectors.noSizeError.style.display = "block";
@@ -357,19 +366,12 @@ const App = (function(ItemCtrl, UICtrl, CartCtrl) {
           CartCtrl.updateItem(itemExistId);
           UICtrl.updateItem(cartData.items[itemExistId]);
         } else {
-          const itemData = data.items.find(el => el.id == itemId);
           const newItem = ItemCtrl.createItem(itemData, pickedSize);
           UICtrl.addToCartView(newItem);
           CartCtrl.addToCart(newItem);
         }
         UICtrl.updateCartSummary(cartData);
       }
-      const links = document.getElementsByName(`${itemId}-link`);
-      links.forEach(link => {
-        link.onclick = () => {
-          StorageCtrl.storePickedItem(el);
-        };
-      });
     });
     items.forEach(el => {
       UICtrl.addItem(el);
