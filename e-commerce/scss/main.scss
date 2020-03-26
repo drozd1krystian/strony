@@ -498,57 +498,19 @@
   .showcase-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: repeat(8, 25vh);
+    grid-auto-rows: 250px;
     grid-gap: 1rem;
     align-items: start;
     justify-items: center;
-    .sale-1 {
+    .sale-small {
       background: url("../img/showcase-small.jpg") no-repeat center center/cover;
-      grid-row-start: 1;
-      grid-row-end: 3;
-      grid-column-start: 1;
-      grid-column-end: 3;
+      grid-row: span 2 / auto;
+      grid-column: span 2 / auto;
     }
-    .sale-2 {
-      background: url("../img/showcase-small.jpg") no-repeat center center/cover;
-      grid-row-start: 3;
-      grid-row-end: 5;
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
-    .sale-3 {
+    .sale-big {
       background: url("../img/showcase-big.jpg") no-repeat center center/cover;
-      grid-row-start: 1;
-      grid-row-end: 5;
-      grid-column-start: 3;
-      grid-column-end: 5;
-    }
-    .sale-4 {
-      background: url("../img/showcase-small.jpg") no-repeat center center/cover;
-      grid-row-start: 5;
-      grid-row-end: 7;
-      grid-column-start: 3;
-      grid-column-end: 5;
-    }
-    .sale-5 {
-      background: url("../img/showcase-small.jpg") no-repeat center center/cover;
-      grid-row-start: 7;
-      grid-row-end: 9;
-      grid-column-start: 3;
-      grid-column-end: 5;
-    }
-    .sale-6 {
-      background: url("../img/showcase-big.jpg") no-repeat center center/cover;
-      grid-row-start: 5;
-      grid-row-end: 9;
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
-    .sale-3,
-    .sale-6 {
-      .header {
-        justify-content: flex-start;
-      }
+      grid-row: span 4 / auto;
+      grid-column: span 2 / auto;
     }
   }
   .sale-7 {
@@ -1263,29 +1225,6 @@
   }
 
   #showcase {
-    .showcase-content {
-      grid-template-rows: repeat(16, 25vh);
-      .sale {
-        grid-column-start: 1;
-        grid-column-end: 4;
-      }
-      .sale-3 {
-        grid-row-start: 5;
-        grid-row-end: 9;
-      }
-      .sale-4 {
-        grid-row-start: 9;
-        grid-row-end: 11;
-      }
-      .sale-5 {
-        grid-row-start: 11;
-        grid-row-end: 13;
-      }
-      .sale-6 {
-        grid-row-start: 13;
-        grid-row-end: 17;
-      }
-    }
     .sale-7 {
       height: 200px;
     }
