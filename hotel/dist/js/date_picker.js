@@ -12,59 +12,33 @@ let months = [
   "Sep",
   "Oct",
   "Nov",
-  "Dec"
+  "Dec",
 ];
 
 checkIn.valueAsDate = today;
 checkIn.setAttribute("min", checkIn.value);
 inDay.innerHTML = ("0" + today.getDate()).slice(-2);
-inMonth.innerHTML = today
-  .toString()
-  .split(" ")
-  .slice(1, 2)
-  .join("");
+inMonth.innerHTML = today.toString().split(" ").slice(1, 2).join("");
 
 checkIn.onchange = () => {
-  inDay.innerHTML = checkIn.value
-    .toString()
-    .split("-")
-    .slice(2, 4)
-    .join("");
+  inDay.innerHTML = checkIn.value.toString().split("-").slice(2, 4).join("");
 
   inMonth.innerHTML =
     months[
-      checkIn.value
-        .toString()
-        .split("-")
-        .slice(1, 2)
-        .join("")
-        .slice(1, 2) - 1
+      checkIn.value.toString().split("-").slice(1, 2).join("").slice(1, 2) - 1
     ];
 };
 
 checkOut.valueAsDate = tommorow;
 checkOut.setAttribute("min", checkOut.value);
-outDay.innerHTML = tommorow.getDate();
-outMonth.innerHTML = tommorow
-  .toString()
-  .split(" ")
-  .slice(1, 2)
-  .join("");
+outDay.innerHTML = ("0" + tommorow.getDate()).slice(-2);
+outMonth.innerHTML = tommorow.toString().split(" ").slice(1, 2).join("");
 
 checkOut.onchange = () => {
-  outDay.innerHTML = checkOut.value
-    .toString()
-    .split("-")
-    .slice(2, 4)
-    .join("");
+  outDay.innerHTML = checkOut.value.toString().split("-").slice(2, 4).join("");
   outMonth.innerHTML =
     months[
-      checkOut.value
-        .toString()
-        .split("-")
-        .slice(1, 2)
-        .join("")
-        .slice(1, 2) - 1
+      checkOut.value.toString().split("-").slice(1, 2).join("").slice(1, 2) - 1
     ];
 };
 

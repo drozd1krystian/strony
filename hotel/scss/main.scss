@@ -1740,12 +1740,17 @@ h6 {
   }
   #blog {
     padding: 3rem 1rem;
+    .box {
+      height: 600px;
+      .disc {
+        p {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
     .grid {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(8, 1fr);
-      .box {
-        height: 600px;
-      }
       .small-box {
         height: 300px;
       }
