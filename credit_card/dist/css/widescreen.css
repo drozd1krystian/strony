@@ -99,6 +99,7 @@ form {
   padding: 2rem 0;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  overflow: hidden;
 }
 
 .credit_card .card_numbers .card_number {
@@ -228,4 +229,31 @@ form button {
   color: #fff;
   border: none;
   border-radius: 5px;
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 0.2s ease-in-out;
+          animation: fadeIn 0.2s ease-in-out;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    top: -20px;
+  }
+  to {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    top: -20px;
+  }
+  to {
+    opacity: 1;
+    top: 0px;
+  }
 }

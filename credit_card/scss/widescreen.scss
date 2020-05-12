@@ -79,6 +79,7 @@ form {
     display: flex;
     padding: 2rem 0;
     justify-content: space-around;
+    overflow: hidden;
     .card_number {
       font-weight: 500;
       font-size: 1.3rem;
@@ -175,5 +176,20 @@ form {
     color: #fff;
     border: none;
     border-radius: 5px;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    top: -20px;
+  }
+  to {
+    opacity: 1;
+    top: 0px;
   }
 }
