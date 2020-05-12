@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/3c70acfb9a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/widescreen.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+    <link rel="stylesheet" href="css/tablet.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source Code Pro"
+    />
+    <title>Credit Card Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="credit_card">
+        <div class="chip">
+          <img src="img/chip.png" alt="card chip" />
+        </div>
+        <div class="card_name">
+          <img src="img/visa.png" alt="Visa" />
+        </div>
+        <div class="card_numbers">
+          <div class="card_number">
+            <span class="number">#</span>
+            <span class="number">#</span>
+            <span class="number">#</span>
+            <span class="number">#</span>
+          </div>
+          <div class="card_number">
+            <span class="number">#</span>
+            <span class="number">#</span>
+            <span class="number">#</span>
+            <span class="number">#</span>
+          </div>
+          <div class="card_number">
+            <span class="number">#</span>
+            <span class="number">#</span>
+            <span class="number">#</span>
+            <span class="number">#</span>
+          </div>
+          <div class="card_number">
+            <span class="number">#</span>
+            <span class="number">#</span>
+            <span class="number">#</span>
+            <span class="number">#</span>
+          </div>
+        </div>
+        <div class="card_holder">
+          <label for="holder_name">Card Holder</label>
+          <p class="text_white" id="holder_name">Jhon Doe</p>
+        </div>
+        <div class="expiry_date">
+          <label for="holder_name">Expires</label>
+          <p class="text_white" id="expiryDate">MM/YY</p>
+        </div>
+      </div>
+      <form action="">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" / id="cardNumber" maxlength="16">
+        <label for="cardName">Card Name</label>
+        <input type="text" / id="cardName">
+        <div class="row">
+          <div class="expiration_date">
+            <label for="expirationMonth">Expiration Date</label>
+            <div>
+              <select id="expirationMonth">
+                <option value="" disabled selected>Month</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <select id="expirationYear">
+                <option value="" disabled selected>Year</option>
+                <option value="2020">2020</option>
+                <option value="2022">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+              </select>
+            </div>
+          </div>
+          <div class="cvv">
+            <label for="CVV" class="cvv">CVV</label>
+            <input type="text" id="CVV" maxlength="4" />
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

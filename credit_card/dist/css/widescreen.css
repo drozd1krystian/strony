@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #d4eafd;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.credit_card,
+form {
+  -webkit-box-shadow: 0 20px 30px 10px #a0adc1;
+          box-shadow: 0 20px 30px 10px #a0adc1;
+}
+
+.credit_card {
+  background: url("../img/cardbackground.jpeg") no-repeat center/cover;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  top: 7rem;
+  padding: 1.5rem;
+  max-height: 250px;
+  min-height: 200px;
+  min-width: 400px;
+  max-width: 350px;
+  color: #fff;
+  font-family: "Source Code Pro";
+}
+
+.credit_card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.credit_card * {
+  z-index: 2;
+  position: relative;
+}
+
+.credit_card .chip img {
+  height: 35px;
+  width: 40px;
+}
+
+.credit_card .card_name {
+  position: absolute;
+  padding: 1.5rem;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.credit_card .card_name img {
+  width: 30%;
+}
+
+.credit_card .card_numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 0;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.credit_card .card_numbers .card_number {
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.credit_card .card_holder,
+.credit_card .expiry_date {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.credit_card .card_holder label,
+.credit_card .expiry_date label {
+  color: #ccc;
+}
+
+.credit_card .card_holder p,
+.credit_card .expiry_date p {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.credit_card .expiry_date {
+  position: absolute;
+  right: 0;
+  padding-right: 1.5rem;
+}
+
+form {
+  padding: 2rem;
+  padding-top: 10rem;
+  background: #fff;
+  border-radius: 10px;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 1rem;
+  margin: 5px 0 10px 0;
+}
+
+form input[type="text"]:focus {
+  border-color: #0055d4;
+}
+
+form label {
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+form input,
+form select {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  border: 1px solid #ccc;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  padding: 1rem;
+  font-size: 16px;
+  position: relative;
+  z-index: 3;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #0055d4;
+  -webkit-box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+form select {
+  padding: 1rem 1.5rem;
+}
+
+form .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 1rem;
+}
+
+form .cvv,
+form .expiration_date {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form .expiration_date {
+  width: 70%;
+}
+
+form .expiration_date select {
+  width: 45%;
+}
+
+form .cvv {
+  width: 30%;
+}
+
+form .cvv input {
+  margin: 0;
+}
+
+form button {
+  width: 100%;
+  padding: 1rem 0;
+  background: #0055d4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
