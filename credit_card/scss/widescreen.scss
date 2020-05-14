@@ -28,19 +28,29 @@ body {
 form {
   box-shadow: 0 20px 30px 10px rgba(#a0adc1, 1);
 }
+.card {
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  max-height: 250px;
+  min-height: 215px;
+  min-width: 400px;
+  max-width: 350px;
+  top: 7rem;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transform-origin: 51% 53%;
+  transform-origin: 51% 53%;
+}
 .credit_card {
   background: url("../img/cardbackground.jpeg") no-repeat center/cover;
   width: 100%;
+  height: 100%;
   border-radius: 10px;
-  position: relative;
-  top: 7rem;
+  position: absolute;
   padding: 1.5rem;
-  max-height: 250px;
-  min-height: 200px;
-  min-width: 400px;
-  max-width: 350px;
   color: #fff;
   font-family: "Source Code Pro";
+  backface-visibility: hidden;
 
   &::after {
     content: "";
@@ -105,6 +115,42 @@ form {
     position: absolute;
     right: 0;
     padding-right: 1.5rem;
+  }
+}
+
+.card_back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  .cvv_space {
+    width: 100%;
+    height: 20%;
+    background: #fff;
+    padding: 0.2rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 3;
+    color: #333;
+
+    &::before {
+      content: "CVV";
+      color: #fff;
+      position: absolute;
+      top: -25px;
+      right: 10px;
+    }
+  }
+  .company_logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1.5rem;
+    width: 100px;
+    height: 70px;
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -183,6 +229,10 @@ form {
   animation: fadeIn 0.2s ease-in-out;
 }
 
+.is-flipped {
+  transform: perspective(2000px) rotateY(180deg) rotateX(0deg) rotateZ(0deg);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -192,4 +242,8 @@ form {
     opacity: 1;
     top: 0px;
   }
+}
+
+.focus {
+  border: 1px solid #ccc !important;
 }

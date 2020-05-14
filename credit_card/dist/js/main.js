@@ -6,12 +6,21 @@ function onCardNumberInput() {
   let cardNumber = cardNumberField.value;
 
   for (let i = 0; i < cardNumber.length; i++) {
+    if (isNaN(cardNumber[i])) {
+      cardNumber = cardNumber.substring(0, i);
+      cardNumberField.value = cardNumber;
+      return;
+    }
     cardNumberFields[i].classList.add("fadeIn");
     cardNumberFields[i].innerHTML = cardNumber[i];
   }
-  cardNumberFields[cardNumber.length].classList.remove("fadeIn");
-  cardNumberFields[cardNumber.length].innerHTML = "#";
+
+  for (let i = cardNumber.length; i < cardNumberFields.length; i++) {
+    cardNumberFields[i].classList.remove("fadeIn");
+    cardNumberFields[i].innerHTML = "#";
+  }
 }
+
 cardNumberField.addEventListener("input", onCardNumberInput);
 
 // Card Name
@@ -46,3 +55,19 @@ function onExpiryDateChange() {
 }
 
 expirationDateContainer.addEventListener("change", onExpiryDateChange);
+
+// Backface
+function flipCard() {
+  const card = document.querySelector(".card");
+  card.classList.toggle("is-flipped");
+}
+
+const cvvField = document.querySelector(".cvv_space");
+function onCvvInput() {
+  const cvv = CVV.value;
+  cvvField.innerHTML = cvv;
+}
+
+CVV.addEventListener("focus", flipCard);
+CVV.addEventListener("blur", flipCard);
+CVV.addEventListener("input", onCvvInput);
