@@ -70,14 +70,15 @@
       </div>
       <form action="">
         <label for="cardNumber">Card Number</label>
-        <input type="text" / id="cardNumber" maxlength="16">
+        <input type="text" / id="cardNumber" minlength = "16" maxlength="16"
+        required="true">
         <label for="cardName">Card Name</label>
-        <input type="text" / id="cardName">
+        <input type="text" / id="cardName" required="true">
         <div class="row">
           <div class="expiration_date">
             <label for="expirationMonth">Expiration Date</label>
             <div>
-              <select id="expirationMonth">
+              <select id="expirationMonth" required="true">
                 <option value="" disabled selected>Month</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -92,7 +93,7 @@
                 <option value="11">11</option>
                 <option value="12">12</option>
               </select>
-              <select id="expirationYear">
+              <select id="expirationYear" required="true">
                 <option value="" disabled selected>Year</option>
                 <option value="2020">2020</option>
                 <option value="2022">2021</option>
