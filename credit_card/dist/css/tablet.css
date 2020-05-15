@@ -1,1 +1,13 @@
-/* No CSS */
+@media screen and (min-width: 767px) and (max-width: 1025px) {
+  .card {
+    min-width: 55%;
+    top: 2rem;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1025px) and (orientation: landscape) {
+  .card {
+    min-width: 40%;
+    top: 2rem;
+  }
+}

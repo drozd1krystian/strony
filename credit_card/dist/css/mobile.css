@@ -1,1 +1,28 @@
-/* No CSS */
+@media screen and (max-width: 1024px) {
+  .container {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: none;
+            transform: none;
+    padding: 0;
+  }
+  .card {
+    min-width: 90%;
+    top: 2rem;
+  }
+  form {
+    padding-top: 4rem;
+    border-radius: 0;
+  }
+  form select {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .card {
+    min-width: 60%;
+    top: 2rem;
+  }
+}
