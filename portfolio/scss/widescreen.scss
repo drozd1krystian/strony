@@ -1,0 +1,125 @@
+@import "config";
+
+// Utility Classes
+
+.bg_dark {
+  background: #222222;
+  color: #797979;
+}
+
+.bg_blue {
+  color: #fff;
+  background: #007ced;
+}
+
+.first_word {
+  color: #fff;
+  font-weight: bold;
+}
+
+// Navigation
+
+#nav_bar,
+#nav_bar .links {
+  display: flex;
+  padding: 0 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav_bar {
+  .logo {
+    display: flex;
+    align-items: center;
+    .letter {
+      padding: 0.8rem;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      color: #fff;
+      font-weight: bold;
+    }
+    .header_logo {
+      padding: 0 1rem;
+      color: #fff;
+      font-weight: 100;
+      font-size: 1.2rem;
+    }
+  }
+  .links {
+    padding: 0 1rem;
+    height: 100%;
+    .link {
+      padding: 1.5rem 2rem;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: all 0.4s ease;
+      height: 100%;
+      position: relative;
+      z-index: 2;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) skewX(-30deg);
+        height: 100%;
+        width: 0%;
+        background: #007ced;
+        opacity: 0;
+        transition: all 0.4s ease;
+        z-index: -1;
+      }
+
+      &:hover {
+        color: #fff;
+
+        &::after {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+#about {
+  padding: 4rem 6rem 4rem 6rem;
+}
+.about_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .photo {
+    padding: 2rem;
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    border-radius: 50%;
+    border: 15px solid #444444;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 10px 5px rgba(#000, 0.75);
+    img {
+      width: 100%;
+      border-radius: 50%;
+      position: relative;
+      top: -30px;
+    }
+  }
+  .disc {
+    width: 50%;
+    text-align: center;
+    .small_header {
+      letter-spacing: 1px;
+    }
+    .big_header {
+      font-size: 2.5rem;
+      color: #fff;
+    }
+    .info {
+      color: rgb(173, 173, 173);
+    }
+  }
+}
