@@ -1,4 +1,4 @@
-<h1 align="center">Simple SPA in Vanilla JS</h1>
+<h1 align="center">Hotel Website</h1>
 
 
 ## Project Overview
