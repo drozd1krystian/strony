@@ -2,7 +2,7 @@
 
 
 ## Project Overview
-Website to practice use of API. You can search for a beer using a name, add it to favorites. It uses local storage to store beer and favorites data. Beer info from <a href="https://punkapi.com/">API</a>
+Website to practice use of API. You can search for a beer using a name, add it to favorites. It uses local storage to store beer and favorites data. Beer info from <a href="https://punkapi.com/">Punkapi</a>.
 
 ## Tech/framework used 🔧
 
