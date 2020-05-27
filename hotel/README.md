@@ -2,7 +2,7 @@
 
 
 ## Project Overview
-Remake of a hotel website template. All credits to <a href="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/#">Nicdarkthemes</a>
+Remake of a hotel website template. All credits to <a href="http://www.nicdarkthemes.com/">Nicdarkthemes</a> You can view their website here: <a href="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/#">Hotel theme</a>
 
 ## Tech/framework used 🔧
 
