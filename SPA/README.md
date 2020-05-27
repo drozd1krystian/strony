@@ -11,5 +11,5 @@ Project made to try making an SPA in Vanilla JS with help of <a href="https://de
 | HTML                        |     |
 | CSS                           |    |
 ## Preview
-<a href="drozd1krystian.github.io/strony/SPA/dist/index.html">Preview website</a>
+<a href="drozd1krystian.github.io/strony/SPA/dist/index.html" target="_blank">Preview website</a>
 ## License
