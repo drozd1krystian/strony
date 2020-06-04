@@ -24,3 +24,16 @@ if (index[index.length - 1].toString() == "index.html") {
   window.addEventListener("resize", detectmob);
   window.addEventListener("load", detectmob);
 }
+
+let prevScrollPos = window.pageYOffset;
+window.onscroll = function () {
+  let currentScrollPos = window.pageYOffset;
+  let navBar = document.getElementById("navbar");
+
+  if (prevScrollPos > currentScrollPos) {
+    navBar.style.transform = "translateY(0)";
+  } else {
+    navBar.style.transform = "translateY(-100%)";
+  }
+  prevScrollPos = currentScrollPos;
+};

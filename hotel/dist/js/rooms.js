@@ -9,9 +9,9 @@ const rooms = [
       { text: "swimming pool", icon: "fas fa-swimming-pool" },
       { text: "television", icon: "fas fa-tv" },
       { text: "no smoking", icon: "fas fa-smoking-ban" },
-      { text: "private bath", icon: "fas fa-bath" }
+      { text: "private bath", icon: "fas fa-bath" },
     ],
-    exServices: [{ text: "breakfast" }, { text: "car rental" }]
+    exServices: [{ text: "breakfast" }, { text: "car rental" }],
   },
   {
     img: "./img/room2.jpg",
@@ -22,9 +22,9 @@ const rooms = [
     services: [
       { text: "swimming pool", icon: "fas fa-swimming-pool" },
       { text: "television", icon: "fas fa-tv" },
-      { text: "private bath", icon: "fas fa-bath" }
+      { text: "private bath", icon: "fas fa-bath" },
     ],
-    exServices: [{ text: "breakfast" }, { text: "laundry" }]
+    exServices: [{ text: "breakfast" }, { text: "laundry" }],
   },
   {
     img: "./img/room3.jpg",
@@ -35,13 +35,13 @@ const rooms = [
     services: [
       { text: "swimming pool", icon: "fas fa-swimming-pool" },
       { text: "television", icon: "fas fa-tv" },
-      { text: "no smoking", icon: "fas fa-smoking-ban" }
+      { text: "no smoking", icon: "fas fa-smoking-ban" },
     ],
     exServices: [
       { text: "breakfast" },
       { text: "laundry" },
-      { text: "car rental" }
-    ]
+      { text: "car rental" },
+    ],
   },
   {
     img: "./img/room5.jpg",
@@ -52,9 +52,9 @@ const rooms = [
     services: [
       { text: "swimming pool", icon: "fas fa-swimming-pool" },
       { text: "no smoking", icon: "fas fa-smoking-ban" },
-      { text: "private bath", icon: "fas fa-bath" }
+      { text: "private bath", icon: "fas fa-bath" },
     ],
-    exServices: [{ text: "breakfast" }]
+    exServices: [{ text: "breakfast" }],
   },
   {
     img: "./img/room4.jpg",
@@ -65,10 +65,10 @@ const rooms = [
     services: [
       { text: "swimming pool", icon: "fas fa-swimming-pool" },
       { text: "no smoking", icon: "fas fa-smoking-ban" },
-      { text: "private bath", icon: "fas fa-bath" }
+      { text: "private bath", icon: "fas fa-bath" },
     ],
-    exServices: [{ text: "breakfast" }, { text: "car rental" }]
-  }
+    exServices: [{ text: "breakfast" }, { text: "car rental" }],
+  },
 ];
 
 dateContainer.addEventListener("change", () => {
@@ -78,19 +78,19 @@ dateContainer.addEventListener("change", () => {
 
 function filterData() {
   let filteredArray = [];
-  let checker = (arr, target) => target.every(v => arr.includes(v));
+  let checker = (arr, target) => target.every((v) => arr.includes(v));
   const services = Array.from(
     document.querySelectorAll('input[name="services"]:checked')
-  ).map(el => el.value);
+  ).map((el) => el.value);
   const exServices = Array.from(
     document.querySelectorAll('input[name="ex-services"]:checked')
-  ).map(el => el.value);
+  ).map((el) => el.value);
 
-  filteredArray = rooms.filter(el => {
-    let elServices = el.services.map(s => {
+  filteredArray = rooms.filter((el) => {
+    let elServices = el.services.map((s) => {
       return s.text;
     });
-    let elExServices = el.exServices.map(es => {
+    let elExServices = el.exServices.map((es) => {
       return es.text;
     });
     if (
@@ -110,9 +110,9 @@ function fillData(data) {
     let markup = `<p class ="error"> No results for this search!</p>`;
     roomsContainer.insertAdjacentHTML("beforeend", markup);
   }
-  data.forEach(el => {
+  data.forEach((el) => {
     let iconsMarkup = "";
-    el.services.forEach(s => {
+    el.services.forEach((s) => {
       iconsMarkup += `
       <div class="icon">
         <i class ="${s.icon}"></i>
@@ -137,8 +137,9 @@ function fillData(data) {
         </div>
         <p class ="grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel molestie nisl. Duis ac mi leo.</p>
         <div class="link-wrapper">
-          <a href="#" class="upcase btn brown-border">Book now from ${el.price *
-            nights.value}$</a>
+          <a href="#" class="upcase btn brown-border">Book now from ${
+            el.price * nights.value
+          }$</a>
         </div>
         <div class="room-services">
           <div class="icons">
@@ -173,15 +174,15 @@ priceRange.onchange = () => {
 
 const filter = document.querySelector(".filters");
 
-filter.onclick = e => {
-  if (e.target.tagName != "I") {
+filter.onclick = (e) => {
+  if (!e.target.closest(".header")) {
     return;
   }
   const parent = e.target.parentElement;
   const list = parent.nextElementSibling;
   list.classList.toggle("list-active");
 
-  list.onclick = e => {
+  list.onclick = (e) => {
     if (e.target.tagName != "INPUT") {
       return;
     }
@@ -206,7 +207,7 @@ function compare(a, b, rev = 1, key) {
 }
 
 const filterButtons = document.querySelectorAll(".expand-menu a");
-sorting.onclick = e => {
+sorting.onclick = (e) => {
   e.preventDefault();
   const target = e.target;
   if (target.tagName != "A") {
@@ -215,7 +216,7 @@ sorting.onclick = e => {
   const key = target.dataset.key;
   const rev = target.dataset.sort;
   const sortedArr = rooms.sort((a, b) => compare(a, b, rev, key));
-  filterButtons.forEach(el => el.classList.remove("text-white"));
+  filterButtons.forEach((el) => el.classList.remove("text-white"));
   target.classList.add("text-white");
   fillData(sortedArr);
 };

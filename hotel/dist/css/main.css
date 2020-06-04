@@ -150,7 +150,7 @@ h6 {
 }
 
 #navbar {
-  padding: 2rem;
+  padding: 2rem 1rem;
   background: #333;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -162,8 +162,9 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   top: 0;
   z-index: 100;
 }
@@ -1386,6 +1387,7 @@ h6 {
   padding: 1rem 0;
   border: none;
   position: relative;
+  cursor: pointer;
 }
 
 #rooms-content .left .filters .input .range input[type="range"]::-webkit-slider-thumb {
@@ -1418,6 +1420,7 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 #rooms-content .left .filters .list .header h1 {
@@ -2143,6 +2146,7 @@ h6 {
 #contact .left form .wrapper button {
   border: none;
   padding: 0.7rem 4rem;
+  cursor: pointer;
 }
 
 #contact .right {
@@ -2225,11 +2229,6 @@ h6 {
 }
 
 @media screen and (max-width: 767px) {
-  #navbar {
-    height: 12vh;
-    position: fixed;
-    top: 0;
-  }
   #showcase {
     background-attachment: initial;
   }
@@ -2646,10 +2645,11 @@ h6 {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  #navbar {
-    height: 12vh;
-    position: fixed;
-    top: 0;
+  #showcase {
+    height: 100vh;
+  }
+  #showcase .showcase-content .container h1 {
+    font-size: 2rem;
   }
   #about .date-container {
     padding: 0 2rem;
@@ -2807,6 +2807,9 @@ h6 {
   }
   #rooms-content .right .card {
     width: 100%;
+  }
+  #rooms-content .right .card .photo img {
+    height: 400px;
   }
   #rooms-content .right .card .disc .icons {
     padding-right: 0;

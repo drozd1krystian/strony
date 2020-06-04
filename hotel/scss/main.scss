@@ -127,13 +127,14 @@ h6 {
 }
 
 #navbar {
-  padding: 2rem;
+  padding: 2rem 1rem;
   background: #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  position: sticky;
+  position: fixed;
+  transition: all 0.4s ease;
   top: 0;
   z-index: 100;
   .links {
@@ -986,6 +987,7 @@ h6 {
             padding: 1rem 0;
             border: none;
             position: relative;
+            cursor: pointer;
             &::-webkit-slider-thumb {
               position: relative;
               z-index: 14;
@@ -1008,6 +1010,7 @@ h6 {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          cursor: pointer;
           h1 {
             padding: 1rem 0 0 1rem;
           }
@@ -1544,6 +1547,7 @@ h6 {
         button {
           border: none;
           padding: 0.7rem 4rem;
+          cursor: pointer;
         }
       }
     }
@@ -1607,11 +1611,6 @@ h6 {
 }
 
 @media screen and (max-width: 767px) {
-  #navbar {
-    height: 12vh;
-    position: fixed;
-    top: 0;
-  }
   #showcase {
     background-attachment: initial;
     .showcase-content h1 {
@@ -1999,10 +1998,11 @@ h6 {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  #navbar {
-    height: 12vh;
-    position: fixed;
-    top: 0;
+  #showcase {
+    height: 100vh;
+    .showcase-content .container h1 {
+      font-size: 2rem;
+    }
   }
   #about {
     .date-container {
@@ -2137,6 +2137,9 @@ h6 {
       padding: 0;
       .card {
         width: 100%;
+        .photo img {
+          height: 400px;
+        }
         .disc {
           .icons {
             padding-right: 0;
