@@ -9,14 +9,14 @@ let Register = {
           <input type="password" placeholder="Password" />
           <input type="password" placeholder="Confirm Password" />
           <button type="submit" class="bg-light btn">Submit</button>
-          <p><a href="/#/login">Already Have An Account? Log In &#10230</a></p>
+          <p><a href="#/login">Already Have An Account? Log In &#10230</a></p>
         </form>
       </div>
     </section>
     `;
     return view;
   },
-  after_render: () => {}
+  after_render: () => {},
 };
 
 export default Register;

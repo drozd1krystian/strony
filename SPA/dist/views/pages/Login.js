@@ -9,13 +9,13 @@ let Login = {
           <input type="password" placeholder="Password" />
           <p><a href="">Forgot Login/Password?</a></p>
           <button type="submit" class="bg-light btn">Submit</button>
-          <h3><a href="">Need An Account? Sign Up &#10230</a></h3>
+          <h3><a href="#/signup">Need An Account? Sign Up &#10230</a></h3>
         </form>
       </div>
     </section>
     `;
     return view;
   },
-  after_render: () => {}
+  after_render: () => {},
 };
 export default Login;
